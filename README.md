@@ -1,10 +1,10 @@
 # hSettings
 
-1. Eclipse
+### Eclipse
 - Preference File
 Eclipse_HoYa_Preferences.epf
 
-2. Vim
+### Vim
 - Setting File
 ~/.vimrc
 - Colorscheme File

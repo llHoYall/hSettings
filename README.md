@@ -14,6 +14,8 @@ Eclipse_HoYa_Preferences.epf
 - Colorscheme File
 ```
 ~/.vim/colors/HoYa.vim
+~/.vim/colors/obsidian.vim
+~/.vim/colors/wombat.vim
 ```
 - Vundle
 ```

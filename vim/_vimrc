@@ -190,7 +190,17 @@ set laststatus=2
 
 " You Complete Me --------------------------------------------------------------
 let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g	:YcmCompleter GoToDefinitionElseDelaration<CR>
+let g:ycm_python_binary_path='/usr/bin/python'
+let g:ycm_key_list_select_completion=['<C-j>','<Down>']
+let g_ycm_key_list_previous_completion=['<C-k>','<Up>']
+let g:ycm_autoclose_preview_window_after_completion=1
+
+nnoremap <leader>g:YcmCompleter GoTo<CR>
+nnoremap <leader>gg:YcmCompleter GoToImprecise<CR>
+nnoremap <leader>d:YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>t:YcmCompleter GetType<CR>
+nnoremap <leader>p:YcmCompleter GetParent<CR>
+map <leader>f:YcmCompleter GoToDefinitionElseDelaration<CR>
 
 
 " man page ---------------------------------------------------------------------

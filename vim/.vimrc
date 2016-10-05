@@ -1,6 +1,6 @@
 "===============================================================================
 " HoYa's Vim Configuration
-" 
+"
 " author:   hoya128@gmail.com
 " version:  v1.1
 " date:     2016.06.30
@@ -13,14 +13,18 @@ set fenc=utf-8
 set fencs=ucs-bom,korea
 set ff=unix
 
+filetype on
+
 let python_highlight_all=1
 syntax on
-filetype on
 if has('gui_running')
 	colo obsidian										" color scheme
 else
 	colo wombat											" color scheme
 endif
+hi BadWhitespace ctermbg=red guibg=red
+match BadWhitespace /^\t\+/
+match BadWhitespace /\s\+$/
 
 set nocompatible									" No compatible with Vi. Only use Vim.
 
@@ -34,9 +38,11 @@ set nu				 								   	" show line number
 set ruler													" show cursor position
 set sm		        								" show match
 set si		        								" smart indent
-set statusline=\%<%l:%v\[%P]%=%a\%h%m%r\%F\ 
+set statusline=\%<%l:%v\[%P]%=%a\%h%m%r\%F\
 set sw=2          								" shift width
 set ts=2          								" tab stop
+set tw=80													" text width
+
 
 " Vundle -----------------------------------------------------------------------
 filetype off
@@ -71,7 +77,7 @@ filetype plugin indent on
 
 
 " Map --------------------------------------------------------------------------
-map <F2>	:NERDTreeToggle<CR>		
+map <F2>	:NERDTreeToggle<CR>
 map <F3>	:TlistToggle<CR>
 map <F4>	:SrcExplToggle<CR><CR>
 
@@ -92,7 +98,6 @@ map ,w 		:bw<CR>			" Current buffer wipeout
 
 
 " AutoCommand ------------------------------------------------------------------
-au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 
 " ctags ------------------------------------------------------------------------
@@ -110,7 +115,7 @@ if version >= 500
 	endfunc
 endif
 
-nmap ,st :call Sts()<CR>
+nmap ,st :call Sts()<CR
 nmap ,tj :call Tj()<CR>
 
 

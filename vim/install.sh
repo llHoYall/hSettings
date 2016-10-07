@@ -5,3 +5,4 @@ mkdir -p ~/.vim/colors
 cp *.vim ~/.vim/colors
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+sudo apt install exuberant-ctags

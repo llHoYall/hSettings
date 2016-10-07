@@ -203,6 +203,12 @@ nnoremap <leader>p:YcmCompleter GetParent<CR>
 map <leader>f:YcmCompleter GoToDefinitionElseDelaration<CR>
 
 
+" Python -----------------------------------------------------------------------
+au BufNewFile,BufRead *.py
+	\ se noet			" no expand tab
+	\ se sts=2		" soft tab stop
+
+
 " man page ---------------------------------------------------------------------
 func! Man()
 	let symbol = expand("<cword>")

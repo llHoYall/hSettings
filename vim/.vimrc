@@ -15,7 +15,6 @@ set ff=unix
 
 filetype on
 
-let python_highlight_all=1
 syntax on
 if has('gui_running')
 	colo obsidian										" color scheme
@@ -204,9 +203,9 @@ map <leader>f:YcmCompleter GoToDefinitionElseDelaration<CR>
 
 
 " Python -----------------------------------------------------------------------
-au BufNewFile,BufRead *.py
-	\ se noet			" no expand tab
-	\ se sts=2		" soft tab stop
+let python_highlight_all=1
+au BufNewFile,BufRead *.py se	sts=2		" soft tab stop
+au BufNewFile,BufRead *.py se	sw=2		" shift width
 
 
 " man page ---------------------------------------------------------------------

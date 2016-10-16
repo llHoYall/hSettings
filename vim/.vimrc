@@ -15,6 +15,7 @@ set ff=unix
 
 filetype on
 
+let python_highlight_all=1
 syntax on
 if has('gui_running')
 	colo obsidian										" color scheme
@@ -70,6 +71,9 @@ Plugin 'nvie/vim-flake8'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline'
+" Ruby
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'ervandew/supertab'
 call vundle#end()
 
 filetype plugin indent on
@@ -203,9 +207,12 @@ map <leader>f:YcmCompleter GoToDefinitionElseDelaration<CR>
 
 
 " Python -----------------------------------------------------------------------
-let python_highlight_all=1
-au BufNewFile,BufRead *.py se	sts=2		" soft tab stop
-au BufNewFile,BufRead *.py se	sw=2		" shift width
+au BufNewFile,BufRead *.py se sts=2		" soft tab stop
+au BufNewFile,BufRead *.py se sw=2		" shift width
+au BufNewFile,BufRead *.py se ts=2		" tab stop
+
+
+" Ruby -------------------------------------------------------------------------
 
 
 " man page ---------------------------------------------------------------------

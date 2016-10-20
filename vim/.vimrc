@@ -74,6 +74,8 @@ Plugin 'Lokaltog/powerline'
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ervandew/supertab'
+" Io
+Plugin 'andreimaxim/vim-io'
 call vundle#end()
 
 filetype plugin indent on

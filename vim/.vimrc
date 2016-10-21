@@ -56,7 +56,6 @@ set rtp+=~/.vim/bundle/nerdtree		" run-time path for NERDTree plugin
 set rtp+=~/.vim/bundle/taglist
 " https://github.com/wesleyche/SrcExpl
 set rtp+=~/.vim/bundle/srcexpl
-set rtp+=~/.vim/bundle/powerline/bindings/vim/
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
@@ -70,7 +69,9 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'nvie/vim-flake8'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/powerline'
+" Common
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ervandew/supertab'
@@ -188,9 +189,9 @@ let Tlist_WinWidth = 50
 let g:SrcExpl_winHeight = 10
 
 
-" Powerline --------------------------------------------------------------------
-let g:Powerline_symbols = 'fancy'
-set laststatus=2
+" vim-airline ------------------------------------------------------------------
+let g:airline_theme = 'wombat'
+let g_airline#extensions#tabline#enabled = 1
 
 
 " You Complete Me --------------------------------------------------------------

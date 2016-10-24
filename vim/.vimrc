@@ -47,14 +47,10 @@ set tw=80													" text width
 " Vundle -----------------------------------------------------------------------
 filetype off
 
-" https://github.com/gmarik/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
-" https://github.com/scrooloose/nerdtree
 set rtp+=~/.vim/bundle/nerdtree		" run-time path for NERDTree plugin
 " https://sourceforge.net/projects/vim-taglist/files
-" https://github.com/vim-scripts/taglist.vim
 set rtp+=~/.vim/bundle/taglist
-" https://github.com/wesleyche/SrcExpl
 set rtp+=~/.vim/bundle/srcexpl
 
 call vundle#begin()
@@ -65,7 +61,6 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'wesleyche/SrcExpl'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'nvie/vim-flake8'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
@@ -190,23 +185,9 @@ let g:SrcExpl_winHeight = 10
 
 
 " vim-airline ------------------------------------------------------------------
+set laststatus=2
 let g:airline_theme = 'wombat'
 let g_airline#extensions#tabline#enabled = 1
-
-
-" You Complete Me --------------------------------------------------------------
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_python_binary_path='/usr/bin/python'
-let g:ycm_key_list_select_completion=['<C-j>','<Down>']
-let g_ycm_key_list_previous_completion=['<C-k>','<Up>']
-let g:ycm_autoclose_preview_window_after_completion=1
-
-nnoremap <leader>g:YcmCompleter GoTo<CR>
-nnoremap <leader>gg:YcmCompleter GoToImprecise<CR>
-nnoremap <leader>d:YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>t:YcmCompleter GetType<CR>
-nnoremap <leader>p:YcmCompleter GetParent<CR>
-map <leader>f:YcmCompleter GoToDefinitionElseDelaration<CR>
 
 
 " Python -----------------------------------------------------------------------

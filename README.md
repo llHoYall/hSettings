@@ -6,6 +6,12 @@
 Eclipse_HoYa_Preferences.epf
 ```
 
+### zsh
+- Installation
+```
+./install.sh
+```
+
 ### Vim
 - Installation
 ```

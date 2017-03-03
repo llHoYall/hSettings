@@ -187,7 +187,7 @@ let g:SrcExpl_winHeight = 10
 " vim-airline ------------------------------------------------------------------
 set laststatus=2
 let g:airline_theme = 'wombat'
-let g_airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 
 
 " Python -----------------------------------------------------------------------

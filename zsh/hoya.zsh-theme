@@ -6,11 +6,10 @@ else
 	NAME_COLOR="green";
 fi
 
-local current_dir='${PWD/#$HOME/~}'
-
-PROMPT='%{$fg[$NAME_COLOR]%}%n%{$reset_color%} %{$FG[033]%}${PWD/#$HOME/~}%{$reset_color%}
+PROMPT='
+%{$fg[$NAME_COLOR]%}%n%{$reset_color%} %{$FG[033]%}${PWD/#$HOME/~}%{$reset_color%}
 %{$FG[226]%}$(git_prompt_info)%{$reset_color%}%(!.#.$) '
-RPROMPT='%{$FG[239]%}[%*]'
+RPROMPT='%{$FG[239]%}[%*]%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[226]%}%B"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "

@@ -11,6 +11,6 @@ chsh -s `which zsh`
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 # Setting file
-cp hoya.zsh-theme ~/.oh-my-zsh/theme/
+cp hoya.zsh-theme ~/.oh-my-zsh/themes/
 cp .zshrc ~/
 

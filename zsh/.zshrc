@@ -11,9 +11,10 @@ export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="crcandy"
 #ZSH_THEME="dst"
 #ZSH_THEME="fino-time"
-ZSH_THEME="pmcgee"
+#ZSH_THEME="pmcgee"
 #ZSH_THEME="tjkirch"
 #ZSH_THEME="ys"
+ZSH_THEME="hoya"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

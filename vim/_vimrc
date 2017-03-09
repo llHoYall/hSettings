@@ -3,10 +3,8 @@
 "
 " author:   hoya128@gmail.com
 " version:  v1.1
-" date:     2016.06.30
-"						- First released.
-"						2016.10.04
-"						- Add vundle
+" revision: 2016.06.30 - First released.
+"						2016.10.04 - Add vundle.
 "===============================================================================
 
 set fenc=utf-8
@@ -187,7 +185,7 @@ let g:SrcExpl_winHeight = 10
 " vim-airline ------------------------------------------------------------------
 set laststatus=2
 let g:airline_theme = 'wombat'
-let g_airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 
 
 " Python -----------------------------------------------------------------------

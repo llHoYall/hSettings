@@ -3,10 +3,9 @@
 "
 " author:   hoya128@gmail.com
 " version:  v1.1
-" date:     2016.06.30
-"						- First released.
-"						2016.10.04
-"						- Add vundle
+" revision: 2016.06.30 - First released.
+"						2016.10.04 - Add vundle.
+"						2017.03.09 - Refactoring.
 "===============================================================================
 
 set fenc=utf-8
@@ -15,14 +14,14 @@ set ff=unix
 
 filetype on
 
-let python_highlight_all=1
 syntax on
 if has('gui_running')
 	colo obsidian										" color scheme
 else
 	colo wombat											" color scheme
 endif
-hi BadWhitespace ctermbg=red guibg=red
+
+hi BadWhitespace ctermbg=red	guibg=red
 match BadWhitespace /^\t\+/
 match BadWhitespace /\s\+$/
 
@@ -49,29 +48,24 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/nerdtree		" run-time path for NERDTree plugin
-" https://sourceforge.net/projects/vim-taglist/files
 set rtp+=~/.vim/bundle/taglist
 set rtp+=~/.vim/bundle/srcexpl
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+" UI
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'wesleyche/SrcExpl'
-Plugin 'nvie/vim-flake8'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-" Common
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" Ruby
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'ervandew/supertab'
-" Io
-Plugin 'andreimaxim/vim-io'
+" Common
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'wesleyche/SrcExpl'
+" Python
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'nvie/vim-flake8'
 call vundle#end()
 
 filetype plugin indent on
@@ -79,8 +73,9 @@ filetype plugin indent on
 
 " Map --------------------------------------------------------------------------
 map <F2>	:NERDTreeToggle<CR>
-map <F3>	:TlistToggle<CR>
-map <F4>	:SrcExplToggle<CR><CR>
+map <F3>	:NERDTreeTabsToggle<CR>
+map <F4>	:TlistToggle<CR>
+map <F5>	:SrcExplToggle<CR><CR>
 
 map ,f		v]}zf				" folding
 map ,1 		:b!1<CR>		" Move to buffer #1
@@ -171,8 +166,30 @@ nmap ,csc :call Csc()<CR>
 
 
 " NERD Tree --------------------------------------------------------------------
+let NERDTreeIgnore = ['\.pyc$', '\~$']		" ignore files in NERDTree
 let g:NERDTreeWinSize = 40
-let NERDTreeIgnore=['\.pyc$', '\~$']		" ignore files in NERDTree
+
+
+" Airline ----------------------------------------------------------------------
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
+let g:airline_left_sep = '>'
+let g:airline_left_alt_sep = '>'
+let g:airline_right_sep = '<'
+let g:airline_right_alt_sep = '<'
+let g:airline_theme = 'wombat'
+
+
+" Syntastic --------------------------------------------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 " TagList ----------------------------------------------------------------------
@@ -182,21 +199,18 @@ let Tlist_WinWidth = 50
 
 " Source Explorer --------------------------------------------------------------
 let g:SrcExpl_winHeight = 10
-
-
-" vim-airline ------------------------------------------------------------------
-set laststatus=2
-let g:airline_theme = 'wombat'
-let g:airline#extensions#tabline#enabled = 1
+let g:SrcExpl_refreshTime = 100
 
 
 " Python -----------------------------------------------------------------------
+let python_highlight_all = 1
+
+let g:flake8_show_quickfix = 1
+let g:flake8_show_in_gutter = 1
+
 au BufNewFile,BufRead *.py se sts=2		" soft tab stop
 au BufNewFile,BufRead *.py se sw=2		" shift width
 au BufNewFile,BufRead *.py se ts=2		" tab stop
-
-
-" Ruby -------------------------------------------------------------------------
 
 
 " man page ---------------------------------------------------------------------

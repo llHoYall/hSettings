@@ -10,7 +10,7 @@ if ! test -d ~/.vim/colors
 then
 	mkdir -p ~/.vim/colors
 fi
-cp *.vim ~/.vim/colors
+cp colors/*.vim ~/.vim/colors
 if ! test -d ~/.vim/bundle/Vundle.vim
 then
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim

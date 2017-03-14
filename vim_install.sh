@@ -2,15 +2,15 @@
 
 if [[ "$(uname)" == "Darwin" || "$(expr substr $(uname -s) 1 5)" == "Linux" ]]
 then
-	cp .vimrc ~/
+	cp vim/.vimrc ~/
 else
-	cp _vimrc ~/
+	cp vim/_vimrc ~/
 fi
 if ! test -d ~/.vim/colors
 then
 	mkdir -p ~/.vim/colors
 fi
-cp colors/*.vim ~/.vim/colors
+cp vim/colors/*.vim ~/.vim/colors
 if ! test -d ~/.vim/bundle/Vundle.vim
 then
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim

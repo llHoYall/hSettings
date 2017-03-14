@@ -16,38 +16,39 @@ filetype on
 
 syntax on
 if has('gui_running')
-	colo obsidian										" color scheme
+	colo obsidian											" color scheme
 else
-	colo wombat											" color scheme
+	colo wombat												" color scheme
 endif
 
 hi BadWhitespace ctermbg=red	guibg=red
 match BadWhitespace /^\t\+/
 match BadWhitespace /\s\+$/
 
-set nocompatible									" No compatible with Vi. Only use Vim.
+set nocompatible										" No compatible with Vi. Only use Vim.
 
-set ai		        								" auto indent
-set backspace=start,indent,eol		" allow backspacing
-set cc=80         								" show print margin
-set cin           								" C-style indent (cindent)
-set clipboard=unnamed							" using system clipboard
-set hlsearch
-set nu				 								   	" show line number
-set ruler													" show cursor position
-set sm		        								" show match
-set si		        								" smart indent
-set statusline=\%<%l:%v\[%P]%=%a\%h%m%r\%F\
-set sw=2          								" shift width
-set ts=2          								" tab stop
-set tw=80													" text width
+set   ai		        								" auto indent
+set   backspace=start,indent,eol		" allow backspacing
+set   cc=80         								" show print margin
+set   cin           								" C-style indent (cindent)
+set   clipboard=unnamed							" using system clipboard
+set   hlsearch
+set   nu				 								   	" show line number
+set   ruler													" show cursor position
+set   sm		        								" show match
+set   si		        								" smart indent
+set   statusline=\%<%l:%v\[%P]%=%a\%h%m%r\%F\
+set   sw=2          								" shift width
+set   ts=2          								" tab stop
+set   tw=80													" text width
+set nowrap
 
 
 " Vundle -----------------------------------------------------------------------
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.vim/bundle/nerdtree		" run-time path for NERDTree plugin
+set rtp+=~/.vim/bundle/nerdtree			" run-time path for NERDTree plugin
 set rtp+=~/.vim/bundle/taglist
 set rtp+=~/.vim/bundle/srcexpl
 

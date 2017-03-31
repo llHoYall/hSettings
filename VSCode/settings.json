@@ -1,0 +1,9 @@
+{
+	"editor.detectIndentation": true,
+	"editor.folding": true,
+	"editor.fontSize": 10,
+	"editor.renderWhitespace": "none",
+	"editor.tabCompletion": true,
+	"editor.tabSize": 2,
+	"editor.useTabStops": true,
+}

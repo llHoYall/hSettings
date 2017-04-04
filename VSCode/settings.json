@@ -1,9 +1,41 @@
 {
-	"editor.detectIndentation": true,
-	"editor.folding": true,
-	"editor.fontSize": 10,
-	"editor.renderWhitespace": "none",
+	// Editor
 	"editor.tabCompletion": true,
+	"editor.fontSize": 10,
+	"editor.rulers": [80],
 	"editor.tabSize": 2,
-	"editor.useTabStops": true,
+	"editor.insertSpaces": false,
+	"editor.scrollBeyondLastLine": false,
+	"editor.minimap.enabled": true,
+	"editor.wordWrap": "on",		// "off"
+	"editor.wrappingIndent": "indent",		// "none", "same"
+	"editor.quickSuggestionsDelay": 100,
+	"editor.formatOnType": true,
+	"editor.formatOnPaste": true,
+	"editor.emptySelectionClipboard": false,
+	"editor.cursorStyle": "block",		// "line", "underline"
+	"editor.renderIndentGuides": true,
+
+	// Files
+	"files.eol": "\n",
+	"files.trimTrailingWhitespace": true,
+
+	// Search
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/bower_components": true
+	},
+	"search.quickOpen.includeSymbols": true,
+
+	// Debug
+	"debug.inlineValues": true,
+
+	// External Terminal
+	"terminal.external.osxExec": "iTerm.app",
+
+	// Integrated Terminal
+	"terminal.integrated.shell.linux": "/bin/zsh",
+	"terminal.integrated.shell.osx": "/bin/zsh",
+	"terminal.integrated.shell.windows": "C:\\Windows\\sysnative\\WindowsPowerShell\\v1.0\\PowerShell.exe"
 }
+

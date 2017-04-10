@@ -1,7 +1,7 @@
 {
 	// Editor
 	"editor.tabCompletion": true,
-	"editor.fontSize": 10,
+	"editor.fontSize": 12,
 	"editor.rulers": [80],
 	"editor.tabSize": 2,
 	"editor.insertSpaces": false,
@@ -9,7 +9,7 @@
 	"editor.minimap.enabled": true,
 	"editor.wordWrap": "on",		// "off"
 	"editor.wrappingIndent": "indent",		// "none", "same"
-	"editor.quickSuggestionsDelay": 100,
+	"editor.quickSuggestionsDelay": 300,
 	"editor.formatOnType": true,
 	"editor.formatOnPaste": true,
 	"editor.emptySelectionClipboard": false,
@@ -37,5 +37,20 @@
 	"terminal.integrated.shell.linux": "/bin/zsh",
 	"terminal.integrated.shell.osx": "/bin/zsh",
 	"terminal.integrated.shell.windows": "C:\\Windows\\sysnative\\WindowsPowerShell\\v1.0\\PowerShell.exe"
+
+	// Language
+	"[markdown]": {
+		"editor.quickSuggestions": true
+	},
+	"markdown.preview.fontSize": 12,
+	"markdown.preview.lineHeight": 1,
+
+	"[c]": {
+		"editor.quickSuggestions": true
+	},
+
+	"[cpp]": {
+		"editor.quickSuggestions": true
+	}
 }
 

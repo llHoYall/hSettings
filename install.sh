@@ -4,15 +4,18 @@ yellow='\033[0;33m'
 nc='\033[0m'
 
 function usage() {
-	echo "usage: ./install.sh [zsh | git | vim | vscode]"
+	echo "for MAC or Linux"
+	echo "  usage: ./install.sh [all | zsh | git | vim | vscode]"
+	echo "for Windows"
+	echo "  usage: sh ./install.sh [all | zsh | git | vim | vscode]"
 }
 
 os=None
 if [ "$(uname -s)" == "Darwin" ]; then
 	os=MAC
-elif [ "$(expr subst $(uname -s) 1 5)" == "Linux" ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	os=LINUX
-elif [ "$(expr subst $(uname -s) 1 7)" == "MSYS_NT" ]; then
+elif [ "$(expr substr $(uname -s) 1 7)" == "MSYS_NT" ]; then
 	os=WINDOWS
 else
 	echo "Not supported OS"

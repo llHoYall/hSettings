@@ -12,6 +12,6 @@ PROMPT='
 RPROMPT='%{$FG[239]%}[%*]%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[226]%}%B"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} <>"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}v"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*"

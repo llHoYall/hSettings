@@ -6,10 +6,10 @@ nc='\033[0m'
 
 # usage function ###############################################################
 function usage() {
+	echo ""
+	echo "[Usage]"
 	echo "for MAC or Linux"
 	echo "  usage: ./install.sh [all | zsh | git | vim | vscode]"
-	echo "for Windows"
-	echo "  usage: sh ./install.sh [all | zsh | git | vim | vscode]"
 }
 
 # check OS #####################################################################
@@ -18,13 +18,11 @@ if [ "$(uname -s)" == "Darwin" ]; then
 	os=MAC
 	echo "Install OS dependecy tools for MAC"
 	if [ -z "$(command -v brew)" ]; then
-		echo -e " => Install ${yellow}brew${nc}"
+		echo -e "==> Install ${yellow}brew${nc}"
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	os=LINUX
-elif [ "$(expr substr $(uname -s) 1 7)" == "MSYS_NT" ]; then
-	os=WINDOWS
 else
 	echo "Not supported OS"
 	exit 1
@@ -39,14 +37,15 @@ fi
 args=$1
 
 # Install Tools ################################################################
+echo "Install tools for ${os}"
 if [ $os = MAC -o $os = LINUX ]; then
 	cd $(dirname $0)
-	echo -e "=== Install ${yellow}${args}${nc} on ${yellow}${os}${nc} ==="
-elif [ $os = WINDOWS ]; then
-	write-host -NoNewline "=== Install "
-	write-host -NoNewline -ForegroundColor "Yellow" $args
-	write-host -NoNewline " on "
-	write-host -NoNewline -ForegroundColor "Yellow" $os
-	write-host " ==="
+	echo -e "==> Install ${yellow}${args}${nc}"
+	case $1 in
+		"zsh")
+			zsh/zsh_install.sh
+			;;
+		*)
+			echo "Not supported tool"
+	esac
 fi
-

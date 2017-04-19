@@ -16,6 +16,11 @@ function usage() {
 os=None
 if [ "$(uname -s)" == "Darwin" ]; then
 	os=MAC
+	echo "Install OS dependecy tools for MAC"
+	if [ -z "$(command -v brew)" ]; then
+		echo -e " => Install ${yellow}brew${nc}"
+		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	fi
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	os=LINUX
 elif [ "$(expr substr $(uname -s) 1 7)" == "MSYS_NT" ]; then
@@ -33,8 +38,9 @@ if [[ $# -ne 1 ]]; then
 fi
 args=$1
 
-# print Message ################################################################
+# Install Tools ################################################################
 if [ $os = MAC -o $os = LINUX ]; then
+	cd $(dirname $0)
 	echo -e "=== Install ${yellow}${args}${nc} on ${yellow}${os}${nc} ==="
 elif [ $os = WINDOWS ]; then
 	write-host -NoNewline "=== Install "

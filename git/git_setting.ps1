@@ -4,7 +4,7 @@ $option = Read-Host "    Input option [(R)P | (H)oYa]: "
 
 <# Set Git Configuration -----------------------------------------------------#>
 switch ($scope) {
-	"G" | "Global" {
+	{($_ -ceq "G") -or ($_ -ceq "Global")} {
 		# Core.Autocrlf
 		git config --global core.autocrlf true
 
@@ -39,7 +39,7 @@ switch ($scope) {
 			git config --global user.email "hoya128@gmail.com"
 		}
 	}
-	"L" | "Local" {
+	{($_ -ceq "L") -or ($_ -ceq "Local")} {
 		if ($option -ceq "R" -or $option -ceq "RP") {
 			# User Name
 			git config --global user.name "HoYa"
@@ -54,6 +54,6 @@ switch ($scope) {
 		}
 	}
 	default {
-		echo "Not supported scope"
+		Write-Host "Not supported scope"
 	}
 }

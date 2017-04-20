@@ -12,6 +12,21 @@ read option
 # Set Git Configuration
 case ${scope} in
 	G | Global)
+		if [ ${option} == "R" -o ${option} == "RP" ]; then
+			# User Name
+			git config --global user.name "HoYa"
+			# User E-mail
+			git config --global user.email "hoya@ixys.net"
+		elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
+			# User Name
+			git config --global user.name "llChameleoNll"
+			# User E-mail
+			git config --global user.email "hoya128@gmail.com"
+		else
+			echo "Not supported option"
+			exit 1
+		fi
+
 		# Core.Autocrlf
 		git config --global core.autocrlf input
 
@@ -26,9 +41,6 @@ case ${scope} in
 			LINUX)
 				git config --global credential.helper cache
 				;;
-			# Windows)
-			# 	git config --global credential.helper winstore
-			# 	;;
 		esac
 
 		# Help.Autocorrect
@@ -42,18 +54,6 @@ case ${scope} in
 
 		# Rerere.Enabled
 		git config --global rerere.enabled true
-
-		if [ ${option} == "R" -o ${option} == "RP" ]; then
-			# User Name
-			git config --global user.name "HoYa"
-			# User E-mail
-			git config --global user.email "hoya@ixys.net"
-		elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
-			# User Name
-			git config --global user.name "llChameleoNll"
-			# User E-mail
-			git config --global user.email "hoya128@gmail.com"
-		fi
 		;;
 	L | Local)
 		if [ ${option} == "R" -o ${option} == "RP" ]; then
@@ -66,6 +66,9 @@ case ${scope} in
 			git config --local user.name "llChameleoNll"
 			# User E-mail
 			git config --local user.email "hoya128@gmail.com"
+		else
+			echo "Not supported option"
+			exit 1
 		fi
 		;;
 	*)

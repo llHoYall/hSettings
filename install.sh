@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Color Value ##################################################################
+red='\033[0;31m'
 yellow='\033[0;33m'
 nc='\033[0m'
 
@@ -11,6 +12,15 @@ function usage() {
 	echo "for MAC or Linux"
 	echo "  usage: ./install.sh [all | zsh | git | vim | vscode]"
 }
+
+# Check Argument ###############################################################
+args=None
+if [ $# -ne 1 ]; then
+	usage
+	exit 1
+fi
+args=$1
+echo
 
 # Check OS #####################################################################
 os=None
@@ -33,17 +43,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 		apt-get install git
 	fi
 else
-	echo "Not supported OS"
-	exit 1
-fi
-
-# Check Argument ###############################################################
-args=None
-if [ $# -ne 1 ]; then
-	usage
+	echo -e "${red}Error: Not supported OS${nc}"
 	exit 2
 fi
-args=$1
 
 # Install Tools ################################################################
 echo "Install tools for ${os}"
@@ -59,6 +61,7 @@ if [ ${os} = MAC -o ${os} = LINUX ]; then
 			git/git_setting.sh ${os} ${path}
 			;;
 		*)
-			echo "Not supported tool"
+			echo -e "${red}Error: Not supported tool${nc}"
+			exit 2
 	esac
 fi

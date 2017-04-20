@@ -1,15 +1,19 @@
 #!/bin/bash
 
-# Change directory
+# Color Value ##################################################################
+red='\033[0;31m'
+nc='\033[0m'
+
+# Change Directory #############################################################
 cd $2
 
-# Get Scope & Option from User
+# Get Scope & Option from User #################################################
 echo -n "    Input scope [(G)lobal | (L)ocal]: "
 read scope
 echo -n "    Input option [(R)P | (H)oYa]: "
 read option
 
-# Set Git Configuration
+# Set Git Configuration ########################################################
 case ${scope} in
 	G | Global)
 		if [ ${option} == "R" -o ${option} == "RP" ]; then
@@ -23,8 +27,8 @@ case ${scope} in
 			# User E-mail
 			git config --global user.email "hoya128@gmail.com"
 		else
-			echo "Not supported option"
-			exit 1
+			echo -e "${red}Error: Not supported option${nc}"
+			exit 2
 		fi
 
 		# Core.Autocrlf
@@ -67,10 +71,11 @@ case ${scope} in
 			# User E-mail
 			git config --local user.email "hoya128@gmail.com"
 		else
-			echo "Not supported option"
-			exit 1
+			echo -e "${red}Error: Not supported option${nc}"
+			exit 2
 		fi
 		;;
 	*)
-		echo "Not supported scope"
+		echo -e "${red}Not supported scope${nc}"
+		exit 2
 esac

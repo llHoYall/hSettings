@@ -5,6 +5,24 @@ $option = Read-Host "    Input option [(R)P | (H)oYa]: "
 <# Set Git Configuration -----------------------------------------------------#>
 switch ($scope) {
 	{($_ -ceq "G") -or ($_ -ceq "Global")} {
+		if ($option -ceq "R" -or $option -ceq "RP") {
+			# User Name
+			git config --global user.name "HoYa"
+			# User E-mail
+			git config --global user.email "hoya@ixys.net"
+		}
+		elseif ($option -ceq "H" -or $option -ceq "HoYa") {
+			# User Name
+			git config --global user.name "llChameleoNll"
+			# User E-mail
+			git config --global user.email "hoya128@gmail.com"
+		}
+		else {
+			Write-Host -ForegroundColor "red" "Error: Not supported option"
+			Write-Host
+			Exit(2)
+		}
+
 		# Core.Autocrlf
 		git config --global core.autocrlf true
 
@@ -25,19 +43,6 @@ switch ($scope) {
 
 		# Rerere.Enabled
 		git config --global rerere.enabled true
-
-		if ($option -ceq "R" -or $option -ceq "RP") {
-			# User Name
-			git config --global user.name "HoYa"
-			# User E-mail
-			git config --global user.email "hoya@ixys.net"
-		}
-		elseif ($option -ceq "H" -or $option -ceq "HoYa") {
-			# User Name
-			git config --global user.name "llChameleoNll"
-			# User E-mail
-			git config --global user.email "hoya128@gmail.com"
-		}
 	}
 	{($_ -ceq "L") -or ($_ -ceq "Local")} {
 		if ($option -ceq "R" -or $option -ceq "RP") {
@@ -52,8 +57,18 @@ switch ($scope) {
 			# User E-mail
 			git config --global user.email "hoya128@gmail.com"
 		}
+		else {
+			Write-Host -ForegroundColor "red" "Error: Not supported option"
+			Write-Host
+			Exit(2)
+		}
 	}
 	default {
-		Write-Host "Not supported scope"
+		Write-Host -ForegroundColor "red" "Error: Not supported scope"
+		Write-Host
+		Exit(2)
 	}
 }
+
+<# Change Directory ----------------------------------------------------------#>
+cd $Args[0]

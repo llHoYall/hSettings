@@ -21,6 +21,7 @@ if ($PSVersionTable.PSVersion -ge "3.0") {
 }
 else {
 	Write-Host -ForegroundColor "red" "Error: Not supported PowerShell version"
+	Write-Host
 	Exit(2)
 }
 
@@ -36,6 +37,7 @@ switch ($Args[0]) {
 	}
 	default {
 		Write-Host -ForegroundColor "red" "Error: Not supported tool"
+		Write-Host
 		Exit(2)
 	}
 }

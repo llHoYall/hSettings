@@ -72,3 +72,4 @@ switch ($scope) {
 
 <# Change Directory ----------------------------------------------------------#>
 cd $Args[0]
+Write-Host

@@ -3,6 +3,9 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+if [[ "$(uname -s)" == "Darwin" ]]; then
+	export EDITOR="/usr/loval/bin/mate -w"
+fi
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.

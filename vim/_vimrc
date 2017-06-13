@@ -62,6 +62,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " Common
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'wesleyche/SrcExpl'
 " Python

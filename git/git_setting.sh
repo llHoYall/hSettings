@@ -31,6 +31,9 @@ case ${scope} in
 			exit 2
 		fi
 
+		# Color.ui
+		git config --global color.ui auto
+
 		# Core.Autocrlf
 		git config --global core.autocrlf input
 

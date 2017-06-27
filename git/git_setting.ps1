@@ -23,6 +23,9 @@ switch ($scope) {
 			Exit(2)
 		}
 
+		# Color.Ui
+		git config --global color.ui auto
+
 		# Core.Autocrlf
 		git config --global core.autocrlf true
 

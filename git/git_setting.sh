@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Color Value ##################################################################
+# Color Definition ------------------------------------------------------------#
 red='\033[0;31m'
 nc='\033[0m'
 
-# Change Directory #############################################################
+# Change Directory ------------------------------------------------------------#
 cd $2
 
-# Get Scope & Option from User #################################################
+# Get Scope & Option from User ------------------------------------------------#
 echo -n "    Input scope [(G)lobal | (L)ocal]: "
 read scope
 echo -n "    Input option [(R)P | (H)oYa]: "
@@ -19,11 +19,13 @@ case ${scope} in
 		if [ ${option} == "R" -o ${option} == "RP" ]; then
 			# User Name
 			git config --global user.name "HoYa"
+
 			# User E-mail
 			git config --global user.email "hoya@ixys.net"
 		elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
 			# User Name
 			git config --global user.name "llChameleoNll"
+
 			# User E-mail
 			git config --global user.email "hoya128@gmail.com"
 		else
@@ -66,11 +68,13 @@ case ${scope} in
 		if [ ${option} == "R" -o ${option} == "RP" ]; then
 			# User Name
 			git config --local user.name "HoYa"
+
 			# User E-mail
 			git config --local user.email "hoya@ixys.net"
 		elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
 			# User Name
 			git config --local user.name "llChameleoNll"
+
 			# User E-mail
 			git config --local user.email "hoya128@gmail.com"
 		else

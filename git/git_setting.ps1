@@ -8,12 +8,14 @@ switch ($scope) {
 		if ($option -ceq "R" -or $option -ceq "RP") {
 			# User Name
 			git config --global user.name "HoYa"
+
 			# User E-mail
 			git config --global user.email "hoya@ixys.net"
 		}
 		elseif ($option -ceq "H" -or $option -ceq "HoYa") {
 			# User Name
 			git config --global user.name "llChameleoNll"
+
 			# User E-mail
 			git config --global user.email "hoya128@gmail.com"
 		}
@@ -51,12 +53,14 @@ switch ($scope) {
 		if ($option -ceq "R" -or $option -ceq "RP") {
 			# User Name
 			git config --global user.name "HoYa"
+
 			# User E-mail
 			git config --global user.email "hoya@ixys.net"
 		}
 		elseif ($option -ceq "H" -or $option -ceq "HoYa") {
 			# User Name
 			git config --global user.name "llChameleoNll"
+
 			# User E-mail
 			git config --global user.email "hoya128@gmail.com"
 		}

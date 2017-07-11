@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Color Value ##################################################################
+# Color Definition ------------------------------------------------------------#
 red='\033[0;31m'
 yellow='\033[0;33m'
 nc='\033[0m'
 
-# Usage Function ###############################################################
+# Usage Function --------------------------------------------------------------#
 function usage() {
 	echo ""
 	echo "[Usage]"
@@ -13,7 +13,7 @@ function usage() {
 	echo "  usage: ./install.sh [all | zsh | git | vim | vscode]"
 }
 
-# Check Argument ###############################################################
+# Check Argument --------------------------------------------------------------#
 args=None
 if [ $# -ne 1 ]; then
 	usage
@@ -22,7 +22,7 @@ fi
 args=$1
 echo
 
-# Check OS #####################################################################
+# Check OS --------------------------------------------------------------------#
 os=None
 if [ "$(uname -s)" == "Darwin" ]; then
 	os=MAC
@@ -31,23 +31,15 @@ if [ "$(uname -s)" == "Darwin" ]; then
 		echo -e "==> Install ${yellow}brew${nc}"
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
-	if [ -z "$(command -v git)" ]; then
-		echo -e "==> Install ${yellow}git${nc}"
-		brew install git
-	fi
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	os=LINUX
 	echo "Install OS dependency tools for Linux"
-	if [ -z "$(command -v git)" ]; then
-		echo -e "==> Install ${yellow}git${nc}"
-		apt-get install git
-	fi
 else
 	echo -e "${red}Error: Not supported OS${nc}"
 	exit 2
 fi
 
-# Install Tools ################################################################
+# Install Tools ---------------------------------------------------------------#
 echo "Install tools for ${os}"
 if [ ${os} = MAC -o ${os} = LINUX ]; then
 	path=$PWD
@@ -58,7 +50,18 @@ if [ ${os} = MAC -o ${os} = LINUX ]; then
 			zsh/zsh_install.sh
 			;;
 		"git")
+			if [ -z "$(command -v git)" ]; then
+				echo -e "==> Install ${yellow}git${nc}"
+				if [ ${os} = MAC ]; then
+					brew install git
+				elif [ ${os} =  LINUX ]; then
+					apt-get install git
+				fi
+			fi
 			git/git_setting.sh ${os} ${path}
+			;;
+		"vim")
+			vim/vim_install.sh
 			;;
 		*)
 			echo -e "${red}Error: Not supported tool${nc}"

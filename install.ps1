@@ -35,6 +35,9 @@ switch ($Args[0]) {
 	"git" {
 		git/git_setting.ps1 $path
 	}
+	"vim" {
+		vim/vim_install.ps1
+	}
 	default {
 		Write-Host -ForegroundColor "red" "Error: Not supported tool"
 		Write-Host

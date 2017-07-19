@@ -77,6 +77,10 @@ call vundle#end()
 filetype plugin indent on
 
 
+" Macro ------------------------------------------------------------------------
+runtime macros/mtchit.vim
+
+
 " Map --------------------------------------------------------------------------
 map <F2>	:NERDTreeToggle<CR>
 map <F3>	:NERDTreeTabsToggle<CR>

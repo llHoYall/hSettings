@@ -22,7 +22,6 @@ else
 	colo wombat
 endif
 
-
 set nocompatible										" No compatible with Vi. Only use Vim.
 
 set ai		        									" auto indent
@@ -36,6 +35,7 @@ set ruler														" show cursor position
 set sm		        									" show match
 set si		        									" smart indent
 set statusline=\%<%l:%v\[%P]%=%a\%h%m%r\%F\
+set sua+=.py												" suffixesadd
 set sw=2          									" shift width
 set ts=2          									" tab stop
 set tw=80														" text width

@@ -30,6 +30,7 @@ set cc=80         									" show print margin
 set cin           									" C-style indent (cindent)
 set clipboard=unnamed								" using system clipboard
 set hlsearch
+set nowrap
 set nu				 									   	" show line number
 set ruler														" show cursor position
 set sm		        									" show match
@@ -39,7 +40,7 @@ set sua+=.py												" suffixesadd
 set sw=2          									" shift width
 set ts=2          									" tab stop
 set tw=80														" text width
-set nowrap
+set vb															" visual bell
 
 
 " Show Trailing Whitespace -----------------------------------------------------

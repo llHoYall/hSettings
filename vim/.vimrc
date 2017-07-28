@@ -22,25 +22,27 @@ else
 	colo wombat
 endif
 
-set nocompatible										" No compatible with Vi. Only use Vim.
+set nocompatible											" No compatible with Vi. Only use Vim.
 
-set ai		        									" auto indent
-set backspace=start,indent,eol			" allow backspacing
-set cc=80         									" show print margin
-set cin           									" C-style indent (cindent)
-set clipboard=unnamed								" using system clipboard
-set hlsearch
+set 	ai		        									" auto indent
+set 	backspace=start,indent,eol			" allow backspacing
+set 	cc=80         									" show print margin
+set 	cin           									" C-style indent (cindent)
+set 	clipboard=unnamed								" using system clipboard
+set	noet															" expand tab
+set 	hlsearch
+set 	nu				 									   	" show line number
+set 	ruler														" show cursor position
+set 	sm		        									" show match
+set 	si		        									" smart indent
+set 	statusline=\%<%l:%v\[%P]%=%a\%h%m%r\%F\
+set		sts=2														" soft tab stop
+set 	sua+=.py												" suffixesadd
+set 	sw=2          									" shift width
+set 	ts=2          									" tab stop
+set 	tw=80														" text width
+set 	vb															" visual bell
 set nowrap
-set nu				 									   	" show line number
-set ruler														" show cursor position
-set sm		        									" show match
-set si		        									" smart indent
-set statusline=\%<%l:%v\[%P]%=%a\%h%m%r\%F\
-set sua+=.py												" suffixesadd
-set sw=2          									" shift width
-set ts=2          									" tab stop
-set tw=80														" text width
-set vb															" visual bell
 
 
 " Show Trailing Whitespace -----------------------------------------------------

@@ -31,16 +31,18 @@ set 	cin           									" C-style indent (cindent)
 set 	clipboard=unnamed								" using system clipboard
 set	noet															" expand tab
 set 	hlsearch
+set		ic															" ignore case
 set 	nu				 									   	" show line number
 set 	ruler														" show cursor position
+set		scs															" smart case
 set 	sm		        									" show match
 set 	si		        									" smart indent
 set 	statusline=\%<%l:%v\[%P]%=%a\%h%m%r\%F\
 set		sts=2														" soft tab stop
-set 	sua+=.py												" suffixesadd
+set 	sua+=.py												" suffixes add
 set 	sw=2          									" shift width
 set 	ts=2          									" tab stop
-set 	tw=80														" text width
+set 	tw=0														" text width
 set 	vb															" visual bell
 set nowrap
 
@@ -104,6 +106,8 @@ map ,0 		:b!10<CR>		" Move to buffer #10
 map ,x 		:bn!<CR>		" Move to next buffer
 map ,z 		:bp!<CR>		" Move to previous buffer
 map ,w 		:bw<CR>			" Current buffer wipeout
+
+nnoremap <silent> <C-l>		:<C-u>noh<<CR><C-l>		"Temporary mute highlighting
 
 
 " Show Invisible ---------------------------------------------------------------

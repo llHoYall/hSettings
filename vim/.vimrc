@@ -77,7 +77,6 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'wesleyche/SrcExpl'
 " Python
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'nvie/vim-flake8'
 call vundle#end()
 
 filetype plugin indent on
@@ -228,6 +227,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pep8']
 
 " TagList
 let Tlist_Use_Right_Window = 1
@@ -237,8 +237,7 @@ let Tlist_WinWidth = 50
 let g:SrcExpl_winHeight = 10
 let g:SrcExpl_refreshTime = 100
 
+
+" Language Specific -----------------------------------------------------------"
 " Python
 let python_highlight_all = 1
-
-let g:flake8_show_quickfix = 0
-let g:flake8_show_in_gutter = 0

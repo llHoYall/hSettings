@@ -32,6 +32,7 @@ set 	clipboard=unnamed								" using system clipboard
 set	noet															" expand tab
 set 	hlsearch
 set		ic															" ignore case
+set		is															" inc search
 set 	nu				 									   	" show line number
 set 	ruler														" show cursor position
 set		scs															" smart case
@@ -110,9 +111,24 @@ map ,w 		:bw<CR>			" Current buffer wipeout
 nnoremap <silent> <C-l>		:<C-u>noh<<CR><C-l>		"Temporary mute highlighting
 
 
+" autocmd ----------------------------------------------------------------------
+if has ("autocmd")
+	autocmd FileType python setlocal sts=4 sw=4 ts=4 et
+endif
+
+
 " Show Invisible ---------------------------------------------------------------
 nmap		<leader>l		:set list!<CR>
 set listchars=tab:▸\ ,eol:¬
+
+
+" man page ---------------------------------------------------------------------
+func! Man()
+	let symbol = expand("<cword>")
+	exe "!man -S 2:3:4:5:6:7:8:9:tcl:n:l:p:o ".symbol
+endfunc
+
+nmap ,man	:call Man()<CR><CR>
 
 
 " ctags ------------------------------------------------------------------------
@@ -184,12 +200,12 @@ nmap ,csd :call Csd()<CR>
 nmap ,csc :call Csc()<CR>
 
 
-" NERD Tree --------------------------------------------------------------------
+" PlugIn ----------------------------------------------------------------------"
+" NERD Tree
 let NERDTreeIgnore = ['\.pyc$', '\~$']		" ignore files in NERDTree
 let g:NERDTreeWinSize = 40
 
-
-" Airline ----------------------------------------------------------------------
+" Airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_powerline_fonts = 1
@@ -203,8 +219,7 @@ let g:airline_right_alt_sep = '◀'
 let g:airline_right_alt_sep = '<'
 let g:airline_theme = 'wombat'
 
-
-" Syntastic --------------------------------------------------------------------
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -214,33 +229,16 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-
-" TagList ----------------------------------------------------------------------
+" TagList
 let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 50
 
-
-" Source Explorer --------------------------------------------------------------
+" Source Explorer
 let g:SrcExpl_winHeight = 10
 let g:SrcExpl_refreshTime = 100
 
-
-" Python -----------------------------------------------------------------------
+" Python
 let python_highlight_all = 1
 
-let g:flake8_show_quickfix = 1
-let g:flake8_show_in_gutter = 1
-
-au BufNewFile,BufRead *.py se sts=2		" soft tab stop
-au BufNewFile,BufRead *.py se sw=2		" shift width
-au BufNewFile,BufRead *.py se ts=2		" tab stop
-
-
-" man page ---------------------------------------------------------------------
-func! Man()
-	let symbol = expand("<cword>")
-	exe "!man -S 2:3:4:5:6:7:8:9:tcl:n:l:p:o ".symbol
-endfunc
-
-nmap ,man	:call Man()<CR><CR>
-
+let g:flake8_show_quickfix = 0
+let g:flake8_show_in_gutter = 0

@@ -3,7 +3,7 @@ function usage {
 	Write-Host ""
 	Write-Host "[Usage]"
 	Write-Host "for Windows"
-	Write-Host "  usage: .\install.ps1 [all | git | vim | vscode]"
+	Write-Host "  usage: .\install.ps1 [all | wsl | fish | git | vim | vscode]"
 	Write-Host ""
 }
 
@@ -31,7 +31,15 @@ $path=$Pwd.path
 cd $PSScriptRoot
 Write-Host -NoNewline "==> Install "
 Write-Host -ForegroundColor "Yellow" $Args[0]
+
+if (($Args[0] -eq "all") -or ($Args[0] -eq "wsl")) {
+	wsl/wsl_install.ps1
+}
+
 switch ($Args[0]) {
+	"fish" {
+		fish/fish_setting.ps1 $path
+	}
 	"git" {
 		git/git_setting.ps1 $path
 	}

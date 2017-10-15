@@ -16,8 +16,5 @@ if (Get-Command open-wsl -errorAction SilentlyContinue) {
 }
 
 <# Setting Wsl-Terminal ------------------------------------------------------#>
-Write-Host $path
-Write-Host $home
-
 Copy-Item $path\wsl\wsl-terminal.conf $home\wsl-terminal\etc
 Copy-Item $path\wsl\minttyrc $home\wsl-terminal\etc

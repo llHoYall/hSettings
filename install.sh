@@ -10,7 +10,7 @@ function usage() {
 	echo ""
 	echo "[Usage]"
 	echo "for MAC or Linux"
-	echo "  usage: ./install.sh [all | zsh | git | vim | vscode]"
+	echo "  usage: ./install.sh [all | fish | zsh | git | vim | vscode]"
 }
 
 # Check Argument --------------------------------------------------------------#
@@ -45,6 +45,11 @@ if [ ${os} = MAC -o ${os} = LINUX ]; then
 	path=$PWD
 	cd $(dirname $0)
 	echo -e "==> Install ${yellow}${args}${nc}"
+	
+	if [ $1 -eq "fish" ]; then
+		fish/fish_install.sh
+	fi
+
 	case $1 in
 		"zsh")
 			zsh/zsh_install.sh

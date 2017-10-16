@@ -16,7 +16,7 @@ function usage {
 if ($PSVersionTable.PSVersion -ge "5.0") {
 	Write-Host "Install tools for Windows"
 	Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-	New-Item -Path $profile -ItemType File -Force -Value "set-alias vim 'C:/Program Files (x86)/vim/vim80/vim.exe'"
+	New-Item -Path $profile -ItemType File -Force -Value "Set-Alias vim 'C:\Program Files (x86)\vim\vim80\vim.exe'`r`nSet-Alias git 'C:\Program Files\Git\bin\git.exe'"
 }
 else {
 	Write-Host -ForegroundColor RED "Error: Not supported PowerShell version"

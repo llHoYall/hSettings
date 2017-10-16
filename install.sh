@@ -26,34 +26,37 @@ echo
 os=None
 if [ "$(uname -s)" == "Darwin" ]; then
 	os=MAC
-	echo "Install OS dependecy tools for MAC"
+	echo "Install tools for MAC"
 	if [ -z "$(command -v brew)" ]; then
 		echo -e "==> Install ${yellow}brew${nc}"
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	os=LINUX
-	echo "Install OS dependency tools for Linux"
+	echo "Install tools for Linux"
 else
 	echo -e "${red}Error: Not supported OS${nc}"
 	exit 2
 fi
 
 # Install Tools ---------------------------------------------------------------#
-echo "Install tools for ${os}"
 if [ ${os} = MAC -o ${os} = LINUX ]; then
 	path=$PWD
 	cd $(dirname $0)
-	echo -e "==> Install ${yellow}${args}${nc}"
-	
-	if [ $1 -eq "fish" ]; then
+
+	# 1. fish
+	if [ $1 -eq "all" -o $1 -eq "fish" ]; then
+		echo -e "==> Install ${yellow}fish${nc}"
 		fish/fish_install.sh
 	fi
 
+	# 1-1. zsh
+	if [ $1 -eq "zsh" ]; then
+		echo -e "==> Install #{yellow}zsh${nc}"
+		zeh/zeh_install.sh
+	fi
+
 	case $1 in
-		"zsh")
-			zsh/zsh_install.sh
-			;;
 		"git")
 			if [ -z "$(command -v git)" ]; then
 				echo -e "==> Install ${yellow}git${nc}"

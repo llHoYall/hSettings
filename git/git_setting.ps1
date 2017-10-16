@@ -1,3 +1,6 @@
+<# Change Directory ----------------------------------------------------------#>
+cd $Args[0]
+
 <# Get Scope & Option from User ----------------------------------------------#>
 $scope = Read-Host "    Input scope [(G)lobal | (L)ocal]: "
 $option = Read-Host "    Input option [(R)P | (H)oYa]: "
@@ -52,17 +55,17 @@ switch ($scope) {
 	{($_ -ceq "L") -or ($_ -ceq "Local")} {
 		if ($option -ceq "R" -or $option -ceq "RP") {
 			# User Name
-			git config --global user.name "HoYa"
+			git config --local user.name "HoYa"
 
 			# User E-mail
-			git config --global user.email "hoya@ixys.net"
+			git config --local user.email "hoya@ixys.net"
 		}
 		elseif ($option -ceq "H" -or $option -ceq "HoYa") {
 			# User Name
-			git config --global user.name "llChameleoNll"
+			git config --local user.name "llChameleoNll"
 
 			# User E-mail
-			git config --global user.email "hoya128@gmail.com"
+			git config --local user.email "hoya128@gmail.com"
 		}
 		else {
 			Write-Host -ForegroundColor RED "Error: Not supported option"
@@ -76,7 +79,4 @@ switch ($scope) {
 		Exit(2)
 	}
 }
-
-<# Change Directory ----------------------------------------------------------#>
-cd $Args[0]
 Write-Host

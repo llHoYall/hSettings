@@ -35,7 +35,7 @@ switch ($scope) {
 		git config --global core.editor vim
 
 		# Credential.Helper
-		git config --global credential.helper winstore
+		git config --global credential.helper wincred
 
 		# Help.Autocorrect
 		git config --global help.autocorrect 1

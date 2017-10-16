@@ -6,7 +6,7 @@ function usage {
 	Write-Host "  usage: .\install.ps1 [list of tools]"
 	Write-Host "    list of supported tools"
 	Write-Host "    - all"
-	Write-Host "    - wsl" 
+	Write-Host "    - wsl"
 	Write-Host "  ex: .\install.ps1 all"
 	Write-Host "  ex: .\install.ps1 wsl"
 	Write-Host
@@ -15,6 +15,8 @@ function usage {
 <# Check PowerShell Version --------------------------------------------------#>
 if ($PSVersionTable.PSVersion -ge "5.0") {
 	Write-Host "Install tools for Windows"
+	Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+	New-Item -Path $profile -ItemType File -Force -Value "set-alias vim 'C:/Program Files (x86)/vim/vim80/vim.exe'"
 }
 else {
 	Write-Host -ForegroundColor RED "Error: Not supported PowerShell version"
@@ -28,7 +30,7 @@ if (($Args.Count -lt 1) -Or ($Args.Count -gt 1)) {
 	Write-Host -NoNewline -ForegroundColor RED "Error: Invalid arguments"
 	usage
 	Exit(2)
-} 
+}
 Write-Host
 
 <# Install Tools -------------------------------------------------------------#>

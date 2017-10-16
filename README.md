@@ -19,3 +19,13 @@ This program can help HoYa's development environment settings.
 Eclipse_HoYa_Preferences.epf
 ```
 
+# Requirements
+### MAC
+
+### Linux
+
+### WINDOWS
+- vim
+- git
+- typora
+- vscode

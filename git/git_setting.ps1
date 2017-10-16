@@ -20,7 +20,7 @@ switch ($scope) {
 			git config --global user.email "hoya128@gmail.com"
 		}
 		else {
-			Write-Host -ForegroundColor "red" "Error: Not supported option"
+			Write-Host -ForegroundColor RED "Error: Not supported option"
 			Write-Host
 			Exit(2)
 		}
@@ -65,13 +65,13 @@ switch ($scope) {
 			git config --global user.email "hoya128@gmail.com"
 		}
 		else {
-			Write-Host -ForegroundColor "red" "Error: Not supported option"
+			Write-Host -ForegroundColor RED "Error: Not supported option"
 			Write-Host
 			Exit(2)
 		}
 	}
 	default {
-		Write-Host -ForegroundColor "red" "Error: Not supported scope"
+		Write-Host -ForegroundColor RED "Error: Not supported scope"
 		Write-Host
 		Exit(2)
 	}

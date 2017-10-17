@@ -1,6 +1,8 @@
 # hSettings
 This program can help HoYa's development environment settings.
 
+&nbsp;
+
 ### Usage
 - MAC or LINUX
 ```
@@ -13,11 +15,15 @@ This program can help HoYa's development environment settings.
 ./setting.ps1 all
 ```
 
+&nbsp;
+
 ### Eclipse
 - Preference File
 ```
 Eclipse_HoYa_Preferences.epf
 ```
+
+&nbsp;
 
 # Requirements
 ### MAC
@@ -25,7 +31,10 @@ Eclipse_HoYa_Preferences.epf
 ### Linux
 
 ### WINDOWS
-- vim
-- git
-- typora
-- vscode
+- [vim](https://vim.sourceforge.io/download.php)
+- [git](https://git-scm.com/downloads)
+- [typora](https://typora.io/)
+- [vscode](https://code.visualstudio.com/)
+- [llvm](https://llvm.org/builds/)
+- [cmake](https://cmake.org/download)
+

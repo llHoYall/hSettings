@@ -79,4 +79,6 @@ switch ($scope) {
 		Exit(2)
 	}
 }
+
+cd $PSScriptRoot\..\
 Write-Host

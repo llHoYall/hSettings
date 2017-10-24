@@ -37,7 +37,7 @@ cd $PSScriptRoot
 
 $tools = @($Args)
 If (($Args.Count -eq 1) -And ($Args -eq "all")) {
-	$tools = @("git")
+	$tools = @("git", "vim")
 }
 
 For ($i = 0; $i -lt $tools.Length; $i++) {`
@@ -46,7 +46,10 @@ For ($i = 0; $i -lt $tools.Length; $i++) {`
 	switch ($tools[$i]) {
 		"git" {
 			git/git_setting.ps1 $path
-		 }
+		}
+		"vim" {
+			vim/vim_setting.ps1
+		}
 		default {
 			Write-Host -ForegroundColor RED "Error: Not supported tool"
 			Write-Host
@@ -54,3 +57,5 @@ For ($i = 0; $i -lt $tools.Length; $i++) {`
 		}
 	}
 }
+
+cd $path

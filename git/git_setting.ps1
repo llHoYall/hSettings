@@ -1,5 +1,5 @@
 <# Change Directory ----------------------------------------------------------#>
-cd $Args[0]
+Set-Location $Args[0]
 
 <# Get Scope & Option from User ----------------------------------------------#>
 $scope = Read-Host "    Input scope [(G)lobal | (L)ocal]: "
@@ -79,6 +79,3 @@ switch ($scope) {
 		Exit(2)
 	}
 }
-
-cd $PSScriptRoot\..\
-Write-Host

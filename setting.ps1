@@ -51,7 +51,7 @@ For ($i = 0; $i -lt $tools.Length; $i++) {`
 		}
 		"git" {
 			Set-Location git
-			git/git_setting.ps1 $path
+			.\git_setting.ps1 $path
 			Set-Location $PSScriptRoot
 		}
 		"vim" {

@@ -1,14 +1,14 @@
 "###############################################################################
-"	HoYa's Vim Plugin - Miscellaneous
+"	HoYa's Vim Plugin - Filetype
 "
 "	author:		hoya128@gmail.com
 "	version:	v1.0
 "	note
-"		2017.10.25 - First Created.
+"		2017.10.26 - First Created.
 "###############################################################################
 
-"Show Trailing Whitespace -----------------------------------------------------"
-hi	BadWhitespace ctermbg=red		guibg=red
-match	BadWhitespace	/^\t\+/
-match BadWhitespace	/\s\+$/
+"	Python ----------------------------------------------------------------------"
+if has ("autocmd")
+	au	FileType	python	setl et sts=4 sw=4 ts=4
+endif
 "------------------------------------------------------------------------------"

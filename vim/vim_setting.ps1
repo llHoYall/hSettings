@@ -1,3 +1,6 @@
+<# Vim Configuration ---------------------------------------------------------#>
+Copy-Item _vimrc $HOME
+
 <# Color Configuration -------------------------------------------------------#>
 If (!(Test-Path $HOME\vimfiles\colors)) {
 	New-Item -Type directory $HOME\vimfiles\colors

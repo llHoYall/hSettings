@@ -7,8 +7,10 @@ Function usage {
 	Write-Host "    list of supported tools"
 	Write-Host "    - all"
 	Write-Host "    - wsl"
+	Write-Host "		- git"
+	Write-Host "		- vim"
 	Write-Host "  ex: .\install.ps1 all"
-	Write-Host "  ex: .\install.ps1 wsl"
+	Write-Host "  ex: .\install.ps1 wsl git"
 	Write-Host
 }
 
@@ -16,7 +18,7 @@ Function usage {
 If ($PSVersionTable.PSVersion -ge "5.0") {
 	Write-Host "Install tools for Windows"
 	Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-	New-Item -Path $profile -ItemType File -Force -Value "Set-Alias vim 'C:\Program Files (x86)\vim\vim80\vim.exe'`r`nSet-Alias git 'C:\Program Files\Git\bin\git.exe'"
+	New-Item -Path $profile -ItemType File -Force -Value "Set-Alias vim 'C:\Program Files (x86)\vim\vim80\vim.exe'`r`n`r`nSet-Location $HOME"
 }
 Else {
 	Write-Host -ForegroundColor RED "Error: Not supported PowerShell version"
@@ -37,9 +39,17 @@ Write-Host
 $path=$Pwd.path
 cd $PSScriptRoot
 
+If (Get-Command choco -errorAction SilentlyContinue) {
+	Write-Host -NoNewline -ForegroundColor Yellow "choco"
+	Write-Host " is installed"
+}
+Else {
+	Invoke-WebRequest https://chocolatey.org/install.ps1 -UseBasicParsing | Invoke-Expression
+}
+
 $tools = @($Args)
 If (($Args.Count -eq 1) -And ($Args -eq "all")) {
-	$tools = @("wsl")
+	$tools = @("wsl", "git", "vim")
 }
 
 For ($i = 0; $i -lt $tools.Length; $i++) {`
@@ -48,7 +58,13 @@ For ($i = 0; $i -lt $tools.Length; $i++) {`
 	Switch ($tools[$i]) {
 		"wsl" {
 			wsl/wsl_install.ps1
-		 }
+		}
+		"git" {
+			git/git_install.ps1
+		}
+		"vim" {
+			vim/vim_install.ps1
+		}
 		default {
 			Write-Host -ForegroundColor RED "Error: Not supported tool"
 			Write-Host
@@ -56,3 +72,5 @@ For ($i = 0; $i -lt $tools.Length; $i++) {`
 		}
 	}
 }
+
+refreshenv

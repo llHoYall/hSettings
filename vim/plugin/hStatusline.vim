@@ -1,15 +1,14 @@
 "###############################################################################
-"	HoYa's Vim Plugin - Filetype
+"	HoYa's Vim Plugin - Statusline
 "
 "	author:		hoya128@gmail.com
 "	version:	v1.0
 "	note
-"		2017.10.26 - First Created.
+"		2017.10.27 - First Created.
 "###############################################################################
 
-"	Python ----------------------------------------------------------------------"
-se		sua+=.py
-if has ("autocmd")
-	au	FileType	python	setl et sts=4 sw=4 ts=4
-endif
+" Statusline Configuration ----------------------------------------------------"
+se		sts=2
+se		stl=%n%#cursorcolumn#\ %m%r%F%=
+se		stl+=%P%%\ %l:%v\ %y\[%{&fileformat}\]\[%{&fileencoding}\]
 "------------------------------------------------------------------------------"

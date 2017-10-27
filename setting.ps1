@@ -6,7 +6,7 @@ function usage {
 	Write-Host "  usage: .\setting.ps1 [list of tools]"
 	Write-Host "    list of supported tools"
 	Write-Host "    - all"
-	Write-Host "    - git" 
+	Write-Host "    - git"
 	Write-Host "  ex: .\setting.ps1 all"
 	Write-Host "  ex: .\setting.ps1 git"
 	Write-Host
@@ -29,7 +29,7 @@ if (($Args.Count -lt 1) -Or ($Args.Count -gt 2)) {
 	Write-Host -NoNewline -ForegroundColor RED "Error: Invalid arguments"
 	usage
 	Exit(2)
-} 
+}
 
 <# Install Tools -------------------------------------------------------------#>
 $path=$Pwd.path

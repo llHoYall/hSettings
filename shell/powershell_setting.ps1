@@ -1,5 +1,11 @@
 <# Registry Configuration ----------------------------------------------------#>
-$Screen = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize
+If ([System.Environment]::OSVersion.Version.Major -lt 10) {
+	$Screen = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize
+}
+Else {
+	Add-Type -AssemblyName System.Windows.Forms
+	$Screen = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
+}
 $Width = $Screen.Width
 $Height = $Screen.Height
 

@@ -1,3 +1,5 @@
+#Requires -RunAsAdministrator
+
 <# Usage Function ------------------------------------------------------------#>
 Function usage {
 	Write-Host
@@ -16,9 +18,12 @@ Function usage {
 
 <# Check PowerShell Version --------------------------------------------------#>
 If ($PSVersionTable.PSVersion -ge "5.0") {
+	Write-Host
 	Write-Host "Install tools for Windows"
 	Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-	New-Item -Path $profile -ItemType File -Force -Value "Set-Alias vim 'C:\Program Files (x86)\vim\vim80\vim.exe'`r`n`r`nSet-Location $HOME"
+	If (!(Test-Path $Profile)) {
+		New-Item -Path $Profile -ItemType File -Force -Value "Set-Alias vim 'C:\Program Files (x86)\vim\vim80\vim.exe'`r`n`r`nSet-Location $HOME"
+	}
 }
 Else {
 	Write-Host -ForegroundColor RED "Error: Not supported PowerShell version"
@@ -33,7 +38,6 @@ If (($Args.Count -lt 1) -Or ($Args.Count -gt 1)) {
 	usage
 	Exit(2)
 }
-Write-Host
 
 <# Install Tools -------------------------------------------------------------#>
 $path=$Pwd.path
@@ -41,7 +45,8 @@ cd $PSScriptRoot
 
 If (Get-Command choco -errorAction SilentlyContinue) {
 	Write-Host -NoNewline -ForegroundColor Yellow "choco"
-	Write-Host " is installed"
+	Write-Host " has been installed"
+	Write-Host
 }
 Else {
 	Invoke-WebRequest https://chocolatey.org/install.ps1 -UseBasicParsing | Invoke-Expression
@@ -74,3 +79,4 @@ For ($i = 0; $i -lt $tools.Length; $i++) {`
 }
 
 refreshenv
+Write-Host

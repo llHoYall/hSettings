@@ -13,4 +13,14 @@ if [ "$(uname -s)" == "Darwin" ]; then
 		echo -e "${yellow}git${nc} has been installed"
 		echo
 	fi
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+	if [ -z "$(command -v git)" ]; then
+		apt-get install git -y
+	else
+		echo -e "${yellow}git${nc} has been installed"
+		echo
+	fi
+else
+	echo -e "${red}Error: Not supported OS${nc}"
+	echo
 fi

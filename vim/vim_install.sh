@@ -20,4 +20,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 		echo -e "${yellow}vim${nc} has been installed"
 		echo
 	fi
+else
+	echo -e "${red}Error: Not supported OS${nc}"
+	echo
 fi

@@ -24,6 +24,7 @@ If ($PSVersionTable.PSVersion -ge "5.0") {
 	If (!(Test-Path $Profile)) {
 		New-Item -Path $Profile -ItemType File -Force -Value "Set-Alias vim 'C:\Program Files (x86)\vim\vim80\vim.exe'`r`n`r`nSet-Location $HOME"
 	}
+	Write-Host
 }
 Else {
 	Write-Host -ForegroundColor RED "Error: Not supported PowerShell version"
@@ -43,6 +44,8 @@ If (($Args.Count -lt 1) -Or ($Args.Count -gt 1)) {
 $path=$Pwd.path
 cd $PSScriptRoot
 
+Write-Host -NoNewline "==> Install "
+Write-Host -ForegroundColor YELLOW choco
 If (Get-Command choco -errorAction SilentlyContinue) {
 	Write-Host -NoNewline -ForegroundColor Yellow "choco"
 	Write-Host " has been installed"
@@ -50,6 +53,7 @@ If (Get-Command choco -errorAction SilentlyContinue) {
 }
 Else {
 	Invoke-WebRequest https://chocolatey.org/install.ps1 -UseBasicParsing | Invoke-Expression
+	Write-Host
 }
 
 $tools = @($Args)
@@ -79,4 +83,3 @@ For ($i = 0; $i -lt $tools.Length; $i++) {`
 }
 
 refreshenv
-Write-Host

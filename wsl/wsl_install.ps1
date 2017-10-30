@@ -1,6 +1,7 @@
 <# Check OS Version ----------------------------------------------------------#>
 If ([System.Environment]::OSVersion.Version.Major -lt 10) {
 	Write-Host -ForegroundColor RED "Error: Not supported OS version"
+	Write-Host
 	Exit(1)
 }
 

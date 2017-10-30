@@ -33,10 +33,6 @@ Else {
 
 <# Check Argument ------------------------------------------------------------#>
 If (($Args.Count -lt 1) -Or ($Args.Count -gt 3)) {
-<<<<<<< HEAD
-	Write-Host
-=======
->>>>>>> [Common] Update Installer for Windows
 	Write-Host -NoNewline -ForegroundColor RED "Error: Invalid arguments"
 	usage
 	Exit(2)

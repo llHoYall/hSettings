@@ -34,6 +34,7 @@ Else {
 <# Check Argument ------------------------------------------------------------#>
 If (($Args.Count -lt 1) -Or ($Args.Count -gt 3)) {
 	Write-Host -NoNewline -ForegroundColor RED "Error: Invalid arguments"
+	Write-Host
 	usage
 	Exit(2)
 }

@@ -7,72 +7,70 @@ nc='\033[0m'
 
 # Usage Function --------------------------------------------------------------#
 function usage() {
-	echo ""
 	echo "[Usage]"
 	echo "for MAC or Linux"
-	echo "  usage: ./install.sh [all | fish | zsh | git | vim | vscode]"
+	echo "  usage: ./install.sh [list of tools]"
+	echo "    list of supported tools"
+	echo "    - all"
+	echo "    - git"
+	echo "    - vim"
+	echo "  ex: ./install.sh all"
+	echo "  ex: ./install.sh git vim"
 }
-
-# Check Argument --------------------------------------------------------------#
-args=None
-if [ $# -ne 1 ]; then
-	usage
-	exit 1
-fi
-args=$1
-echo
 
 # Check OS --------------------------------------------------------------------#
 os=None
 if [ "$(uname -s)" == "Darwin" ]; then
 	os=MAC
 	echo "Install tools for MAC"
-	if [ -z "$(command -v brew)" ]; then
-		echo -e "==> Install ${yellow}brew${nc}"
-		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	fi
+	echo
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	os=LINUX
 	echo "Install tools for Linux"
+	echo
 else
 	echo -e "${red}Error: Not supported OS${nc}"
+	echo
+	exit 1
+fi
+
+# Check Argument --------------------------------------------------------------#
+args=None
+if [ $# -lt 1 -o $# -gt 2 ]; then
+	usage
 	exit 2
 fi
 
 # Install Tools ---------------------------------------------------------------#
-if [ ${os} = MAC -o ${os} = LINUX ]; then
-	path=$PWD
-	cd $(dirname $0)
+path=$PWD
+cd $(dirname $0)
 
-	# 1. fish
-	if [ $1 -eq "all" -o $1 -eq "fish" ]; then
-		echo -e "==> Install ${yellow}fish${nc}"
-		fish/fish_install.sh
+if [ ${os} = MAC ]; then
+	echo -e "==> Install ${yellow}brew${nc}"
+	if [ -z "$(command -v brew)" ]; then
+		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	else
+		echo -e "${yellow}brew${nc} has been installed"
+		echo
 	fi
+fi
 
-	# 1-1. zsh
-	if [ $1 -eq "zsh" ]; then
-		echo -e "==> Install #{yellow}zsh${nc}"
-		zeh/zeh_install.sh
-	fi
+args=( "$@" )
+if [ $# -eq 1 -a $1 == "all" ]; then
+	args=( git vim )
+fi
 
-	case $1 in
+for i in "${args[@]}"; do
+	echo -e "==> Install ${yellow}$i${nc}"
+	case $i in
 		"git")
-			if [ -z "$(command -v git)" ]; then
-				echo -e "==> Install ${yellow}git${nc}"
-				if [ ${os} = MAC ]; then
-					brew install git
-				elif [ ${os} =  LINUX ]; then
-					apt-get install git
-				fi
-			fi
-			git/git_setting.sh ${os} ${path}
+			git/git_install.sh
 			;;
 		"vim")
 			vim/vim_install.sh
 			;;
 		*)
-			echo -e "${red}Error: Not supported tool${nc}"
-			exit 2
+			echo -e "${red}Error: Not supported tool"
+			exit 3
 	esac
-fi
+done

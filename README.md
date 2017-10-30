@@ -27,6 +27,11 @@ Eclipse_HoYa_Preferences.epf
 
 # Requirements
 ### MAC
+- [homebrew](https://brew.sh)
+- [vim](https://vim.sourceforge.io/download.php)
+- [git](https://git-scm.com/downloads)
+- [typora](https://typora.io/)
+- [cmake](https://cmake.org/download)
 
 ### Linux
 
@@ -38,4 +43,3 @@ Eclipse_HoYa_Preferences.epf
 - [vscode](https://code.visualstudio.com/)
 - [llvm](https://llvm.org/builds/)
 - [cmake](https://cmake.org/download)
-

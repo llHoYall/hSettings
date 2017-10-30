@@ -19,4 +19,4 @@ If (!(Get-Command git -errorAction SilentlyContinue)) {
 If (!(Test-Path $HOME\.vim\bundle)) {
 	git clone https://github.com/VundleVim/Vundle.vim $HOME\.vim\bundle\Vundle.vim
 }
-vim +PluginInstall +qall
+vim +PluginInstall! +qall

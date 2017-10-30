@@ -79,3 +79,4 @@ switch ($scope) {
 		Exit(2)
 	}
 }
+Write-Host

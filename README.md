@@ -31,6 +31,7 @@ Eclipse_HoYa_Preferences.epf
 ### Linux
 
 ### WINDOWS
+- [choco](https://chocolatey.org/install)
 - [vim](https://vim.sourceforge.io/download.php)
 - [git](https://git-scm.com/downloads)
 - [typora](https://typora.io/)

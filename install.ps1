@@ -9,8 +9,8 @@ Function usage {
 	Write-Host "    list of supported tools"
 	Write-Host "    - all"
 	Write-Host "    - wsl"
-	Write-Host "		- git"
-	Write-Host "		- vim"
+	Write-Host "    - git"
+	Write-Host "    - vim"
 	Write-Host "  ex: .\install.ps1 all"
 	Write-Host "  ex: .\install.ps1 wsl git"
 	Write-Host
@@ -83,3 +83,4 @@ For ($i = 0; $i -lt $tools.Length; $i++) {`
 }
 
 refreshenv
+Write-Host

@@ -6,9 +6,11 @@ function usage {
 	Write-Host "  usage: .\setting.ps1 [list of tools]"
 	Write-Host "    list of supported tools"
 	Write-Host "    - all"
+	Write-Host "		- shell"
 	Write-Host "    - git"
+	Write-Host "		- vim"
 	Write-Host "  ex: .\setting.ps1 all"
-	Write-Host "  ex: .\setting.ps1 git"
+	Write-Host "  ex: .\setting.ps1 git vim"
 	Write-Host
 }
 
@@ -16,6 +18,7 @@ function usage {
 if ($PSVersionTable.PSVersion -ge "5.0") {
 	Write-Host
 	Write-Host "Setting tools for Windows"
+	Write-Host
 }
 else {
 	Write-Host -ForegroundColor RED "Error: Not supported PowerShell version"

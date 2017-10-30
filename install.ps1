@@ -2,7 +2,6 @@
 
 <# Usage Function ------------------------------------------------------------#>
 Function usage {
-	Write-Host
 	Write-Host "[Usage]"
 	Write-Host "for Windows"
 	Write-Host "  usage: .\install.ps1 [list of tools]"
@@ -33,7 +32,7 @@ Else {
 }
 
 <# Check Argument ------------------------------------------------------------#>
-If (($Args.Count -lt 1) -Or ($Args.Count -gt 1)) {
+If (($Args.Count -lt 1) -Or ($Args.Count -gt 3)) {
 	Write-Host
 	Write-Host -NoNewline -ForegroundColor RED "Error: Invalid arguments"
 	usage

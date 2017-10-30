@@ -27,7 +27,7 @@ endif
 
 " Plugin ----------------------------------------------------------------------"
 filet	off
-se	rtp+=$HOME\vimfiles\bundle\Vundle.vim
+se	rtp+=$HOME\.vim\bundle\Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'

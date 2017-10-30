@@ -16,8 +16,7 @@ Copy-Item plugin\*.vim $HOME\vimfiles\plugin
 If (!(Get-Command git -errorAction SilentlyContinue)) {
 	choco install git -y
 }
-If (!(Test-Path $HOME\vimfiles\bundle)) {
-	New-Item -Type directory $HOME\vimfiles\bundle
-	git clone https://github.com/VundleVim/Vundle.vim $HOME\vimfiles\bundle\Vundle.vim
+If (!(Test-Path $HOME\.vim\bundle)) {
+	git clone https://github.com/VundleVim/Vundle.vim $HOME\.vim\bundle\Vundle.vim
 }
 vim +PluginInstall +qall

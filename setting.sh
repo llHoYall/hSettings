@@ -55,12 +55,12 @@ for i in "${args[@]}"; do
 	case $i in
 		"git")
 			cd git
-			git/git_setting.sh
+			./git_setting.sh $path
 			cd $(dirname $0)
 			;;
 		"vim")
 			cd vim
-			vim/vim_setting.sh
+			./vim_setting.sh
 			cd $(dirname $0)
 			;;
 		*)

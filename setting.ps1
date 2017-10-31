@@ -23,7 +23,7 @@ if ($PSVersionTable.PSVersion -ge "5.0") {
 else {
 	Write-Host -ForegroundColor RED "Error: Not supported PowerShell version"
 	Write-Host
-	Exit(1)
+	Exit 1
 }
 
 <# Check Argument ------------------------------------------------------------#>
@@ -31,7 +31,7 @@ if (($Args.Count -lt 1) -Or ($Args.Count -gt 2)) {
 	Write-Host
 	Write-Host -NoNewline -ForegroundColor RED "Error: Invalid arguments"
 	usage
-	Exit(2)
+	Exit 2
 }
 
 <# Install Tools -------------------------------------------------------------#>

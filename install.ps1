@@ -8,7 +8,7 @@ Function usage {
 	Write-Host "    list of supported tools"
 	Write-Host "    - all"
 	Write-Host "    - wsl"
-	Write-Host "		- shell"
+	Write-Host "    - shell"
 	Write-Host "    - git"
 	Write-Host "    - vim"
 	Write-Host "  ex: .\install.ps1 all"
@@ -29,7 +29,7 @@ If ($PSVersionTable.PSVersion -ge "5.0") {
 Else {
 	Write-Host -ForegroundColor RED "Error: Not supported PowerShell version"
 	Write-Host
-	Exit(1)
+	Exit 1
 }
 
 <# Check Argument ------------------------------------------------------------#>
@@ -37,7 +37,7 @@ If (($Args.Count -lt 1) -Or ($Args.Count -gt 4)) {
 	Write-Host -NoNewline -ForegroundColor RED "Error: Invalid arguments"
 	Write-Host
 	usage
-	Exit(2)
+	Exit 2
 }
 
 <# Install Tools -------------------------------------------------------------#>

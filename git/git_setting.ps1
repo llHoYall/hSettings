@@ -25,7 +25,7 @@ switch ($scope) {
 		else {
 			Write-Host -ForegroundColor RED "Error: Not supported option"
 			Write-Host
-			Exit(2)
+			Return
 		}
 
 		# Color.Ui
@@ -70,13 +70,13 @@ switch ($scope) {
 		else {
 			Write-Host -ForegroundColor RED "Error: Not supported option"
 			Write-Host
-			Exit(2)
+			Return
 		}
 	}
 	default {
 		Write-Host -ForegroundColor RED "Error: Not supported scope"
 		Write-Host
-		Exit(2)
+		Return
 	}
 }
 Write-Host

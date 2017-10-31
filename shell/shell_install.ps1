@@ -1,10 +1,9 @@
 <# Install ConEmu ------------------------------------------------------------#>
-If (Get-Command "C:\Program Files\ConEmu\ConEmu64.exe" -errorAction SilentlyContinue) {
-	Write-Host -NoNewline -ForegroundColor Yellow "ConEmu"
+If (Get-Command cmder -errorAction SilentlyContinue) {
+	Write-Host -NoNewline -ForegroundColor Yellow "cmder"
 	Write-Host " has been installed"
 }
 Else {
-	choco install ConEmu -y
+	choco install cmder -y
 }
-Copy-Item $path\shell\ConEmu.xml $HOME\AppData\Roaming
 Write-Host

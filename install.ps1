@@ -8,6 +8,7 @@ Function usage {
 	Write-Host "    list of supported tools"
 	Write-Host "    - all"
 	Write-Host "    - wsl"
+	Write-Host "		- shell"
 	Write-Host "    - git"
 	Write-Host "    - vim"
 	Write-Host "  ex: .\install.ps1 all"
@@ -32,7 +33,7 @@ Else {
 }
 
 <# Check Argument ------------------------------------------------------------#>
-If (($Args.Count -lt 1) -Or ($Args.Count -gt 3)) {
+If (($Args.Count -lt 1) -Or ($Args.Count -gt 4)) {
 	Write-Host -NoNewline -ForegroundColor RED "Error: Invalid arguments"
 	Write-Host
 	usage
@@ -57,7 +58,7 @@ Else {
 
 $tools = @($Args)
 If (($Args.Count -eq 1) -And ($Args -eq "all")) {
-	$tools = @("wsl", "git", "vim")
+	$tools = @("wsl", "shell", "git", "vim")
 }
 
 For ($i = 0; $i -lt $tools.Length; $i++) {`
@@ -66,6 +67,9 @@ For ($i = 0; $i -lt $tools.Length; $i++) {`
 	Switch ($tools[$i]) {
 		"wsl" {
 			wsl/wsl_install.ps1
+		}
+		"shell" {
+			shell/shell_install.ps1
 		}
 		"git" {
 			git/git_install.ps1

@@ -2,7 +2,7 @@
 If ([System.Environment]::OSVersion.Version.Major -lt 10) {
 	Write-Host -ForegroundColor RED "Error: Not supported OS version"
 	Write-Host
-	Exit(1)
+	Return
 }
 
 <# Install WSL ---------------------------------------------------------------#>
@@ -23,7 +23,7 @@ If (![bool](Get-Command $home\wsl-terminal\open-wsl.exe -errorAction SilentlyCon
 }
 
 <# Setting Wsl-Terminal ------------------------------------------------------#>
-If ((Get-Command $home\wsl-terminal\open-wsl.exe -errorAction SilentlyContinue)) {
+If (Get-Command $home\wsl-terminal\open-wsl.exe -errorAction SilentlyContinue) {
 	Copy-Item $path\wsl\wsl-terminal.conf $home\wsl-terminal\etc
 	Copy-Item $path\wsl\minttyrc $home\wsl-terminal\etc
 }

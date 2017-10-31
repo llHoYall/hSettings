@@ -9,24 +9,24 @@ nc='\033[0m'
 function usage() {
 	echo "[Usage]"
 	echo "for MAC or Linux"
-	echo "  usage: ./install.sh [list of tools]"
+	echo "  usage: ./setting.sh [list of tools]"
 	echo "    list of supported tools"
 	echo "    - all"
 	echo "    - git"
 	echo "    - vim"
-	echo "  ex: ./install.sh all"
-	echo "  ex: ./install.sh git vim"
+	echo "  ex: ./setting.sh all"
+	echo "  ex: ./setting.sh git vim"
 }
 
 # Check OS --------------------------------------------------------------------#
 os=None
 if [ "$(uname -s)" == "Darwin" ]; then
 	os=MAC
-	echo "Install tools for MAC"
+	echo "Setting tools for MAC"
 	echo
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	os=LINUX
-	echo "Install tools for Linux"
+	echo "Setting tools for Linux"
 	echo
 else
 	echo -e "${red}Error: Not supported OS${nc}"
@@ -45,29 +45,23 @@ fi
 path=$PWD
 cd $(dirname $0)
 
-if [ ${os} = MAC ]; then
-	echo -e "==> Install ${yellow}brew${nc}"
-	if [ -z "$(command -v brew)" ]; then
-		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	else
-		echo -e "${yellow}brew${nc} has been installed"
-		echo
-	fi
-fi
-
 args=( "$@" )
 if [ $# -eq 1 -a $1 == "all" ]; then
 	args=( git vim )
 fi
 
 for i in "${args[@]}"; do
-	echo -e "==> Install ${yellow}$i${nc}"
+	echo -e "==> Setting ${yellow}$i${nc}"
 	case $i in
 		"git")
-			git/git_install.sh
+			cd git
+			git/git_setting.sh
+			cd $(dirname $0)
 			;;
 		"vim")
-			vim/vim_install.sh
+			cd vim
+			vim/vim_setting.sh
+			cd $(dirname $0)
 			;;
 		*)
 			echo -e "${red}Error: Not supported tool${nc}"

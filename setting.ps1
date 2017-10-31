@@ -1,4 +1,4 @@
-<# Usage Function ------------------------------------------------------------#>
+# Usage Function ------------------------------------------------------------#>
 function usage {
 	Write-Host
 	Write-Host "[Usage]"
@@ -65,7 +65,6 @@ For ($i = 0; $i -lt $tools.Length; $i++) {`
 		default {
 			Write-Host -ForegroundColor RED "Error: Not supported tool"
 			Write-Host
-			Exit(3)
 		}
 	}
 }

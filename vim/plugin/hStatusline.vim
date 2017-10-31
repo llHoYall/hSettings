@@ -1,4 +1,5 @@
 "###############################################################################
+"
 "	HoYa's Vim Plugin - Statusline
 "
 "	author:		hoya128@gmail.com
@@ -9,8 +10,8 @@
 
 " Statusline Configuration ----------------------------------------------------"
 se		sts=2
-se		stl=%n%#cursorcolumn#\ %m%r%F%=
-se		stl+=%P%%\ %l:%v\ %y\[%{&fileformat}\]\[%{&fileencoding}\]
+se		stl=%n\ %#cursorcolumn#\ %h%r%F%m%=
+se		stl+=%p%%\ %l:%v\ %y\[%{&fileformat}\]\[%{&fileencoding}\]
 "------------------------------------------------------------------------------"
 
 "	Plugin: Vim-Airline Configuraion --------------------------------------------"

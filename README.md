@@ -66,6 +66,7 @@ Eclipse_HoYa_Preferences.epf
 - [git](https://git-scm.com/downloads)
 - [typora](https://typora.io/)
 
+- [teraterm](https://ttssh2.osdn.jp)
 - [vscode](https://code.visualstudio.com/)
 - [llvm](https://llvm.org/builds/)
 - [cmake](https://cmake.org/download)

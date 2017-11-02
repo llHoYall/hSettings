@@ -1,6 +1,7 @@
 <# Install Powershell Module -------------------------------------------------#>
-Install-Module -Name "Posh-Git" -Scope AllUsers
-Install-Module -Name "PSColor" -Scope AllUsers
+Install-Module -Name "posh-git" -Scope AllUsers
+Install-Module -Name "pscolor" -Scope AllUsers
+Copy-Item shell\Microsoft.Powershell_profile.ps1 $PROFILE
 
 <# Install ConEmu ------------------------------------------------------------#>
 If (Get-Command "C:\Program Files\ConEmu\ConEmu64.exe" -errorAction SilentlyContinue) {
@@ -10,4 +11,5 @@ If (Get-Command "C:\Program Files\ConEmu\ConEmu64.exe" -errorAction SilentlyCont
 Else {
 	choco install ConEmu -y
 }
+Copy-Item shell\ConEmu.xml $HOME\AppData\Roaming\ConEmu.xml
 Write-Host

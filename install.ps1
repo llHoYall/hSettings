@@ -21,9 +21,6 @@ If ($PSVersionTable.PSVersion -ge "5.0") {
 	Write-Host
 	Write-Host "Install tools for Windows"
 	Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-	If (!(Test-Path $Profile)) {
-		New-Item -Path $Profile -ItemType File -Force -Value "Set-Alias vim 'C:\Program Files (x86)\vim\vim80\vim.exe'`r`n`r`nSet-Location $HOME"
-	}
 	Write-Host
 }
 Else {

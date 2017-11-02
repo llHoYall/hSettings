@@ -1,13 +1,14 @@
 <# Aliasing ------------------------------------------------------------------#>
 Set-Alias vim 'C:\Program Files (x86)\vim\vim80\vim.exe'
 
-Import-Module -Name pscolor
-
 <# Chocolatey Profile --------------------------------------------------------#>
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
 	Import-Module "$ChocolateyProfile"
 }
+
+<# PSColor -------------------------------------------------------------------#>
+Import-Module -Name PSColor
 
 <# Posh Git ------------------------------------------------------------------#>
 function prompt {
@@ -25,7 +26,7 @@ function prompt {
 	"$('>' * ($nestedPromptLevel + 1)) "
 }
 
-Import-Module posh-git
+Import-Module -Name posh-git
 $global:GitPromptSettings.BeforeText = '['
 $global:GitPromptSettings.AfterText  = '] '
 

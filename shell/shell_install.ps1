@@ -1,6 +1,6 @@
 <# Install Powershell Module -------------------------------------------------#>
 Install-Module -Name "posh-git" -Scope AllUsers
-Install-Module -Name "pscolor" -Scope AllUsers
+Install-Module -Name "PSColor" -Scope AllUsers
 Copy-Item shell\Microsoft.Powershell_profile.ps1 $PROFILE
 
 <# Install ConEmu ------------------------------------------------------------#>

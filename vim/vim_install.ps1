@@ -6,4 +6,9 @@ If (Get-Command vim -errorAction SilentlyContinue) {
 Else {
 	choco install vim -y
 }
+
+<# Install Vim Supporting Tools ----------------------------------------------#>
+If (!(Get-Command ctags -errorAction SilentlyContinue)) {
+	choco install ctags -y
+}
 Write-Host

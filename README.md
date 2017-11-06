@@ -59,14 +59,14 @@ Eclipse_HoYa_Preferences.epf
 - [cloudstation](https://www.synology.com/en-us/support/download/DS213j)
 - [notestation](https://www.synology.com/en-us/support/download/DS213j)
 - [evernote](https://evernote.com/download)
+- [typora](https://typora.io/)
 
 - [github desktop](https://desktop.github.com)
 - [choco](https://chocolatey.org/install)
 - [vim](https://vim.sourceforge.io/download.php)
 - [git](https://git-scm.com/downloads)
-- [typora](https://typora.io/)
-
-- [teraterm](https://ttssh2.osdn.jp)
 - [vscode](https://code.visualstudio.com/)
 - [llvm](https://llvm.org/builds/)
 - [cmake](https://cmake.org/download)
+- [teraterm](https://ttssh2.osdn.jp)
+

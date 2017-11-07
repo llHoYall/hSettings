@@ -28,3 +28,16 @@ hi	BadWhitespace ctermbg=Red		guibg=Red
 mat	BadWhitespace	/^\t\+/
 mat	BadWhitespace	/\s\+$/
 "------------------------------------------------------------------------------"
+
+" Remove Trailing Whitespace --------------------------------------------------"
+fu! Preserve(command)
+	let _s=@/
+	let l = line(".")
+	let c = col(".")
+	execute a:command
+	let @/=_s
+	call cursor(l, c)
+endf
+
+au	BufWritePre	*	call Preserve("%s/\\s\\+$//e")
+"------------------------------------------------------------------------------"

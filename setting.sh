@@ -44,6 +44,7 @@ fi
 # Install Tools ---------------------------------------------------------------#
 path=$PWD
 cd $(dirname $0)
+root=$PWD
 
 args=( "$@" )
 if [ $# -eq 1 -a $1 == "all" ]; then
@@ -56,12 +57,12 @@ for i in "${args[@]}"; do
 		"git")
 			cd git
 			./git_setting.sh $path
-			cd $(dirname $0)
+			cd $root
 			;;
 		"vim")
 			cd vim
 			./vim_setting.sh
-			cd $(dirname $0)
+			cd $root
 			;;
 		*)
 			echo -e "${red}Error: Not supported tool${nc}"

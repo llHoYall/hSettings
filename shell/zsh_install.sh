@@ -17,7 +17,7 @@ if [ -z "$(command -v zsh)" ]; then
 	elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 		sudo apt-get install zsh
 	fi
-	chsh -s `which zsh`
+	chsh -s $(which zsh)
 else
 	echo -e "${yellow}zsh${nc} has been installed"
 	echo

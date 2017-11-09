@@ -95,8 +95,12 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # HoYa #########################################################################
+# tmux ------------------------------------------------------------------------#
+if [ -z "$TMUX" ]; then
+	tmux attach -t hTMUX || tmux new -s hTMUX
+fi
+
 # TextMate2 -------------------------------------------------------------------#
 if [[ "$(uname)" == "Darwin" ]]; then
 	export EDITOR="/usr/local/bin/mate -w"
 fi
-

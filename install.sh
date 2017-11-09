@@ -12,7 +12,7 @@ function usage() {
 	echo "  usage: ./install.sh [list of tools]"
 	echo "    list of supported tools"
 	echo "    - all"
-	echo "    - fish"
+	echo "    - shell"
 	echo "    - git"
 	echo "    - vim"
 	echo "  ex: ./install.sh all"
@@ -58,14 +58,14 @@ fi
 
 args=( "$@" )
 if [ $# -eq 1 -a $1 == "all" ]; then
-	args=( fish git vim )
+	args=( shell git vim )
 fi
 
 for i in "${args[@]}"; do
 	echo -e "==> Install ${yellow}$i${nc}"
 	case $i in
-		"fish")
-			shell/fish_install.sh
+		"shell")
+			shell/zsh_install.sh
 			;;
 		"git")
 			git/git_install.sh

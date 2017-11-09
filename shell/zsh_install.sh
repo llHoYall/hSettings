@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Change Directory ------------------------------------------------------------#
-cd $(dirname $0)
+# Color Definition ------------------------------------------------------------#
+red='\033[0;31m'
+yellow='\033[0;33m'
+nc='\033[0m'
 
 # Install RVM (Ruby Version Manager) ------------------------------------------#
 if [ -z "$(command -v rvm)" ]; then
@@ -16,6 +18,9 @@ if [ -z "$(command -v zsh)" ]; then
 		sudo apt-get install zsh
 	fi
 	chsh -s `which zsh`
+else
+	echo -e "${yellow}zsh${nc} has been installed"
+	echo
 fi
 
 # Install oh-my-zsh -----------------------------------------------------------#
@@ -24,6 +29,5 @@ if [ ! -d ~/.oh-my-zsh ]; then
 fi
 
 # Setting file ----------------------------------------------------------------#
-cp hoya.zsh-theme ~/.oh-my-zsh/themes/
-cp .zshrc ~/
-
+cp shell/hoya.zsh-theme ~/.oh-my-zsh/themes/
+cp shell/.zshrc ~/

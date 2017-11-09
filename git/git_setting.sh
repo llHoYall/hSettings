@@ -50,7 +50,8 @@ case ${scope} in
 				git config --global credential.helper osxkeychain
 				;;
 			LINUX)
-				git config --global credential.helper cache
+				#git config --global credential.helper cache
+				git config --global credential.helper store
 				;;
 		esac
 

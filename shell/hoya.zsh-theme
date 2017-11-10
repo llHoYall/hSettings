@@ -12,18 +12,31 @@
 # %*	: current time of day in 24-hour format, with seconds.
 # %B	: start boldface mode.
 
-if [ $UID -eq 0 ]; then
-	NAME_COLOR="red";			# root
-else
-	NAME_COLOR="green";		# user
-fi
+hGet_Username() {
+	local color_name
+	if [ $UID -eq 0 ]; then
+		color_name="red"			# root
+	else
+		color_name="green"		# user
+	fi
+	echo "%{$fg_bold[$color_name]%}%n%{$reset_color%}"
+}
+
+hGet_Path() {
+	echo "%{$fg_bold[blue]%~%{$reset_color%}"
+}
+
+hGet_GitStatus() {
+	local ref
+	if [[ "$(command git config --get oh-my-zsh.hide-status 2> /dev/null)" != "1" ]]; then
+		ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
+		ref=$(command git rev-parse --short HEAD 2 > /dev/null) ||
+		return 0
+		echo "[$fg_bold[yellow]${ref#refs/heads/}%{$reset_color%}]"
+	fi
+}
 
 PROMPT='
-$fg[$NAME_COLOR]%n%{$reset_color%} $FG[033]%~%{$reset_color%}
-$FG[226]$(git_prompt_info)%{$reset_color%}%(!.#.$) '
-RPROMPT='$FG[239][%*]%{$reset_color%}'
-
-ZSH_THEME_GIT_PROMPT_PREFIX="($FG[226]%B"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%B%{$reset_color%}) "
-ZSH_THEME_GIT_PROMPT_CLEAN="$fg[green]v"
-ZSH_THEME_GIT_PROMPT_DIRTY="$fg[red]*"
+$(hGet_Username) $(hGet_Path)
+$(hGet_GitStatus) %(!.#.$) '
+RPROMPT='$fg[gray][%*]%{$reset_color%}'

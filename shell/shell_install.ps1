@@ -12,4 +12,10 @@ Else {
 	choco install ConEmu -y
 }
 Copy-Item shell\ConEmu.xml $HOME\AppData\Roaming\ConEmu.xml
+
+<# Install Putty -------------------------------------------------------------#>
+If (Get-Command putty -errorAction SilentlyContinue)) {
+		choco install putty -y
+}
+
 Write-Host

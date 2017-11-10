@@ -28,6 +28,12 @@ if [ ! -d ~/.oh-my-zsh ]; then
 	curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 fi
 
+# zsh-syntax-highlighting plugin
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+
+# zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
+
 # Setting file ----------------------------------------------------------------#
 cp shell/hoya.zsh-theme ~/.oh-my-zsh/themes/
 cp shell/.zshrc ~/

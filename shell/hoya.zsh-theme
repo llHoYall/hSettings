@@ -12,7 +12,7 @@
 # %*	: current time of day in 24-hour format, with seconds.
 # %B	: start boldface mode.
 
-hGet_Username() {
+hGetUsername() {
 	local color_name
 	if [ $UID -eq 0 ]; then
 		color_name="red"			# root
@@ -22,21 +22,25 @@ hGet_Username() {
 	echo "%{$fg_bold[$color_name]%}%n%{$reset_color%}"
 }
 
-hGet_Path() {
-	echo "%{$fg_bold[blue]%~%{$reset_color%}"
+hGetPath() {
+	echo "%{$fg_bold[blue]%}%~%{$reset_color%}"
 }
 
-hGet_GitStatus() {
-	local ref
-	if [[ "$(command git config --get oh-my-zsh.hide-status 2> /dev/null)" != "1" ]]; then
-		ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
-		ref=$(command git rev-parse --short HEAD 2 > /dev/null) ||
-		return 0
-		echo "[$fg_bold[yellow]${ref#refs/heads/}%{$reset_color%}]"
+hGit_GetBranchName() {
+	local bname
+	if [ -d .git ]; then
+		bname=$(command git symbolic-ref HEAD 2> /dev/null) || return 0
+		echo "${bname#refs/heads/}"
+	fi
+}
+
+hGit_GetStatus() {
+	if [ -d .git ]; then
+		echo "[%{$fg_bold[yellow]%}$(hGit_GetBranchName)%{$reset_color%}]"
 	fi
 }
 
 PROMPT='
-$(hGet_Username) $(hGet_Path)
-$(hGet_GitStatus) %(!.#.$) '
-RPROMPT='$fg[gray][%*]%{$reset_color%}'
+$(hGetUsername) $(hGetPath)
+$(hGit_GetStatus) %(!.#.$) '
+RPROMPT='%{$fg_bold[black]%}[%*]%{$reset_color%}'

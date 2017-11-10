@@ -1,6 +1,6 @@
 Windows Registry Editor Version 5.00
 
-[HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\Solarized%20Dark]
+[HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\Ubuntu]
 "Colour0"="131,148,150"
 "Colour1"="147,161,161"
 "Colour2"="0,43,54"
@@ -23,3 +23,7 @@ Windows Registry Editor Version 5.00
 "Colour19"="147,161,161"
 "Colour20"="238,232,213"
 "Colour21"="253,246,227"
+
+"HostName"="192.168.0.165"
+"UserName"="hoya"
+"Font"="DejaVu Sans Mono"

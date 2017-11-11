@@ -1,6 +1,7 @@
 <# Install Powershell Module -------------------------------------------------#>
 Install-Module -Name "posh-git" -Scope AllUsers
 Install-Module -Name "PSColor" -Scope AllUsers
+Install-Module -Name "PSReadLine" -Scope AllUsers
 Copy-Item shell\Microsoft.Powershell_profile.ps1 $PROFILE
 
 <# Install ConEmu ------------------------------------------------------------#>
@@ -14,7 +15,7 @@ Else {
 Copy-Item shell\ConEmu.xml $HOME\AppData\Roaming\ConEmu.xml
 
 <# Install Putty -------------------------------------------------------------#>
-If (Get-Command putty -errorAction SilentlyContinue)) {
+If (Get-Command putty -errorAction SilentlyContinue) {
 		choco install putty -y
 }
 

@@ -30,5 +30,8 @@ Import-Module -Name posh-git
 $global:GitPromptSettings.BeforeText = '['
 $global:GitPromptSettings.AfterText  = '] '
 
+<# PSReadLink ----------------------------------------------------------------#>
+Import-Module -Name PSReadLine
+
 <# Default Stating Location --------------------------------------------------#>
 Set-Location $HOME

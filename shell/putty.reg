@@ -1,11 +1,17 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\Ubuntu]
+; Default Foregound
 "Colour0"="131,148,150"
+; Default Bold Foreground
 "Colour1"="147,161,161"
+; Default Background
 "Colour2"="0,43,54"
+; Default Bold Background
 "Colour3"="7,54,66"
+; Cursor Text
 "Colour4"="0,43,54"
+; Cursor Colour
 "Colour5"="238,232,213"
 "Colour6"="7,54,66"
 "Colour7"="0,43,54"
@@ -27,3 +33,4 @@ Windows Registry Editor Version 5.00
 "HostName"="192.168.0.165"
 "UserName"="hoya"
 "Font"="DejaVu Sans Mono"
+"TCPKeepalives"=DROWD:00000001

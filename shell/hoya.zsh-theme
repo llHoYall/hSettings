@@ -19,11 +19,11 @@ hGetUsername() {
 	else
 		color_name="green"		# user
 	fi
-	echo "%{$fg_bold[$color_name]%}%n%{$reset_color%}"
+	echo "%{$fg[$color_name]%}%n%{$reset_color%}"
 }
 
 hGetPath() {
-	echo "%{$fg_bold[blue]%}%~%{$reset_color%}"
+	echo "%{$fg[blue]%}%~%{$reset_color%}"
 }
 
 hGit_GetBranchName() {
@@ -36,7 +36,7 @@ hGit_GetBranchName() {
 
 hGit_GetStatus() {
 	if [ -d .git ]; then
-		echo "[%{$fg_bold[yellow]%}$(hGit_GetBranchName)%{$reset_color%}]"
+		echo "[%{$fg[yellow]%}$(hGit_GetBranchName)%{$reset_color%}]"
 	fi
 }
 

@@ -5,11 +5,6 @@ red='\033[0;31m'
 yellow='\033[0;33m'
 nc='\033[0m'
 
-# Install RVM (Ruby Version Manager) ------------------------------------------#
-if [ -z "$(command -v rvm)" ]; then
-	curl -sSL https://get.rvm.io | sudo bash -s stable
-fi
-
 # Install zsh -----------------------------------------------------------------#
 if [ -z "$(command -v zsh)" ]; then
 	if [ "$(uname)" == "Darwin" ]; then
@@ -25,7 +20,7 @@ fi
 
 # Install oh-my-zsh -----------------------------------------------------------#
 if [ ! -d ~/.oh-my-zsh ]; then
-	curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 fi
 
 # zsh-syntax-highlighting plugin

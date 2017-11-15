@@ -16,6 +16,13 @@ export ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="ys"
 ZSH_THEME="hoya"
 
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -58,7 +65,10 @@ ZSH_THEME="hoya"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(
+	zsh-syntax-highlighting
+	zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,10 +101,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
 # HoYa #########################################################################
+# LS_COLORS -------------------------------------------------------------------#
+export LS_COLORS=$LS_COLORS:"di=34":"*.sh=32":"*.ps1=32"
+
 # tmux ------------------------------------------------------------------------#
 if [ -z "$TMUX" ]; then
 	tmux attach -t hTMUX || tmux new -s hTMUX

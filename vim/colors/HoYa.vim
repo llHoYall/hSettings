@@ -1,11 +1,33 @@
 "===============================================================================
 " HoYa's Vim Color Scheme
 "
+" brief:		Solarized based custom color scheme
 " author:   hoya128@gmail.com
 " version:  v1.0
 " date:	    2016.06.21
 "===============================================================================
 
+" Color Values -----------------------------------------------------------------
+"	 Solarized		Hex				Xterm		RGB
+"	 ---------		-------		-----		-----------
+"	 base03				#002b36		234				0  43  54
+"	 base02				#073642		235				7  54  66
+"	 base01				#586e75		240			 88 110 117
+"	 base00				#657b83		241			101 123 131
+"	 base0				#839496		244			131 148 150
+"	 base1				#93a1a1		245			147 161 161
+"	 base2				#eee8d5		254			238 232 213
+"	 base3				#fdf6e3		230			253 246 227
+"	 yellow				#b58900		136			181 137   0
+"	 orange				#cb4b16		166			203  75  22
+"	 red					#dc322f		160			220  50  47
+"	 magenta			#d33682		125			211  54 130
+"	 violet				#6c71c4		 61			108 113 196
+"	 blue					#268bd2		 33			 38 139 210
+"	 cyan					#2aa198		 37			 42 161 152
+"	 green				#859900		 64			133 153   0
+
+" Initialization ---------------------------------------------------------------
 set background=dark
 hi clear
 if exists("syntax_on")
@@ -14,9 +36,9 @@ endif
 
 let colors_name="HoYa"
 
-" Base color *******************************************************************
-hi Normal                             guifg=#d4d2cf   guibg=#201f1f
-hi Normal                             ctermfg=253     ctermbg=235
+" Base color -------------------------------------------------------------------
+hi Normal                             guifg=#839496		guibg=#002b36
+hi Normal                             ctermfg=244			ctermbg=234
 
 " Cursor ***********************************************************************
 hi Cursor                             guifg=fg        guibg=#0078ff

@@ -102,6 +102,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # HoYa #########################################################################
+# Terminal
+export TERM=xterm-256color
+
 # LS_COLORS -------------------------------------------------------------------#
 export LS_COLORS=$LS_COLORS:"di=34":"*.sh=32":"*.ps1=32"
 

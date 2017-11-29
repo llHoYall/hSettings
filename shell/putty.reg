@@ -48,5 +48,6 @@ Windows Registry Editor Version 5.00
 
 "HostName"="192.168.0.165"
 "UserName"="hoya"
+"TerminalType"="xterm-256color"
 "Font"="DejaVu Sans Mono"
 "TCPKeepalives"=DROWD:00000001

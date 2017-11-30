@@ -23,6 +23,6 @@ Else {
 	Push-Location
 	cd $HOME\vimfiles\bundle\Vundle.vim
 	git pull
-	Pop-Pocation
+	Pop-Location
 }
 vim +PluginInstall! +qall

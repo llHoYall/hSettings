@@ -8,26 +8,28 @@
 "===============================================================================
 
 " Color Values -----------------------------------------------------------------
-"	 Solarized		Hex				Xterm		RGB
-"	 ---------		-------		-----		-----------
-"	 base03				#002b36		234				0  43  54
-"	 base02				#073642		235				7  54  66
-"	 base01				#586e75		240			 88 110 117
-"	 base00				#657b83		241			101 123 131
-"	 base0				#839496		244			131 148 150
-"	 base1				#93a1a1		245			147 161 161
-"	 base2				#eee8d5		254			238 232 213
-"	 base3				#fdf6e3		230			253 246 227
-"	 yellow				#b58900		136			181 137   0
-"	 orange				#cb4b16		166			203  75  22
-"	 red					#dc322f		160			220  50  47
-"	 magenta			#d33682		125			211  54 130
-"	 violet				#6c71c4		 61			108 113 196
-"	 blue					#268bd2		 33			 38 139 210
-"	 cyan					#2aa198		 37			 42 161 152
-"	 green				#859900		 64			133 153   0
+"	 Solarized		Hex				Xterm		16/8		RGB
+"	 ---------		-------		-----		----		-----------
+"	 base03				#002b36		234			 8/4		  0  43  54
+"	 base02				#073642		235			 0/4		  7  54  66
+"	 base01				#586e75		240			10/7		 88 110 117
+"	 base00				#657b83		241			11/7		101 123 131
+"	 base0				#839496		244			12/6		131 148 150
+"	 base1				#93a1a1		245			14/4		147 161 161
+"	 base2				#eee8d5		254			 7/7		238 232 213
+"	 base3				#fdf6e3		230			15/7		253 246 227
+"	 yellow				#b58900		136			 3/3		181 137   0
+"	 orange				#cb4b16		166			 9/3		203  75  22
+"	 red					#dc322f		160			 1/1		220  50  47
+"	 magenta			#d33682		125			 5/5		211  54 130
+"	 violet				#6c71c4		 61			13/5		108 113 196
+"	 blue					#268bd2		 33			 4/4		 38 139 210
+"	 cyan					#2aa198		 37			 6/6		 42 161 152
+"	 green				#859900		 64			 2/2		133 153   0
 
 " Initialization ---------------------------------------------------------------
+set term=xterm-256color
+set t_Co=256
 set background=dark
 hi clear
 if exists("syntax_on")
@@ -38,19 +40,19 @@ let colors_name="HoYa"
 
 " Base color -------------------------------------------------------------------
 hi Normal                             guifg=#839496		guibg=#002b36
-hi Normal                             ctermfg=244			ctermbg=234
+hi Normal                             ctermfg=12			ctermbg=8
 
-" Cursor ***********************************************************************
-hi Cursor                             guifg=fg        guibg=#0078ff
-hi Cursor                             ctermfg=bg      ctermbg=153
-hi lCursor                            guifg=black     guibg=white
-hi lCursor                            ctermfg=black   ctermbg=white
-hi CursorColumn     gui=NONE          guifg=NONE      guibg=#202438
-hi CursorColumn     cterm=none        ctermfg=none    ctermbg=236
-hi CursorIM                           guifg=bg        guibg=#96cdcd
-hi CursorIM                           ctermfg=bg      ctermbg=116
-hi CursorLine       gui=NONE                          guibg=#202438
-hi CursorLine       cterm=none                        ctermbg=236
+" Cursor -----------------------------------------------------------------------
+hi Cursor                             guifg=#eee8d5   guibg=#002b36
+hi Cursor                             ctermfg=7
+hi lCursor                            guifg=#eee8d5   guibg=#002b36
+hi lCursor                            ctermfg=7
+hi CursorColumn     gui=NONE          guifg=#eee8d5   guibg=#002b36
+hi CursorColumn     cterm=none        ctermfg=7
+hi CursorIM                           guifg=#eee8d5   guibg=#002b36
+hi CursorIM                           ctermfg=7
+hi CursorLine       gui=NONE          guifg=#eee8d5   guibg=#002b36
+hi CursorLine       cterm=none        ctermfg=7
 
 " Status Line ******************************************************************
 hi StatusLine       gui=bold          guifg=#508ed8   guibg=#1c2c3f
@@ -58,21 +60,21 @@ hi StatusLine       cterm=bold        ctermfg=254     ctermbg=237
 hi StatusLineNC     gui=NONE          guifg=#78777f   guibg=#302f2f
 hi StatusLineNC     cterm=none        ctermfg=244     ctermbg=237
 
-" Comment Group ****************************************************************
-hi Comment          gui=italic        guifg=#787775
-hi Comment          cterm=none        ctermfg=240
+" Comment Group ----------------------------------------------------------------
+hi Comment          gui=italic        guifg=#586e75		guibg=#002b36
+hi Comment														ctermfg=10
 
-" Preprocessor Group ***********************************************************
-hi Define           gui=NONE          guifg=#78b753
-hi Define           cterm=none        ctermfg=223
-hi Include          gui=NONE          guifg=#78b753
-hi Include          cterm=none        ctermfg=223
-hi Macro            gui=NONE          guifg=#78b753
-hi Macro            cterm=none        ctermfg=223
-hi PreCondit        gui=NONE          guifg=#78b753
-hi PreCondit        cterm=none        ctermfg=223
-hi PreProc          gui=NONE          guifg=#78b753
-hi PreProc          cterm=none        ctermfg=223
+" Preprocessor Group -----------------------------------------------------------
+hi Define           gui=NONE          guifg=#cb4b16
+hi Define           cterm=NONE        ctermfg=9
+hi Include          gui=NONE          guifg=#cb4b16
+hi Include          cterm=NONE        ctermfg=9
+hi Macro            gui=underline     guifg=#cb4b16
+hi Macro            cterm=underline   ctermfg=9
+hi PreCondit        gui=NONE          guifg=#cb4b16
+hi PreCondit        cterm=NONE        ctermfg=9
+hi PreProc          gui=NONE          guifg=#cb4b16
+hi PreProc          cterm=NONE        ctermfg=9
 
 " Type Group *******************************************************************
 hi StorageClass     gui=NONE          guifg=#508ed8

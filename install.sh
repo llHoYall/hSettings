@@ -12,6 +12,7 @@ function usage() {
 	echo "  usage: ./install.sh [list of tools]"
 	echo "    list of supported tools"
 	echo "    - all"
+	echo "		- terminal"
 	echo "    - shell"
 	echo "    - git"
 	echo "    - vim"
@@ -37,7 +38,7 @@ fi
 
 # Check Argument --------------------------------------------------------------#
 args=None
-if [ $# -lt 1 -o $# -gt 3 ]; then
+if [ $# -lt 1 -o $# -gt 4 ]; then
 	usage
 	exit 2
 fi
@@ -47,6 +48,7 @@ path=$PWD
 cd $(dirname $0)
 
 if [ ${os} = MAC ]; then
+	# brew
 	echo -e "==> Install ${yellow}brew${nc}"
 	if [ -z "$(command -v brew)" ]; then
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -54,16 +56,38 @@ if [ ${os} = MAC ]; then
 		echo -e "${yellow}brew${nc} has been installed"
 		echo
 	fi
+
+	# fzf
+	echo -e "==> Install ${yellow}fzf${nc}"
+	if [ -z "$(command -v fzf)" ]; then
+		brew install fzf
+		$(brew --prefix)/opt/fzf/install
+	else
+		echo -e "${yellow}fzf${nc} has been installed"
+		echo
+	fi
+
+	# fasd
+	echo -e "==> Install ${yellow}fasd${nc}"
+	if [ -z "$(command -v fasd)" ]; then
+		brew install fasd
+	else
+		echo -e "${yellow}fasd${nc} has been installed"
+		echo
+	fi
 fi
 
 args=( "$@" )
 if [ $# -eq 1 -a $1 == "all" ]; then
-	args=( shell git vim )
+	args=( terminal shell git vim )
 fi
 
 for i in "${args[@]}"; do
 	echo -e "==> Install ${yellow}$i${nc}"
 	case $i in
+		"terminal")
+			terminal/terminal_intall.sh
+			;;
 		"shell")
 			shell/zsh_install.sh
 			;;

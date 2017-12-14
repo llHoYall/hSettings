@@ -41,6 +41,7 @@ If (($Args.Count -lt 1) -Or ($Args.Count -gt 4)) {
 $path=$Pwd.path
 cd $PSScriptRoot
 
+<# choco #>
 Write-Host -NoNewline "==> Install "
 Write-Host -ForegroundColor YELLOW choco
 If (Get-Command choco -errorAction SilentlyContinue) {
@@ -51,6 +52,19 @@ If (Get-Command choco -errorAction SilentlyContinue) {
 Else {
 	Invoke-WebRequest https://chocolatey.org/install.ps1 -UseBasicParsing | Invoke-Expression
 	Write-Host
+}
+
+<# fzf #>
+Write-Host -NoNewline "==> Install "
+Write-Host -ForegroundColor YELLOW fzf
+If (Get-Command fzf -errorAction SilentlyContinue) {
+	Write-Host -NoNewline -ForegroundColor YELLOW "fzf"
+	Write-Host " has been installed"
+	Write-Host
+	choco upgrade fzf
+}
+Else {
+	choco install fzf
 }
 
 $tools = @($Args)

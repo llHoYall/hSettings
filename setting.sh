@@ -14,6 +14,7 @@ function usage() {
 	echo "    - all"
 	echo "    - git"
 	echo "    - vim"
+	echo "		- terminal"
 	echo "  ex: ./setting.sh all"
 	echo "  ex: ./setting.sh git vim"
 }
@@ -36,7 +37,7 @@ fi
 
 # Check Argument --------------------------------------------------------------#
 args=None
-if [ $# -lt 1 -o $# -gt 2 ]; then
+if [ $# -lt 1 -o $# -gt 3 ]; then
 	usage
 	exit 2
 fi
@@ -62,6 +63,11 @@ for i in "${args[@]}"; do
 		"vim")
 			cd vim
 			./vim_setting.sh
+			cd $root
+			;;
+		"terminal")
+			cd terminal
+			./terminal_setting.sh
 			cd $root
 			;;
 		*)

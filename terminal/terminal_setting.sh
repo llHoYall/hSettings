@@ -13,4 +13,4 @@ else
 	cd -
 fi
 ln -s -f .tmux/.tmux.conf
-cp .tmux/.tmux.conf.local`
+cp .tmux.conf.local ~/

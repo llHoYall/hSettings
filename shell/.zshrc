@@ -69,6 +69,7 @@ plugins=(
 	git
 	fasd
 	tmux
+	tmuxinator
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 )

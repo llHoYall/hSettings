@@ -109,7 +109,7 @@ for i in "${args[@]}"; do
 	echo -e "==> Install ${yellow}$i${nc}"
 	case $i in
 		"terminal")
-			terminal/terminal_intall.sh
+			terminal/terminal_install.sh
 			;;
 		"shell")
 			shell/zsh_install.sh

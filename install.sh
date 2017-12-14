@@ -47,8 +47,8 @@ fi
 path=$PWD
 cd $(dirname $0)
 
+# brew
 if [ ${os} = MAC ]; then
-	# brew
 	echo -e "==> Install ${yellow}brew${nc}"
 	if [ -z "$(command -v brew)" ]; then
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -56,25 +56,48 @@ if [ ${os} = MAC ]; then
 		echo -e "${yellow}brew${nc} has been installed"
 		echo
 	fi
+fi
 
-	# fzf
-	echo -e "==> Install ${yellow}fzf${nc}"
-	if [ -z "$(command -v fzf)" ]; then
+# fzf
+echo -e "==> Install ${yellow}fzf${nc}"
+if [ -z "$(command -v fzf)" ]; then
+	if [ ${os} = MAC ]; then
 		brew install fzf
 		$(brew --prefix)/opt/fzf/install
-	else
-		echo -e "${yellow}fzf${nc} has been installed"
-		echo
+	elif [ ${os} = LINUX ]; then
+		if [ -z "$(command -v git)" ]; then
+			sudo apt install git -y
+		fi
+		git clone --depth 1 https://github.com/junegunn/fzf ~/.fzf
+		~/.fzf/install
 	fi
+else
+	echo -e "${yellow}fzf${nc} has been installed"
+	echo
+	if [ ${os} = MAC ]; then
+		brew reinstall fzf
+	elif [ ${os} = LINUX ]; then
+		cd ~/.fzf && git pull && ./install
+		cd -
+	fi
+fi
 
-	# fasd
-	echo -e "==> Install ${yellow}fasd${nc}"
-	if [ -z "$(command -v fasd)" ]; then
+# fasd
+echo -e "==> Install ${yellow}fasd${nc}"
+if [ -z "$(command -v fasd)" ]; then
+	if [ ${os} = MAC ]; then
 		brew install fasd
-	else
-		echo -e "${yellow}fasd${nc} has been installed"
-		echo
+	elif [ ${os} = LINUX ]; then
+		if [ -z "$(command -v git)" ]; then
+			sudo apt install git -y
+		fi
+		git clone --depth 1 https://github.com/clvv/fasd ~/.fasd
+		cd ~/.fasd && sudo make install
+		cd -
 	fi
+else
+	echo -e "${yellow}fasd${nc} has been installed"
+	echo
 fi
 
 args=( "$@" )

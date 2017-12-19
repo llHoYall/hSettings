@@ -27,18 +27,8 @@
 "	 cyan					#2aa198		cyan			 37			 6/6		 42 161 152
 "	 green				#859900		green			 64			 2/2		133 153   0
 "
-"	 Obsidian			Hex				Xterm		16/8		RGB
-"	 ---------		-------		-----		----		-----------
-"	 brblack			#2f393c
-"	 black				#293134
-"								#
-"	 bryellow			#e8e2b7
-"								#
-"								#
-"								#
-"	 yellow				#ffcd22
-"	 brred				#
-"	 red					#
+"	 Obsidian			Hex				TermCol		Xterm		16/8		RGB
+"	 ---------		-------		-------		-----		----		-----------
 "
-"	 Wombat
-"	 ---------
+"	 Wombat				Hex				TermCol		Xterm		16/8		RGB
+"	 ---------		-------		-------		-----		----		-----------

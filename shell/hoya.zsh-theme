@@ -27,20 +27,23 @@ hGetPath() {
 }
 
 hGit_GetBranchName() {
-	local bname
-	if [ -d .git ]; then
-		bname=$(command git symbolic-ref HEAD 2> /dev/null) || return 0
-		echo "${bname#refs/heads/}"
-	fi
+	echo $(command git rev-parse --abbrev-ref HEAD 2> /dev/null)
+}
+
+hGit_GetModified() {
+	echo $(git status | grep 'modified' | wc -l)
 }
 
 hGit_GetStatus() {
-	if [ -d .git ]; then
-		echo "[%{$fg[yellow]%}$(hGit_GetBranchName)%{$reset_color%}]"
+	if git rev-parse --git-dir > /dev/null 2>&1; then
+		echo -n "["
+		echo -n "%{$fg[yellow]%}$(hGit_GetBranchName)%{$reset_color%}"
+		echo -n " %{$fg[red]%}+$(hGit_GetModified)%{$reset_color%}"
+		echo "]"
 	fi
 }
 
 PROMPT='
 $(hGetUsername) $(hGetPath)
 $(hGit_GetStatus) %(!.#.$) '
-RPROMPT='%{$fg_bold[black]%}[%*]%{$reset_color%}'
+RPROMPT='%{$fg[white]%}[%*]%{$reset_color%}'

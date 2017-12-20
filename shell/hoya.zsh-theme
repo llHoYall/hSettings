@@ -30,15 +30,42 @@ hGit_GetBranchName() {
 	echo $(command git rev-parse --abbrev-ref HEAD 2> /dev/null)
 }
 
-hGit_GetModified() {
-	echo $(git status | grep 'modified' | wc -l)
+hGit_GetRemote() {
+	local ahead=$(git rev-list --left-right --count master...origin | cut -d '	' -f1)
+	local behind=$(git rev-list --left-right --count master...origin | cut -d '	' -f2)
+	if [ $ahead -gt 0 ]; then
+		echo " ↑$ahead"
+	fi
+	if [ $behind -gt 0 ]; then
+		echo " ↓$behind"
+	fi
+}
+
+hGit_GetStaged() {
+	local modified=$(git status -s | egrep '^M.' | wc -l)
+	if [ $modified -gt 0 ]; then
+		echo " ~$modified"
+	fi
+}
+
+hGit_GetWorkDir() {
+	local modified=$(git status -s | egrep '^.M' | wc -l)
+	if [ $modified -gt 0 ]; then
+		echo " ~$modified"
+	fi
+	local untracked=$(git status -s | egrep '^\?\?' | wc -l)
+	if [ $untracked -gt 0 ]; then
+		echo " +$untrackde"
+	fi
 }
 
 hGit_GetStatus() {
 	if git rev-parse --git-dir > /dev/null 2>&1; then
 		echo -n "["
 		echo -n "%{$fg[yellow]%}$(hGit_GetBranchName)%{$reset_color%}"
-		echo -n " %{$fg[red]%}+$(hGit_GetModified)%{$reset_color%}"
+		echo -n "%{$fg[magenta]%}$(hGit_GetRemote)%{$reset_color%}"
+		echo -n "%{$fg[cyan]%}$(hGit_GetStaged)%{$reset_color%}"
+		echo -n "%{$fg[red]%}$(hGit_GetWorkDir)%{$reset_color%}"
 		echo "]"
 	fi
 }
@@ -46,4 +73,4 @@ hGit_GetStatus() {
 PROMPT='
 $(hGetUsername) $(hGetPath)
 $(hGit_GetStatus) %(!.#.$) '
-RPROMPT='%{$fg[white]%}[%*]%{$reset_color%}'
+RPROMPT='%{$fg_bold[green]%}[%*]%{$reset_color%}'

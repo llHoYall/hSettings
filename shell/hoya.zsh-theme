@@ -23,7 +23,7 @@ hGetUsername() {
 }
 
 hGetPath() {
-	echo "%{$fg[blue]%}%~%{$reset_color%}"
+	echo "%{$fg_bold[blue]%}%~%{$reset_color%}"
 }
 
 hGit_GetBranchName() {
@@ -73,4 +73,4 @@ hGit_GetStatus() {
 PROMPT='
 $(hGetUsername) $(hGetPath)
 $(hGit_GetStatus) %(!.#.$) '
-RPROMPT='%{$fg_bold[green]%}[%*]%{$reset_color%}'
+RPROMPT='%{$fg_bold[black]%}[%*]%{$reset_color%}'

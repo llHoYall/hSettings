@@ -1,37 +1,16 @@
-# hSettings
-This program can help HoYa's development environment settings.
+# hConfig
+This program configure my development environment.
 
 &nbsp;
 
 ### Usage
 
-- MAC or LINUX
-
-```sh
-./install.sh all
-./setting.sh all
-```
-
-- WINDOWS
-
-```powershell
-./install.ps1 all
-./setting.ps1 all
-```
+- Help
+> $ hConfig -h
 
 &nbsp;
 
-### Eclipse
-
-- Preference File
-
-```sh
-Eclipse_HoYa_Preferences.epf
-```
-
-&nbsp;
-
-# Requirements
+# Reference
 
 ### MAC
 

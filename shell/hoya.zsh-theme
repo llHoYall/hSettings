@@ -68,7 +68,7 @@ hGit_GetWorkDir() {
 }
 
 hGit_GetClean() {
-	if [ -z $(hGit_GetRemote) -a -z $(hGit_GetStaged) -a -z $(hGit_GetWorkDir) ]; then
+	if [[ -z $(hGit_GetRemote) && -z $(hGit_GetStaged) && -z $(hGit_GetWorkDir) ]]; then
 		echo "*"
 	fi
 }

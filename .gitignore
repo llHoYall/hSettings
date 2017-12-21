@@ -1,0 +1,5 @@
+# Temporary vim swap files
+*.swp
+
+# [Optimized] Byte-compiled python files
+__pycache__/

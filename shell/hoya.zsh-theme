@@ -46,6 +46,10 @@ hGit_GetStaged() {
 	if [ $modified -gt 0 ]; then
 		echo -n " ~$modified"
 	fi
+	local added=$(git status -s | egrep '^A.' | wc -l)
+	if [ $added -gt 0 ]; then
+		echo -n " +$added"
+	fi
 	local removed=$(git status -s | egrep '^D.' | wc -l)
 	if [ $removed -gt 0 ]; then
 		echo -n " -$removed"

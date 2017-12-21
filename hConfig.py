@@ -2,11 +2,13 @@
 import platform
 import sys
 import mac
+import linux
 
 # Definition -----------------------------------------------------------------#
 COLOR_BOLD = '\033[1m'
 COLOR_RED = '\033[31m'
 COLOR_GREEN = '\033[32m'
+COLOR_ORANGE = '\033[33m'
 COLOR_END = '\033[0m'
 
 
@@ -14,7 +16,7 @@ COLOR_END = '\033[0m'
 def usage():
     print()
     print(COLOR_BOLD + " Usage: " + COLOR_END +
-          COLOR_RED + "hConfig [opt]" + COLOR_END)
+          COLOR_ORANGE + "hConfig [opt]" + COLOR_END)
     print()
     print(COLOR_GREEN + "    opt" + COLOR_END)
     print("    -a\tInstall and Configure. (Default)")
@@ -35,7 +37,15 @@ if argc > 1:
 
 # Check OS -------------------------------------------------------------------#
 os = platform.system()
-if os == 'MAC':
 
-# Main -----------------------------------------------------------------------#
-usage()
+# Configuration --------------------------------------------------------------#
+print()
+if os == 'MAC':
+    print("Install tools for MAC")
+elif os == 'Linux':
+    print("Install tools for Linux")
+    linux.config(opt)
+elif os == 'Windows':
+    print("Install tools for Windows")
+else:
+    print(COLOR_RED + "Error: Not supported OS" + COLOR_END)

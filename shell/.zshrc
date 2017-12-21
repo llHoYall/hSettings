@@ -111,7 +111,8 @@ export EDITOR='vim'
 export TERM=xterm-256color
 
 # LS_COLORS -------------------------------------------------------------------#
-export LS_COLORS=$LS_COLORS:"di=94:*.sh=32:*.ps1=32"
+# Sexy Color Palette
+export LS_COLORS=$LS_COLORS:"di=34:*.sh=32:*.ps1=32"
 
 # fzf -------------------------------------------------------------------------#
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

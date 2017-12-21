@@ -68,7 +68,7 @@ hGit_GetWorkDir() {
 }
 
 hGit_GetClean() {
-	if [ -z $(git status --porcelain) ]; then
+	if [ -z $(hGit_GetRemote) -a -z $(hGit_GetStaged) -a -z $(hGit_GetWorkDir) ]; then
 		echo "*"
 	fi
 }

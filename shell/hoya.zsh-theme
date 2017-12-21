@@ -27,7 +27,7 @@ hGetPath() {
 }
 
 hGit_GetBranchName() {
-	echo $(command git rev-parse --abbrev-ref HEAD 2> /dev/null)
+	echo -n $(command git rev-parse --abbrev-ref HEAD 2> /dev/null)
 }
 
 hGit_GetRemote() {
@@ -67,13 +67,20 @@ hGit_GetWorkDir() {
 	fi
 }
 
+hGit_GetClean() {
+	if [ -z $(git status --porcelain) ]; then
+		echo "*"
+	fi
+}
+
 hGit_GetStatus() {
 	if git rev-parse --git-dir > /dev/null 2>&1; then
 		echo -n "["
-		echo -n "%{$fg[yellow]%}$(hGit_GetBranchName)%{$reset_color%}"
+		echo -n "%{$fg_bold[yellow]%}$(hGit_GetBranchName)%{$reset_color%}"
 		echo -n "%{$fg[magenta]%}$(hGit_GetRemote)%{$reset_color%}"
 		echo -n "%{$fg[cyan]%}$(hGit_GetStaged)%{$reset_color%}"
 		echo -n "%{$fg[red]%}$(hGit_GetWorkDir)%{$reset_color%}"
+		echo -n "%{$fg_bold[green]%}$(hGit_GetClean)%{$reset_color%}"
 		echo "]"
 	fi
 }
@@ -81,4 +88,4 @@ hGit_GetStatus() {
 PROMPT='
 $(hGetUsername) $(hGetPath)
 $(hGit_GetStatus) %(!.#.$) '
-RPROMPT='%{$fg_bold[black]%}[%*]%{$reset_color%}'
+RPROMPT='%{$fg[white]%}[%*]%{$reset_color%}'

@@ -44,18 +44,26 @@ hGit_GetRemote() {
 hGit_GetStaged() {
 	local modified=$(git status -s | egrep '^M.' | wc -l)
 	if [ $modified -gt 0 ]; then
-		echo " ~$modified"
+		echo -n " ~$modified"
+	fi
+	local removed=$(git status -s | egrep '^D.' | wc -l)
+	if [ $removed -gt 0 ]; then
+		echo -n " -$removed"
 	fi
 }
 
 hGit_GetWorkDir() {
 	local modified=$(git status -s | egrep '^.M' | wc -l)
 	if [ $modified -gt 0 ]; then
-		echo " ~$modified"
+		echo -n " ~$modified"
 	fi
 	local untracked=$(git status -s | egrep '^\?\?' | wc -l)
 	if [ $untracked -gt 0 ]; then
-		echo " +$untrackde"
+		echo -n " +$untracked"
+	fi
+	local removed=$(git status -s | egrep '^.D' | wc -l)
+	if [ $removed -gt 0 ]; then
+		echo -n " -$removed"
 	fi
 }
 

@@ -12,8 +12,9 @@ This program configure my development environment.
 
 # Reference
 
-### MAC
+### MAC (17.3.0)
 
+- [Xcode](https://developer.apple.com/xcode)
 - [homebrew](https://brew.sh)
 - [vim](https://vim.sourceforge.io/download.php)
 - [git](https://git-scm.com/downloads)
@@ -21,6 +22,8 @@ This program configure my development environment.
 - [cmake](https://cmake.org/download)
 
 ### Linux
+
+- [clang](https://clang.llvm.org)
 
 ### WINDOWS
 

@@ -1,9 +1,6 @@
 # Import Module --------------------------------------------------------------#
 import os
-
-# Definition -----------------------------------------------------------------#
-COLOR_YELLOW = '\033[93m'
-COLOR_END = '\033[0m'
+import color
 
 
 # clang ----------------------------------------------------------------------#
@@ -14,7 +11,7 @@ def _install_clang():
 
 # Configuration --------------------------------------------------------------#
 def config_essential():
-    print("==> Install " + COLOR_YELLOW + "clang" + COLOR_END)
+    print("==> Install " + color.YELLOW + "clang" + color.END)
     _install_clang()
 
 

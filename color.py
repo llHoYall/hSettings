@@ -5,6 +5,7 @@ _BLACK = '30'
 _RED = '31'
 _GREEN = '32'
 _ORANGE = '33'
+_WHITE = '37'
 
 
 # Set Color ------------------------------------------------------------------#
@@ -16,9 +17,12 @@ def setColor(bold, color):
 
 
 # for User -------------------------------------------------------------------#
-DARK_GRAY = setColor(True, _BLACK)
+BLACK = setColor(False, _BLACK)
+BOLD_BLACK = setColor(True, _BLACK)
 RED = setColor(False, _RED)
 GREEN = setColor(False, _GREEN)
 ORANGE = setColor(False, _ORANGE)
 YELLOW = setColor(True, _ORANGE)
+WHITE = setColor(False, _WHITE)
+BOLD_WHITE = setColor(True, _WHITE)
 END = setColor(False, _END)

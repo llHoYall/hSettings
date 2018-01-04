@@ -8,16 +8,16 @@ import linux
 
 # Usage ----------------------------------------------------------------------#
 def usage():
-    print
+    print()
     print(color.BOLD_WHITE + " Usage: " + color.END +
           color.ORANGE + "hConfig [opt] [tools]" + color.END)
-    print
+    print()
     print(color.GREEN + "    opt" + color.END)
     print("    -a\tInstall and Configure. (Default)")
     print("    -i\tInstall only")
     print("    -c\tConfigure only")
     print("    -h\tHelp")
-    print
+    print()
     print(color.GREEN + "    tools" + color.END)
     print("    git\t\tInstall, Configure")
 
@@ -52,8 +52,13 @@ if os == 'Darwin':
         print("Install & Configure tools for MAC")
     mac.config(opt, args)
 elif os == 'Linux':
-    print("Install tools for Linux")
-    linux.config(opt)
+    if opt == 'i':
+        print("Install tools for Linux")
+    elif opt == 'c':
+        print("Configure tools for Linux")
+    else:
+        print("Install & Configure tools for Linux")
+    linux.config(opt, args)
 elif os == 'Windows':
     print("Install tools for Windows")
 else:

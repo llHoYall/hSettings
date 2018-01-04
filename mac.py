@@ -1,5 +1,3 @@
-# Import Module --------------------------------------------------------------#
-import os
 import color
 
 
@@ -29,7 +27,7 @@ def _install_git():
         print("      Already installed.")
 
 
-def _configure_git():
+def _config_git():
     if os.system("git --version 1> /dev/null"):
         print("      Not installed.")
     else:
@@ -117,7 +115,7 @@ def _install_devtools(args):
 def _config_devtools(args):
     if "git" in args:
         print("==> Configure " + color.YELLOW + "git" + color.END)
-        _configure_git()
+        _config_git()
 
 
 # API ------------------------------------------------------------------------#

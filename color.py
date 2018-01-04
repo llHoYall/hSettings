@@ -5,6 +5,7 @@ _BLACK = '30'
 _RED = '31'
 _GREEN = '32'
 _ORANGE = '33'
+_BLUE = '34'
 _WHITE = '37'
 
 
@@ -23,6 +24,8 @@ RED = setColor(False, _RED)
 GREEN = setColor(False, _GREEN)
 ORANGE = setColor(False, _ORANGE)
 YELLOW = setColor(True, _ORANGE)
+BLUE = setColor(False, _BLUE)
+BOLD_BLUE = setColor(True, _BLUE)
 WHITE = setColor(False, _WHITE)
 BOLD_WHITE = setColor(True, _WHITE)
 END = setColor(False, _END)

@@ -1,29 +1,25 @@
 # Import Module --------------------------------------------------------------#
+import os
 import color
 
 
-# Xcode ----------------------------------------------------------------------#
-def _install_xcode():
-    if os.system("xcode-select -p 1> /dev/null"):
-        os.system("xcode-select --install")
-    else:
-        print("      Already installed.")
-
-
-# Homebrew -------------------------------------------------------------------#
-def _install_homebrew():
-    if os.system("brew -v 1> /dev/null"):
-        os.system("/usr/bin/ruby -e '$(curl -fsSL   \
-                  https://raw.githubusercontent.com/Homebrew/install/   \
-                  master/install)'")
+# choco ----------------------------------------------------------------------#
+def _install_choco():
+    if os.system("powershell Get-Command choco -errorAction \
+                 SilentlyContinue 1> null"):
+        os.system("powershell Invoke-WebRequest https://chocolatey.org/ \
+                  install.ps1 -UseBasicParsing | Invoke-Expression")
     else:
         print("      Already installed.")
 
 
 # git ------------------------------------------------------------------------#
 def _install_git():
-    if os.system("git --version 1> /dev/null"):
-        os.system("brew install git git-lfs")
+    if os.system("powershell Get-Command git -errorAction SilentlyContinue  \
+                 1> /dev/null"):
+        os.system("curl -s https://packagecloud.io/install/repositories/    \
+                  github/ git-lfs/script.deb.sh | sudo bash")
+        os.system("sudo apt install git git-lfs")
     else:
         print("      Already installed.")
 
@@ -32,7 +28,7 @@ def _config_git():
     if os.system("git --version 1> /dev/null"):
         print("      Not installed.")
     else:
-        scope = input("    - Input scope [" +
+        scope = input("    - Input scope[" +
                       color.BOLD_BLUE + "G" + color.END + "lobal | " +
                       color.BOLD_BLUE + "L" + color.END + "ocal]: ")
         if scope != 'G' and scope != 'L':
@@ -63,13 +59,13 @@ def _config_git():
             os.system("git config --global color.ui auto")
 
             # core.autocrlf
-            os.system("git config --global core.autocrlf input")
+            os.system("git config --global core.autocrlf true")
 
             # core.editor
             os.system("git config --global core.editor vim")
 
             # credential.helper
-            os.system("git config --global credential.helper osxkeychain")
+            os.system("git config --global credential.helper wincred")
 
             # help.autocorrect
             os.system("git config --global help.autocorrect 1")
@@ -100,10 +96,8 @@ def _config_git():
 
 # Installation ---------------------------------------------------------------#
 def _install_essential():
-    print("==> Install " + color.YELLOW + "xcode" + color.END)
-    _install_xcode()
-    print("==> Install " + color.YELLOW + "homebrew" + color.END)
-    _install_homebrew()
+    print("==> Install " + color.YELLOW + "choco" + color.END)
+    _install_choco()
 
 
 def _install_devtools(args):
@@ -129,3 +123,4 @@ def config(opt, args):
         _install_devtools(args)
     elif opt == 'c':
         _config_devtools(args)
+    os.system("refreshenv")

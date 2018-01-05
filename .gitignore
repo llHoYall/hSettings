@@ -4,3 +4,6 @@
 # [Optimized] Byte-compiled python files
 __pycache__/
 *.pyc
+
+# /dev/null
+null

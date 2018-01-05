@@ -28,7 +28,7 @@ def _config_git():
         scope = input("    - Input scope[" +
                       color.BOLD_BLUE + "G" + color.END + "lobal | " +
                       color.BOLD_BLUE + "L" + color.END + "ocal]: ")
-        if scope !='G' and scope != 'L':
+        if scope != 'G' and scope != 'L':
             print("      Wrong input.")
             return
         option = input("    - Input option [" +
@@ -109,13 +109,14 @@ def _config_devtools(args):
         print("==> Configure " + color.YELLOW + "git" + color.END)
         _config_git()
 
+
 # API ------------------------------------------------------------------------#
 def config(opt, args):
     if opt == 'a':
         _install_essential()
         _install_devtools(args)
         _config_devtools(args)
-    elif opt =='i':
+    elif opt == 'i':
         _install_devtools(args)
     elif opt == 'c':
         _config_devtools(args)

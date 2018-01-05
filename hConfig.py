@@ -1,9 +1,14 @@
 # Import Module --------------------------------------------------------------#
+# Built-In
 import platform
 import sys
+import ctypes
+import subprocess
+# User
 import color
 import mac
 import linux
+import windows
 
 
 # Usage ----------------------------------------------------------------------#
@@ -60,6 +65,22 @@ elif os == 'Linux':
         print("Install & Configure tools for Linux")
     linux.config(opt, args)
 elif os == 'Windows':
-    print("Install tools for Windows")
+    # Check run as administrator
+    if ctypes.windll.shell32.IsUserAnAdmin() == 0:
+        print("Must run as administrator")
+        exit()
+
+    # check powershell version
+    if subprocess.run(['powershell', '$PSVersionTable.PSVersion.Major'], stdout = subprocess.PIPE).stdout.decode('utf-8') < '5':
+        print("Not supported powershell version")
+        exit()
+
+    if opt == 'i':
+        print("Install tools for Windows")
+    elif opt == 'c':
+        print("Configure tools for Windows")
+    else:
+        print("Install & Configure tools for Windows")
+    windows.config(opt, args)
 else:
     print(color.RED + "Error: Not supported OS" + color.END)

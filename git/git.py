@@ -1,7 +1,6 @@
 ###############################################################################
-#   @file       linux.py
-#   @brief      This file is for instsallation and configuration program on
-#               linux.
+#   @file       git.py
+#   @brief      This file installs and configures git program.
 #   @author     llHoYall <hoya128@gmail.com>
 ###############################################################################
 #   @version    v1.0
@@ -12,33 +11,25 @@
 # Import Module --------------------------------------------------------------#
 # Built-In
 import os
+import sys
 # User
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from misc import color
 
-
-# clang ----------------------------------------------------------------------#
-def _install_clang():
-    if os.system("clang -v 2> /dev/null"):
-        os.system("sudo apt install clang")
-    else:
-        print("      Already installed.")
-
-
-# git ------------------------------------------------------------------------#
-def _install_git():
+# Install --------------------------------------------------------------------#
+def install_mac():
     if os.system("git --version 1> /dev/null"):
-        os.system("curl -s https://packagecloud.io/install/repositories/    \
-                  github/ git-lfs/script.deb.sh | sudo bash")
-        os.system("sudo apt install git git-lfs")
+        os.system("brew install git git-lfs")
     else:
         print("      Already installed.")
 
 
-def _config_git():
+# Config ---------------------------------------------------------------------#
+def config_mac():
     if os.system("git --version 1> /dev/null"):
         print("      Not installed.")
     else:
-        scope = input("    - Input scope[" +
+        scope = input("    - Input scope [" +
                       color.BOLD_BLUE + "G" + color.END + "lobal | " +
                       color.BOLD_BLUE + "L" + color.END + "ocal]: ")
         if scope != 'G' and scope != 'L':
@@ -75,7 +66,7 @@ def _config_git():
             os.system("git config --global core.editor vim")
 
             # credential.helper
-            os.system("git config --global credential.helper store")
+            os.system("git config --global credential.helper osxkeychain")
 
             # help.autocorrect
             os.system("git config --global help.autocorrect 1")
@@ -102,34 +93,3 @@ def _config_git():
                 os.system("git config --local user.email 'hoya@ixys.net'")
             elif option == 'H':
                 os.system("git config --local user.email 'hoya128@gmail.com'")
-
-
-# Installation ---------------------------------------------------------------#
-def _install_essential():
-    print("==> Install " + color.YELLOW + "clang" + color.END)
-    _install_clang()
-
-
-def _install_devtools(args):
-    if "git" in args:
-        print("==> Install " + color.YELLOW + "git" + color.END)
-        _install_git()
-
-
-# Configuration --------------------------------------------------------------#
-def _config_devtools(args):
-    if "git" in args:
-        print("==> Configure " + color.YELLOW + "git" + color.END)
-        _config_git()
-
-
-# API ------------------------------------------------------------------------#
-def config(opt, args):
-    if opt == 'a':
-        _install_essential()
-        _install_devtools(args)
-        _config_devtools(args)
-    elif opt == 'i':
-        _install_devtools(args)
-    elif opt == 'c':
-        _config_devtools(args)

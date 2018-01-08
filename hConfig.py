@@ -1,3 +1,13 @@
+###############################################################################
+#   @file       hConfig.py
+#   @brief      This file is for configuring my development environment.
+#   @author     llHoYall <hoya128@gmail.com>
+###############################################################################
+#   @version    v1.0
+#   @note
+#       - 2018.01.05    Created.
+###############################################################################
+
 # Import Module --------------------------------------------------------------#
 # Built-In
 import platform
@@ -5,7 +15,7 @@ import sys
 import ctypes
 import subprocess
 # User
-import color
+from misc import color
 import mac
 import linux
 import windows
@@ -50,19 +60,21 @@ os = platform.system()
 print()
 if os == 'Darwin':
     if opt == 'i':
-        print("Install tools for MAC")
+        print("Install tools for ", end='')
     elif opt == 'c':
-        print("Configure tools for MAC")
+        print("Configure tools for ", end='')
     else:
-        print("Install & Configure tools for MAC")
+        print("Install & Configure tools for ", end='')
+    print(color.MAGENTA + "MAC" +  color.END)
     mac.config(opt, args)
 elif os == 'Linux':
     if opt == 'i':
-        print("Install tools for Linux")
+        print("Install tools for ", end='')
     elif opt == 'c':
-        print("Configure tools for Linux")
+        print("Configure tools for ", end='')
     else:
-        print("Install & Configure tools for Linux")
+        print("Install & Configure tools for ", end='')
+    print(color.MAGENTA + "Linux" + color.END)
     linux.config(opt, args)
 elif os == 'Windows':
     # Check run as administrator
@@ -71,16 +83,18 @@ elif os == 'Windows':
         exit()
 
     # check powershell version
-    if subprocess.run(['powershell', '$PSVersionTable.PSVersion.Major'], stdout = subprocess.PIPE).stdout.decode('utf-8') < '5':
+    if subprocess.run(['powershell', '$PSVersionTable.PSVersion.Major'],    \
+                      stdout = subprocess.PIPE).stdout.decode('utf-8') < '5':
         print("Not supported powershell version")
         exit()
 
     if opt == 'i':
-        print("Install tools for Windows")
+        print("Install tools for ", end='')
     elif opt == 'c':
-        print("Configure tools for Windows")
+        print("Configure tools for ", end='')
     else:
-        print("Install & Configure tools for Windows")
+        print("Install & Configure tools for ", end='')
+    print(color.MAGENTA + "Windows" + color.END)
     windows.config(opt, args)
 else:
     print(color.RED + "Error: Not supported OS" + color.END)

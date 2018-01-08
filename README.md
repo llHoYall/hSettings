@@ -12,7 +12,7 @@ This program configure my development environment.
 
 ### Support List
 
-##### MAC
+##### MAC (17.3.0)
 
 - HomeBrew
 - Xcode
@@ -21,23 +21,23 @@ This program configure my development environment.
 - tmux
 - tmuxinator
 
+##### Linux (Ubuntu 4.4.0)
+
+- clang
+- git
+
 # Reference
 
-### MAC (17.3.0)
+- [homebrew (M)](https://brew.sh)
+- [choco (W)](https://chocolatey.org/install)
 
-- [Xcode](https://developer.apple.com/xcode)
-- [homebrew](https://brew.sh)
-- [git](https://git-scm.com/downloads)
+- [Xcode (M)](https://developer.apple.com/xcode)
+- [git (MLW)](https://git-scm.com/downloads)
+- [clang (L)](https://clang.llvm.org)
+
 - [vim](https://vim.sourceforge.io/download.php)
 - [typora](https://typora.io/)
 - [cmake](https://cmake.org/download)
-
-### Linux
-
-- [clang](https://clang.llvm.org)
-
-### WINDOWS
-
 - [.net framework](https://www.microsoft.com/en-us/download)
 - [windows management framework](https://www.microsoft.com/en-us/download)
 
@@ -55,7 +55,6 @@ This program configure my development environment.
 - [typora](https://typora.io/)
 
 - [github desktop](https://desktop.github.com)
-- [choco](https://chocolatey.org/install)
 - [vim](https://vim.sourceforge.io/download.php)
 - [git](https://git-scm.com/downloads)
 - [vscode](https://code.visualstudio.com/)

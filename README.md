@@ -10,14 +10,25 @@ This program configure my development environment.
 
 &nbsp;
 
+### Support List
+
+##### MAC
+
+- HomeBrew
+- Xcode
+- git
+- iTerm2
+- tmux
+- tmuxinator
+
 # Reference
 
 ### MAC (17.3.0)
 
 - [Xcode](https://developer.apple.com/xcode)
 - [homebrew](https://brew.sh)
-- [vim](https://vim.sourceforge.io/download.php)
 - [git](https://git-scm.com/downloads)
+- [vim](https://vim.sourceforge.io/download.php)
 - [typora](https://typora.io/)
 - [cmake](https://cmake.org/download)
 

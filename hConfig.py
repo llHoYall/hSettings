@@ -47,7 +47,7 @@ if argc > 1:
     else:
         args = sys.argv[1:]
 else:
-    args = ['git']
+    args = ['git', 'terminal']
 
 if opt == 'h' or (opt != 'a' and opt != 'i' and opt != 'c'):
     usage()
@@ -65,7 +65,7 @@ if os == 'Darwin':
         print("Configure tools for ", end='')
     else:
         print("Install & Configure tools for ", end='')
-    print(color.MAGENTA + "MAC" +  color.END)
+    print(color.MAGENTA + "MAC" + color.END)
     mac.config(opt, args)
 elif os == 'Linux':
     if opt == 'i':
@@ -83,8 +83,8 @@ elif os == 'Windows':
         exit()
 
     # check powershell version
-    if subprocess.run(['powershell', '$PSVersionTable.PSVersion.Major'],    \
-                      stdout = subprocess.PIPE).stdout.decode('utf-8') < '5':
+    if subprocess.run(['powershell', '$PSVersionTable.PSVersion.Major'],
+                      stdout=subprocess.PIPE).stdout.decode('utf-8') < '5':
         print("Not supported powershell version")
         exit()
 

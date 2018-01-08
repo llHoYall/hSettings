@@ -16,27 +16,40 @@ from misc import color
 from essential import xcode
 from essential import homebrew
 from git import git
+from terminal import terminal
 
 
 # Installation ---------------------------------------------------------------#
 def _install_essential():
-    print("==> Install " + color.YELLOW + "xcode" + color.END)
+    print("==> Install " + color.ORANGE + "xcode" + color.END)
     xcode.install_mac()
-    print("==> Install " + color.YELLOW + "homebrew" + color.END)
+    print("==> Install " + color.ORANGE + "homebrew" + color.END)
     homebrew.install_mac()
 
 
 def _install_devtools(args):
     if "git" in args:
-        print("==> Install " + color.YELLOW + "git" + color.END)
+        print("==> Install " + color.ORANGE + "git" + color.END)
         git.install_mac()
+
+
+def _install_devenv(args):
+    if "terminal" in args:
+        print("==> Install " + color.ORANGE + "terminal" + color.END)
+        terminal.install_mac()
 
 
 # Configuration --------------------------------------------------------------#
 def _config_devtools(args):
     if "git" in args:
-        print("==> Configure " + color.YELLOW + "git" + color.END)
+        print("==> Configure " + color.ORANGE + "git" + color.END)
         git.config_mac()
+
+
+def _config_devenv(args):
+    if "terminal" in args:
+        print("==> Configure " + color.ORANGE + "terminal" + color.END)
+        terminal.config_mac()
 
 
 # API ------------------------------------------------------------------------#
@@ -44,8 +57,11 @@ def config(opt, args):
     if opt == 'a':
         _install_essential()
         _install_devtools(args)
+        _install_devenv(args)
         _config_devtools(args)
     elif opt == 'i':
         _install_devtools(args)
+        _install_devenv(args)
     elif opt == 'c':
         _config_devtools(args)
+        _config_devenv(args)

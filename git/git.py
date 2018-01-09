@@ -19,8 +19,8 @@ from misc import color  # noqa
 
 # Install --------------------------------------------------------------------#
 def install_mac():
-    if os.system("which git 1> /dev/null"):
-        os.system("brew install git git-lfs")
+    if os.system("git --version 1> /dev/null"):
+        os.system("brew install git git-lfs tig")
     else:
         print("      Already installed.")
 
@@ -29,7 +29,7 @@ def install_linux():
     if os.system("which git 1> /dev/null"):
         os.system("curl -s https://packagecloud.io/install/repositories/    \
                   github/ git-lfs/script.deb.sh | sudo bash")
-        os.system("sudo apt install git git-lfs")
+        os.system("sudo apt install git git-lfs tig")
     else:
         print("      Already installed.")
 

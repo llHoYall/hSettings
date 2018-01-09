@@ -6,7 +6,16 @@ This program configure my development environment.
 ### Usage
 
 - Help
-> $ hConfig -h
+> $ python3 hConfig -h
+
+- Installation and COnfiguration
+> $ python3 hConfig -a
+
+- Installation
+> $ python3 hConfig -i <tools>
+
+- Configuration
+> $ python3 hConfig -c <tools>
 
 &nbsp;
 

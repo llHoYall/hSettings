@@ -35,6 +35,7 @@ def usage():
     print()
     print(color.GREEN + "    tools" + color.END)
     print("    git\t\tInstall, Configure")
+    print("    terminal\t\tInstall, Configure")
 
 
 # Check Argv -----------------------------------------------------------------#

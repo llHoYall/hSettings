@@ -16,18 +16,26 @@ import os
 from misc import color
 from essential import clang
 from git import git
+from terminal import terminal
 
 
 # Installation ---------------------------------------------------------------#
-def _install_essential():
-    print("==> Install " + color.ORANGE + "clang" + color.END)
-    clang.install_linux()
+def _install_essential(args):
+    if "essential" in args:
+        print("==> Install " + color.ORANGE + "clang" + color.END)
+        clang.install_linux()
 
 
 def _install_devtools(args):
     if "git" in args:
         print("==> Install " + color.ORANGE + "git" + color.END)
         git.install_linux()
+
+
+def _install_devenv(args):
+    if "terminal" in args:
+        print("==> Install " + color.ORANGE + "terminal" + color.END)
+        terminal.install_linux()
 
 
 # Configuration --------------------------------------------------------------#
@@ -37,13 +45,23 @@ def _config_devtools(args):
         git.config_linux()
 
 
+def _config_devenv(args):
+    if "terminal" in args:
+        print("==> Configure " + color.ORANGE + "terminal" + color.END)
+        terminal.config_linux()
+
+
 # API ------------------------------------------------------------------------#
 def config(opt, args):
     if opt == 'a':
-        _install_essential()
+        _install_essential(args)
         _install_devtools(args)
+        _install_devenv(args)
         _config_devtools(args)
     elif opt == 'i':
+        _install_essential(args)
         _install_devtools(args)
+        _install_devenv(args)
     elif opt == 'c':
         _config_devtools(args)
+        _config_devenv(args)

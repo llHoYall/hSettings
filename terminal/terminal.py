@@ -45,8 +45,43 @@ def install_mac():
         print("        Already installed.")
 
 
+def install_linux():
+    # tmux
+    print("  => Install " + color.ORANGE + "tmux" + color.END)
+    if os.system("which tmux 1> /dev/null"):
+        os.system("sudo apt install tmux")
+    else:
+        print("        Already installed.")
+
+    # tmuxinator
+    print("  => Install " + color.ORANGE + "tmuxinator" + color.END)
+    if os.system("which tmuxinator 1> /dev/null"):
+        os.system("sudo apt install tmuxinator")
+    else:
+        print("        Already installed.")
+
+
 # Config ---------------------------------------------------------------------#
 def config_mac():
+    # tmux
+    print("  => Configure " + color.ORANGE + "tmux" + color.END)
+    if os.system("which tmux 1> /dev/null"):
+        print("      Not installed.")
+    else:
+        src = os.path.dirname(os.path.realpath(__file__)) + "/.tmux.conf"
+        dst = str(pathlib.Path.home())
+        if os.path.isfile(src):
+            shutil.copy2(src, dst)
+
+        src = os.path.dirname(os.path.realpath(__file__)) + "/get-uptime.sh"
+        dst = str(pathlib.Path.home()) + "/.tmux"
+        if os.path.isfile(src):
+            if not os.path.exists(dst):
+                os.makedirs(dst)
+            shutil.copy2(src, dst)
+
+
+def config_linux():
     # tmux
     print("  => Configure " + color.ORANGE + "tmux" + color.END)
     if os.system("which tmux 1> /dev/null"):

@@ -34,8 +34,9 @@ def usage():
     print("    -h\tHelp")
     print()
     print(color.GREEN + "    tools" + color.END)
+    print("    essential\tInstall")
     print("    git\t\tInstall, Configure")
-    print("    terminal\t\tInstall, Configure")
+    print("    terminal\tInstall, Configure")
 
 
 # Check Argv -----------------------------------------------------------------#
@@ -47,9 +48,8 @@ if argc > 1:
         args = sys.argv[2:]
     else:
         args = sys.argv[1:]
-else:
-    args = ['git', 'terminal']
-
+if argc == 1 or opt == 'a':
+    args = ['essential', 'git', 'terminal']
 if opt == 'h' or (opt != 'a' and opt != 'i' and opt != 'c'):
     usage()
     exit()

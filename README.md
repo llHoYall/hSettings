@@ -34,6 +34,8 @@ This program configure my development environment.
 
 - clang
 - git
+- tmux
+- tmuxinator
 
 # Reference
 

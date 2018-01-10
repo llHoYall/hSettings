@@ -20,11 +20,12 @@ from terminal import terminal
 
 
 # Installation ---------------------------------------------------------------#
-def _install_essential():
-    print("==> Install " + color.ORANGE + "xcode" + color.END)
-    xcode.install_mac()
-    print("==> Install " + color.ORANGE + "homebrew" + color.END)
-    homebrew.install_mac()
+def _install_essential(args):
+    if "essential" in args:
+        print("==> Install " + color.ORANGE + "xcode" + color.END)
+        xcode.install_mac()
+        print("==> Install " + color.ORANGE + "homebrew" + color.END)
+        homebrew.install_mac()
 
 
 def _install_devtools(args):
@@ -55,11 +56,12 @@ def _config_devenv(args):
 # API ------------------------------------------------------------------------#
 def config(opt, args):
     if opt == 'a':
-        _install_essential()
+        _install_essential(args)
         _install_devtools(args)
         _install_devenv(args)
         _config_devtools(args)
     elif opt == 'i':
+        _install_essential(args)
         _install_devtools(args)
         _install_devenv(args)
     elif opt == 'c':

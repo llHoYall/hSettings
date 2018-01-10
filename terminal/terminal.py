@@ -14,6 +14,7 @@
 import os
 import sys
 import shutil
+import pathlib
 # User
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from misc import color  # noqa
@@ -51,5 +52,14 @@ def config_mac():
     if os.system("which tmux 1> /dev/null"):
         print("      Not installed.")
     else:
-        if os.path.isfile(".tmux.conf"):
-            shutil.copyfile(".tmux.conf", "~")
+        src = os.path.dirname(os.path.realpath(__file__)) + "/.tmux.conf"
+        dst = str(pathlib.Path.home())
+        if os.path.isfile(src):
+            shutil.copy2(src, dst)
+
+        src = os.path.dirname(os.path.realpath(__file__)) + "/get-uptime.sh"
+        dst = str(pathlib.Path.home()) + "/.tmux"
+        if os.path.isfile(src):
+            if not os.path.exists(dst):
+                os.makedirs(dst)
+            shutil.copy2(src, dst)

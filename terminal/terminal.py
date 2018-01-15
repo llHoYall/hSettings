@@ -25,7 +25,7 @@ def install_mac():
     # iTerm2
     print("  => Install " + color.ORANGE + "iTerm2" + color.END)
     if os.path.isdir("/Applications/iTerm.app"):
-        print("        Already installed.")
+        print("       Already installed.")
     else:
         os.system("brew cask install iterm2")
 
@@ -34,7 +34,7 @@ def install_mac():
     if os.system("which tmux 1> /dev/null"):
         os.system("brew install tmux")
     else:
-        print("        Already installed.")
+        print("       Already installed.")
 
     # tmuxinator
     print("  => Install " + color.ORANGE + "tmuxinator" + color.END)
@@ -42,7 +42,7 @@ def install_mac():
         os.system("brew install ruby")
         os.system("gem install tmuxinator")
     else:
-        print("        Already installed.")
+        print("       Already installed.")
 
 
 def install_linux():
@@ -51,14 +51,14 @@ def install_linux():
     if os.system("which tmux 1> /dev/null"):
         os.system("sudo apt install tmux")
     else:
-        print("        Already installed.")
+        print("       Already installed.")
 
     # tmuxinator
     print("  => Install " + color.ORANGE + "tmuxinator" + color.END)
     if os.system("which tmuxinator 1> /dev/null"):
         os.system("sudo apt install tmuxinator")
     else:
-        print("        Already installed.")
+        print("       Already installed.")
 
 
 # Config ---------------------------------------------------------------------#
@@ -66,7 +66,7 @@ def config_mac():
     # tmux
     print("  => Configure " + color.ORANGE + "tmux" + color.END)
     if os.system("which tmux 1> /dev/null"):
-        print("      Not installed.")
+        print("       Not installed.")
     else:
         src = os.path.dirname(os.path.realpath(__file__)) + "/.tmux.conf"
         dst = str(pathlib.Path.home())
@@ -85,7 +85,7 @@ def config_linux():
     # tmux
     print("  => Configure " + color.ORANGE + "tmux" + color.END)
     if os.system("which tmux 1> /dev/null"):
-        print("      Not installed.")
+        print("       Not installed.")
     else:
         src = os.path.dirname(os.path.realpath(__file__)) + "/.tmux.conf"
         dst = str(pathlib.Path.home())

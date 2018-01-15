@@ -19,7 +19,7 @@ from misc import color  # noqa
 
 # Install --------------------------------------------------------------------#
 def install_mac():
-    if os.system("brew -v 1> /dev/null"):
+    if os.system("which brew 1> /dev/null"):
         os.system("/usr/bin/ruby -e '$(curl -fsSL   \
                   https://raw.githubusercontent.com/Homebrew/install/   \
                   master/install)'")

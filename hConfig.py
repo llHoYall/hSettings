@@ -37,6 +37,7 @@ def usage():
     print("    essential\tInstall")
     print("    git\t\tInstall, Configure")
     print("    terminal\tInstall, Configure")
+    print("    shell\tInstall, Configure")
 
 
 # Check Argv -----------------------------------------------------------------#
@@ -49,7 +50,7 @@ if argc > 1:
     else:
         args = sys.argv[1:]
 if argc == 1 or opt == 'a':
-    args = ['essential', 'git', 'terminal']
+    args = ['essential', 'git', 'terminal', 'shell']
 if opt == 'h' or (opt != 'a' and opt != 'i' and opt != 'c'):
     usage()
     exit()

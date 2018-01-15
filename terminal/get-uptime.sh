@@ -4,8 +4,14 @@ uptime=$(uptime | tr -d "[:space:]")
 if [[ ${uptime} =~ "day" ]]; then
 	day=${uptime#*up}
 	day=${day%day*}
-	hour=$(echo ${uptime} | cut -d "," -f 2 | cut -d ":" -f 1)
-	min=$(echo ${uptime} | cut -d "," -f 2 | cut -d ":" -f 2)
+	if [[ ${uptime} =~ "min" ]]; then
+		hour="0"
+		min=${uptime#*days,}
+		min=${min%min*}
+	else
+		hour=$(echo ${uptime} | cut -d "," -f 2 | cut -d ":" -f 1)
+		min=$(echo ${uptime} | cut -d "," -f 2 | cut -d ":" -f 2)
+	fi
 elif [[ ${uptime} =~ "min" ]]; then
 	day="0"
 	hour="0"

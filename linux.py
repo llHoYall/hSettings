@@ -17,6 +17,7 @@ from misc import color
 from essential import clang
 from git import git
 from terminal import terminal
+from shell import shell
 
 
 # Installation ---------------------------------------------------------------#
@@ -36,6 +37,9 @@ def _install_devenv(args):
     if "terminal" in args:
         print("==> Install " + color.ORANGE + "terminal" + color.END)
         terminal.install_linux()
+    if "shell" in args:
+        print("==> Install " + color.ORANGE + "shell" + color.END)
+        shell.install_linux()
 
 
 # Configuration --------------------------------------------------------------#
@@ -49,6 +53,9 @@ def _config_devenv(args):
     if "terminal" in args:
         print("==> Configure " + color.ORANGE + "terminal" + color.END)
         terminal.config_linux()
+    if "shell" in args:
+        print("==> Configure " + color.ORANGE + "shell" + color.END)
+        shell.config_linux()
 
 
 # API ------------------------------------------------------------------------#

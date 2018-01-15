@@ -57,15 +57,15 @@ hGit_GetStaged() {
 }
 
 hGit_GetWorkDir() {
-	local modified=$(git status -s | egrep '^.M' | wc -l | tr -d ' ')
+	local modified=$(git status -s | egrep -c '^.M')
 	if [ $modified -gt 0 ]; then
 		echo -n " ~$modified"
 	fi
-	local untracked=$(git status -s | egrep '^\?\?' | wc -l | tr -d ' ')
+	local untracked=$(git ls-files -o exclude-standard | wc -l | tr -d ' ')
 	if [ $untracked -gt 0 ]; then
 		echo -n " +$untracked"
 	fi
-	local removed=$(git status -s | egrep '^.D' | wc -l | tr -d ' ')
+	local removed=$(git status -s | egrep -c '^.D')
 	if [ $removed -gt 0 ]; then
 		echo -n " -$removed"
 	fi

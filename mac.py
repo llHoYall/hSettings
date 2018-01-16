@@ -18,6 +18,7 @@ from essential import homebrew
 from git import git
 from terminal import terminal
 from shell import shell
+from devtool import embedded
 
 
 # Installation ---------------------------------------------------------------#
@@ -27,13 +28,15 @@ def _install_essential(args):
         xcode.install_mac()
         print("==> Install " + color.ORANGE + "homebrew" + color.END)
         homebrew.install_mac()
-
-
-def _install_devtools(args):
     if "git" in args:
         print("==> Install " + color.ORANGE + "git" + color.END)
         git.install_mac()
 
+
+def _install_devtools(args):
+    if "embedded" in args:
+        print("==> Install " + color.ORANGE + "embedded" + color.END)
+        embedded.install_mac()
 
 def _install_devenv(args):
     if "terminal" in args:

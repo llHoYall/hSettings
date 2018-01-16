@@ -27,24 +27,38 @@ This program configure my development environment.
 - Xcode
 - git
 - iTerm2
-- tmux
-- tmuxinator
+- tmux (tmuxinator)
+- zsh (oh-my-zsh)
+- gcc-arm-embedded
+- st-link
 
 ##### Linux (Ubuntu 4.4.0)
 
 - clang
 - git
-- tmux
-- tmuxinator
+- tmux (tmuxinator)
+- zsh (oh-my-zsh)
+
+##### Windows ()
 
 # Reference
+
+### Package Managers
 
 - [homebrew (M)](https://brew.sh)
 - [choco (W)](https://chocolatey.org/install)
 
+### Dev Tools
+
 - [Xcode (M)](https://developer.apple.com/xcode)
 - [git (MLW)](https://git-scm.com/downloads)
 - [clang (L)](https://clang.llvm.org)
+- [gcc-arm-embedded (ML)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm)
+- [ST-Link](http://www.st.com/en/development-tools/st-link-v2.html)
+
+### Dev Environments
+
+### ETC
 
 - [vim](https://vim.sourceforge.io/download.php)
 - [typora](https://typora.io/)

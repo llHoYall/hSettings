@@ -1,6 +1,6 @@
 ###############################################################################
 #   @file       hConfig.py
-#   @brief      This file is for configuring my development environment.
+#   @brief      This file is for configuring hoya's development environment.
 #   @author     llHoYall <hoya128@gmail.com>
 ###############################################################################
 #   @version    v1.0
@@ -38,6 +38,7 @@ def usage():
     print("    git\t\tInstall, Configure")
     print("    terminal\tInstall, Configure")
     print("    shell\tInstall, Configure")
+    print("    embedded\tInstall")
 
 
 # Check Argv -----------------------------------------------------------------#
@@ -50,7 +51,7 @@ if argc > 1:
     else:
         args = sys.argv[1:]
 if argc == 1 or opt == 'a':
-    args = ['essential', 'git', 'terminal', 'shell']
+    args = ['essential', 'git', 'terminal', 'shell', 'embedded']
 if opt == 'h' or (opt != 'a' and opt != 'i' and opt != 'c'):
     usage()
     exit()

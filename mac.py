@@ -18,6 +18,7 @@ from essential import homebrew
 from git import git
 from terminal import terminal
 from shell import shell
+from devtool import embedded
 
 
 # Installation ---------------------------------------------------------------#
@@ -37,6 +38,9 @@ def _install(args):
         elif "shell" == arg:
             print("==> Install " + color.ORANGE + "shell" + color.END)
             shell.install_mac()
+        elif "embedded" == arg:
+            print("==> Install " + color.ORANGE + "embedded" + color.END)
+            embedded.install_mac()
         else:
             print("==> Install " + color.ORANGE + arg + color.END)
             print("      Not supported tool")

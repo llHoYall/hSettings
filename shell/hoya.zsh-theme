@@ -42,15 +42,15 @@ hGit_GetRemote() {
 }
 
 hGit_GetStaged() {
-	local modified=$(git status -s | egrep '^M.' | wc -l | tr -d ' ')
+	local modified=$(git status -s | egrep -c '^M.')
 	if [ $modified -gt 0 ]; then
 		echo -n " ~$modified"
 	fi
-	local added=$(git status -s | egrep '^A.' | wc -l | tr -d ' ')
+	local added=$(git status -s | egrep -c '^A.')
 	if [ $added -gt 0 ]; then
 		echo -n " +$added"
 	fi
-	local removed=$(git status -s | egrep '^D.' | wc -l | tr -d ' ')
+	local removed=$(git status -s | egrep -c '^D.')
 	if [ $removed -gt 0 ]; then
 		echo -n " -$removed"
 	fi
@@ -61,7 +61,7 @@ hGit_GetWorkDir() {
 	if [ $modified -gt 0 ]; then
 		echo -n " ~$modified"
 	fi
-	local untracked=$(git ls-files -o exclude-standard | wc -l | tr -d ' ')
+	local untracked=$(git ls-files -o --exclude-standard | wc -l | tr -d ' ')
 	if [ $untracked -gt 0 ]; then
 		echo -n " +$untracked"
 	fi

@@ -1,11 +1,11 @@
 ###############################################################################
-#   @file       homebrew.py
-#   @brief      This file installs and configures homebrew program.
+#   @file       iTerm2.py
+#   @brief      This file installs and configures iterm2 program.
 #   @author     llHoYall <hoya128@gmail.com>
 ###############################################################################
 #   @version    v1.0
 #   @note
-#       - 2018.01.05    Created.
+#       - 2018.01.18    Created.
 ###############################################################################
 
 # Import Module --------------------------------------------------------------#
@@ -20,13 +20,11 @@ from misc import color  # noqa
 
 # Install --------------------------------------------------------------------#
 def install(hos):
-    print("  => Install " + color.ORANGE + "homebrew" + color.END)
-    if os.system("which brew 1> /dev/null"):
-        os.system("/usr/bin/ruby -e '$(curl -fsSL   \
-                  https://raw.githubusercontent.com/Homebrew/install/   \
-                  master/install)'")
-    else:
+    print("  => Install " + color.ORANGE + "iTerm2" + color.END)
+    if os.path.isdir("/Applications/iTerm.app"):
         print("     Already installed.")
+    else:
+        os.system("brew cask install iterm2")
 
 
 # Main Routine ---------------------------------------------------------------#

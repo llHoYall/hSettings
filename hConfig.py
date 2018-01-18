@@ -17,6 +17,8 @@ import subprocess
 # User
 from misc import color
 from essential import essential
+from git import git
+from terminal import terminal
 
 
 # Usage ----------------------------------------------------------------------#
@@ -40,20 +42,29 @@ def usage():
 
 
 # Install --------------------------------------------------------------------#
-def install(os, args):
+def install(hos, args):
     for arg in args:
         if "essential" == arg:
-            essential.install(os)
+            essential.install(hos)
+        elif "git" == arg:
+            git.install(hos)
+        elif "terminal" == arg:
+            terminal.install(hos)
         else:
             print("==> Install " + color.ORANGE + arg + color.END)
             print(color.RED + "    Error: Not supported tool" + color.END)
 
 
 # Config ---------------------------------------------------------------------#
-def config(os, args):
+def config(hos, args):
     for arg in args:
-        print("==> Configure " + color.ORANGE + arg + color.END)
-        print(color.RED + "    Error: Not supported tool" + color.END)
+        if "git" == arg:
+            git.config(hos)
+        elif "terminal" == arg:
+            terminal.config(hos)
+        else:
+            print("==> Configure " + color.ORANGE + arg + color.END)
+            print(color.RED + "    Error: Not supported tool" + color.END)
 
 
 # Check Argv -----------------------------------------------------------------#
@@ -72,8 +83,11 @@ if opt == 'h' or (opt != 'a' and opt != 'i' and opt != 'c'):
     exit()
 
 # Check OS -------------------------------------------------------------------#
-os = platform.system()
-if os == 'Windows':
+hos = platform.system()
+if hos != 'Darwin' and hos != 'Linux' and hos != 'Windows':
+    print(color.RED + "Error: Not supported OS" + color.END)
+
+if hos == 'Windows':
     # Check run as administrator
     if ctypes.windll.shell32.IsUserAnAdmin() == 0:
         print(color.RED + "Error: Must run as administrator" + color.END)
@@ -82,7 +96,8 @@ if os == 'Windows':
     # check powershell version
     if subprocess.run(['powershell', '$PSVersionTable.PSVersion.Major'],
                       stdout=subprocess.PIPE).stdout.decode('utf-8') < '5':
-        print(color.RED + "Error: Not supported powershell version" + color.END)
+        print(color.RED + "Error: Not supported powershell version"
+              + color.END)
         exit()
 
 # Configuration --------------------------------------------------------------#
@@ -94,19 +109,17 @@ elif opt == 'c':
 else:
     print("Install & Configure tools for ", end='')
 
-if os == 'Darwin':
+if hos == 'Darwin':
     print(color.MAGENTA + "MAC" + color.END)
-elif os == 'Linux':
+elif hos == 'Linux':
     print(color.MAGENTA + "Linux" + color.END)
-elif os == 'Windows':
-    print(color.MAGENTA + "Windows" + color.END)
 else:
-    print(color.RED + "Error: Not supported OS" + color.END)
+    print(color.MAGENTA + "Windows" + color.END)
 
-if opt == 'a':
-    install(os, args)
-    config(os, args)
-elif opt == 'i':
-    install(os, args)
+if opt == 'i':
+    install(hos, args)
 elif opt == 'c':
-    config(os, args)
+    config(hos, args)
+else:
+    install(hos, args)
+    config(hos, args)

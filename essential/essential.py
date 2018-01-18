@@ -12,6 +12,7 @@
 # Built-In
 import os
 import sys
+import platform
 # User
 sys.path.append(os.path.dirname(__file__))
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
@@ -20,10 +21,15 @@ import homebrew         # noqa
 
 
 # Install --------------------------------------------------------------------#
-def install(os):
+def install(hos):
     print("==> Install " + color.ORANGE + "essential" + color.END)
-    if os == 'Darwin':
-        # homebrew
-        homebrew.install(os)
-    else:
-        print(color.RED + "    Error: Not supported tool" + color.END)
+
+    # homebrew
+    if hos == 'Darwin':
+        homebrew.install(hos)
+
+
+# Main Routine ---------------------------------------------------------------#
+if __name__ == '__main__':
+    hos = platform.system()
+    install(hos)

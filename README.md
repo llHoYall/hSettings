@@ -38,6 +38,8 @@ This program configure my development environment.
 - git
 - tmux (tmuxinator)
 - zsh (oh-my-zsh)
+- gcc-arm-embedded
+- st-link
 
 ##### Windows ()
 
@@ -54,7 +56,7 @@ This program configure my development environment.
 - [git (MLW)](https://git-scm.com/downloads)
 - [clang (L)](https://clang.llvm.org)
 - [gcc-arm-embedded (ML)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm)
-- [ST-Link](http://www.st.com/en/development-tools/st-link-v2.html)
+- [ST-Link (M)](http://www.st.com/en/development-tools/st-link-v2.html)
 
 ### Dev Environments
 

@@ -34,3 +34,15 @@ def install_mac():
         os.system("brew install stlink")
     else:
         print("       Already installed.")
+
+
+def install_linux():
+    # gcc-arm-embedded
+    print("  => Install " + color.ORANGE + "gcc-arm-embedded" + color.END)
+    if os.system("which arm-none-eabi-gcc 1> /dev/null"):
+        os.system("sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa")
+        os.system("sudo apt update")
+        os.system("sudo apt remove gcc-arm-embedded")
+        os.system("sudo apt install -y gcc-arm-embedded")
+    else:
+        print("      Already installed.")

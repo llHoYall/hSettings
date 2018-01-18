@@ -1,11 +1,11 @@
 ###############################################################################
-#   @file       clang.py
-#   @brief      This file installs and configures clang program.
+#   @file       essential.py
+#   @brief      This file installs and configures essential program.
 #   @author     llHoYall <hoya128@gmail.com>
 ###############################################################################
 #   @version    v1.0
 #   @note
-#       - 2018.01.08    Created.
+#       - 2018.01.05    Created.
 ###############################################################################
 
 # Import Module --------------------------------------------------------------#
@@ -13,13 +13,17 @@
 import os
 import sys
 # User
+sys.path.append(os.path.dirname(__file__))
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from misc import color  # noqa
+import homebrew         # noqa
 
 
 # Install --------------------------------------------------------------------#
-def install_linux():
-    if os.system("which clang 1> /dev/null"):
-        os.system("sudo apt install clang")
+def install(os):
+    print("==> Install " + color.ORANGE + "essential" + color.END)
+    if os == 'Darwin':
+        # homebrew
+        homebrew.install(os)
     else:
-        print("      Already installed.")
+        print(color.RED + "    Error: Not supported tool" + color.END)

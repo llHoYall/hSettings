@@ -16,9 +16,7 @@ import ctypes
 import subprocess
 # User
 from misc import color
-import mac
-import linux
-import windows
+from essential import essential
 
 
 # Usage ----------------------------------------------------------------------#
@@ -38,7 +36,24 @@ def usage():
     print("    git\t\tInstall, Configure")
     print("    terminal\tInstall, Configure")
     print("    shell\tInstall, Configure")
-    print("    embedded\tInstall")
+    print("    devtool\tInstall")
+
+
+# Install --------------------------------------------------------------------#
+def install(os, args):
+    for arg in args:
+        if "essential" == arg:
+            essential.install(os)
+        else:
+            print("==> Install " + color.ORANGE + arg + color.END)
+            print(color.RED + "    Error: Not supported tool" + color.END)
+
+
+# Config ---------------------------------------------------------------------#
+def config(os, args):
+    for arg in args:
+        print("==> Configure " + color.ORANGE + arg + color.END)
+        print(color.RED + "    Error: Not supported tool" + color.END)
 
 
 # Check Argv -----------------------------------------------------------------#
@@ -51,53 +66,47 @@ if argc > 1:
     else:
         args = sys.argv[1:]
 if argc == 1 or opt == 'a':
-    args = ['essential', 'git', 'terminal', 'shell', 'embedded']
+    args = ['essential', 'git', 'terminal', 'shell', 'devtool']
 if opt == 'h' or (opt != 'a' and opt != 'i' and opt != 'c'):
     usage()
     exit()
 
 # Check OS -------------------------------------------------------------------#
 os = platform.system()
-
-# Configuration --------------------------------------------------------------#
-print()
-if os == 'Darwin':
-    if opt == 'i':
-        print("Install tools for ", end='')
-    elif opt == 'c':
-        print("Configure tools for ", end='')
-    else:
-        print("Install & Configure tools for ", end='')
-    print(color.MAGENTA + "MAC" + color.END)
-    mac.config(opt, args)
-elif os == 'Linux':
-    if opt == 'i':
-        print("Install tools for ", end='')
-    elif opt == 'c':
-        print("Configure tools for ", end='')
-    else:
-        print("Install & Configure tools for ", end='')
-    print(color.MAGENTA + "Linux" + color.END)
-    linux.config(opt, args)
-elif os == 'Windows':
+if os == 'Windows':
     # Check run as administrator
     if ctypes.windll.shell32.IsUserAnAdmin() == 0:
-        print("Must run as administrator")
+        print(color.RED + "Error: Must run as administrator" + color.END)
         exit()
 
     # check powershell version
     if subprocess.run(['powershell', '$PSVersionTable.PSVersion.Major'],
                       stdout=subprocess.PIPE).stdout.decode('utf-8') < '5':
-        print("Not supported powershell version")
+        print(color.RED + "Error: Not supported powershell version" + color.END)
         exit()
 
-    if opt == 'i':
-        print("Install tools for ", end='')
-    elif opt == 'c':
-        print("Configure tools for ", end='')
-    else:
-        print("Install & Configure tools for ", end='')
+# Configuration --------------------------------------------------------------#
+print()
+if opt == 'i':
+    print("Install tools for ", end='')
+elif opt == 'c':
+    print("Configure tools for ", end='')
+else:
+    print("Install & Configure tools for ", end='')
+
+if os == 'Darwin':
+    print(color.MAGENTA + "MAC" + color.END)
+elif os == 'Linux':
+    print(color.MAGENTA + "Linux" + color.END)
+elif os == 'Windows':
     print(color.MAGENTA + "Windows" + color.END)
-    windows.config(opt, args)
 else:
     print(color.RED + "Error: Not supported OS" + color.END)
+
+if opt == 'a':
+    install(os, args)
+    config(os, args)
+elif opt == 'i':
+    install(os, args)
+elif opt == 'c':
+    config(os, args)

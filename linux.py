@@ -14,27 +14,23 @@
 import os
 # User
 from misc import color
-from essential import clang
 from git import git
 from terminal import terminal
 from shell import shell
+from devtool import devtool
 
 
 # Installation ---------------------------------------------------------------#
 def _install(args):
     for arg in args:
-        if "essential" == arg:
-            print("==> Install " + color.ORANGE + "clang" + color.END)
-            clang.install_linux()
-        elif "git" == arg:
-            print("==> Install " + color.ORANGE + "git" + color.END)
-            git.install_linux()
+        if "git" == arg:
+            git.install("l")
         elif "terminal" == arg:
-            print("==> Install " + color.ORANGE + "terminal" + color.END)
-            terminal.install_linux()
+            terminal.install("l")
         elif "shell" == arg:
-            print("==> Install " + color.ORANGE + "shell" + color.END)
-            shell.install_linux()
+            shell.install("l")
+        elif "devtool" == arg:
+            devtool.install("l")
         else:
             print("==> Install " + color.ORANGE + arg + color.END)
             print("      Not supported tool")
@@ -44,14 +40,11 @@ def _install(args):
 def _config(args):
     for arg in args:
         if "git" == arg:
-            print("==> Configure " + color.ORANGE + "git" + color.END)
-            git.config_linux()
+            git.config("l")
         elif "terminal" == arg:
-            print("==> Configure " + color.ORANGE + "terminal" + color.END)
-            terminal.config_linux()
+            terminal.config("l")
         elif "shell" == arg:
-            print("==> Configure " + color.ORANGE + "shell" + color.END)
-            shell.config_linux()
+            shell.config("l")
         else:
             print("==> Configure " + color.ORANGE + arg + color.END)
             print("      Not supported tool")

@@ -19,6 +19,7 @@ from misc import color  # noqa
 
 # Install --------------------------------------------------------------------#
 def install_mac():
+    print("==> Install " + color.ORANGE + "git" + color.END)
     if os.system("git --version 1> /dev/null"):
         os.system("brew install git git-lfs tig")
     else:

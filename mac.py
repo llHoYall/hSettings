@@ -13,34 +13,27 @@
 import os
 # User
 from misc import color
-from essential import xcode
-from essential import homebrew
+from essential import essential
 from git import git
 from terminal import terminal
 from shell import shell
-from devtool import embedded
+from devtool import devtool
+
 
 
 # Installation ---------------------------------------------------------------#
 def _install(args):
     for arg in args:
         if "essential" == arg:
-            print("==> Install " + color.ORANGE + "xcode" + color.END)
-            xcode.install_mac()
-            print("==> Install " + color.ORANGE + "homebrew" + color.END)
-            homebrew.install_mac()
+            essential.install("m")
         elif "git" == arg:
-            print("==> Install " + color.ORANGE + "git" + color.END)
-            git.install_mac()
+            git.install("m")
         elif "terminal" == arg:
-            print("==> Install " + color.ORANGE + "terminal" + color.END)
-            terminal.install_mac()
+            terminal.install("m")
         elif "shell" == arg:
-            print("==> Install " + color.ORANGE + "shell" + color.END)
-            shell.install_mac()
-        elif "embedded" == arg:
-            print("==> Install " + color.ORANGE + "embedded" + color.END)
-            embedded.install_mac()
+            shell.install("m")
+        elif "devtool" == arg:
+            devtool.install("m")
         else:
             print("==> Install " + color.ORANGE + arg + color.END)
             print("      Not supported tool")
@@ -50,14 +43,11 @@ def _install(args):
 def _config(args):
     for arg in args:
         if "git" == arg:
-            print("==> Configure " + color.ORANGE + "git" + color.END)
-            git.config_mac()
+            git.config("m")
         elif "terminal" == arg:
-            print("==> Configure " + color.ORANGE + "terminal" + color.END)
-            terminal.config_mac()
+            terminal.config("m")
         elif "shell" == arg:
-            print("==> Configure " + color.ORANGE + "shell" + color.END)
-            shell.config_mac()
+            shell.config("m")
         else:
             print("==> Configure " + color.ORANGE + arg + color.END)
             print("      Not supported tool")

@@ -1,11 +1,11 @@
 ###############################################################################
-#   @file       homebrew.py
-#   @brief      This file installs and configures homebrew program.
+#   @file       cmake.py
+#   @brief      This file installs and configures cmake program.
 #   @author     llHoYall <hoya128@gmail.com>
 ###############################################################################
 #   @version    v1.0
 #   @note
-#       - 2018.01.05    Created.
+#       - 2018.01.17    Created.
 ###############################################################################
 
 # Import Module --------------------------------------------------------------#
@@ -18,11 +18,8 @@ from misc import color  # noqa
 
 
 # Install --------------------------------------------------------------------#
-def install(os):
-    print("  => Install " + color.ORANGE + "homebrew" + color.END)
-    if os.system("which brew 1> /dev/null"):
-        os.system("/usr/bin/ruby -e '$(curl -fsSL   \
-                  https://raw.githubusercontent.com/Homebrew/install/   \
-                  master/install)'")
+def install_linux():
+    if os.system("which cmake 1> /dev/null"):
+        os.system("sudo apt install -y cmake")
     else:
         print("      Already installed.")

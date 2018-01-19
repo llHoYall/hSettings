@@ -20,9 +20,9 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from misc import color  # noqa
 
 
-# Check installed tmux -------------------------------------------------------#
+# Check installed zsh --------------------------------------------------------#
 def _check_zsh(hos):
-    if hos == 'Darwin' and hos == 'Linux':
+    if hos == 'Darwin' or hos == 'Linux':
         if os.system("which zsh 1> /dev/null"):
             return False
     elif hos == 'Windows':
@@ -33,7 +33,7 @@ def _check_zsh(hos):
 
 def _check_ohmyzsh(hos):
     dir = str(pathlib.Path.home()) + "/.oh-my-zsh"
-    if hos == 'Darwin' and hos == 'Linux':
+    if hos == 'Darwin' or hos == 'Linux':
         if os.path.isdir(dir):
             return False
     elif hos == 'Windows':

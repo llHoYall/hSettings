@@ -19,6 +19,7 @@ from misc import color
 from essential import essential
 from git import git
 from terminal import terminal
+from shell import shell
 
 
 # Usage ----------------------------------------------------------------------#
@@ -50,6 +51,8 @@ def install(hos, args):
             git.install(hos)
         elif "terminal" == arg:
             terminal.install(hos)
+        elif "shell" == arg:
+            shell.install(hos)
         else:
             print("==> Install " + color.ORANGE + arg + color.END)
             print(color.RED + "    Error: Not supported tool" + color.END)
@@ -62,6 +65,8 @@ def config(hos, args):
             git.config(hos)
         elif "terminal" == arg:
             terminal.config(hos)
+        elif "shell" == arg:
+            shell.config(hos)
         else:
             print("==> Configure " + color.ORANGE + arg + color.END)
             print(color.RED + "    Error: Not supported tool" + color.END)

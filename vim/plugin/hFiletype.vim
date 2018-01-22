@@ -16,6 +16,10 @@ endif
 
 "	Vim -------------------------------------------------------------------------"
 if has ("autocmd")
-	au	FileType	vim			setl tw=0
+	aug filetype_vim
+		au!
+		au	FileType	vim			setl tw=0
+		au	BufWritePost	*.vimrc,*.vim	source $MYVIMRC
+	aug END
 endif
 "------------------------------------------------------------------------------"

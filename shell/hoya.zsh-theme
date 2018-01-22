@@ -31,7 +31,7 @@ hGit_GetBranchName() {
 }
 
 hGit_GetRemote() {
-	if git ls-remote &> /dev/null; then
+	if git remote &> /dev/null; then
 		local ahead=$(git rev-list --left-right --count master...origin | cut -d '	' -f1)
 		local behind=$(git rev-list --left-right --count master...origin | cut -d '	' -f2)
 		if [ $ahead -gt 0 ]; then
@@ -74,7 +74,7 @@ hGit_GetWorkDir() {
 }
 
 hGit_GetClean() {
-	if [[ -z $(hGit_GetRemote) && -z $(hGit_GetStaged) && -z $(hGit_GetWorkDir) ]]; then
+	if [ -z "$(git status --porcelain)" ]; then
 		echo "*"
 	fi
 }

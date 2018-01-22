@@ -31,13 +31,15 @@ hGit_GetBranchName() {
 }
 
 hGit_GetRemote() {
-	local ahead=$(git rev-list --left-right --count master...origin | cut -d '	' -f1)
-	local behind=$(git rev-list --left-right --count master...origin | cut -d '	' -f2)
-	if [ $ahead -gt 0 ]; then
-		echo " ↑$ahead"
-	fi
-	if [ $behind -gt 0 ]; then
-		echo " ↓$behind"
+	if git ls-remote &> /dev/null; then
+		local ahead=$(git rev-list --left-right --count master...origin | cut -d '	' -f1)
+		local behind=$(git rev-list --left-right --count master...origin | cut -d '	' -f2)
+		if [ $ahead -gt 0 ]; then
+			echo " ↑$ahead"
+		fi
+		if [ $behind -gt 0 ]; then
+			echo " ↓$behind"
+		fi
 	fi
 }
 
@@ -78,7 +80,7 @@ hGit_GetClean() {
 }
 
 hGit_GetStatus() {
-	if git rev-parse --git-dir > /dev/null 2>&1; then
+	if git rev-parse --is-inside-work-tree &> /dev/null; then
 		echo -n "["
 		echo -n "%{$fg_bold[yellow]%}$(hGit_GetBranchName)%{$reset_color%}"
 		echo -n "%{$fg[magenta]%}$(hGit_GetRemote)%{$reset_color%}"

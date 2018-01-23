@@ -31,7 +31,7 @@ hGit_GetBranchName() {
 }
 
 hGit_GetRemote() {
-	if git remote &> /dev/null; then
+	if [ ! -z $(git remote) ]; then
 		local ahead=$(git rev-list --left-right --count master...origin | cut -d '	' -f1)
 		local behind=$(git rev-list --left-right --count master...origin | cut -d '	' -f2)
 		if [ $ahead -gt 0 ]; then
@@ -63,7 +63,7 @@ hGit_GetWorkDir() {
 	if [ $modified -gt 0 ]; then
 		echo -n " ~$modified"
 	fi
-	local untracked=$(git ls-files -o --exclude-standard | wc -l | tr -d ' ')
+	local untracked=$(git status -s -u | egrep -c '^\?\?')
 	if [ $untracked -gt 0 ]; then
 		echo -n " +$untracked"
 	fi

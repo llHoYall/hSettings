@@ -13,6 +13,7 @@
 import os
 import sys
 import platform
+import shutil
 # User
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from misc import color  # noqa
@@ -20,10 +21,7 @@ from misc import color  # noqa
 
 # Check installed git --------------------------------------------------------#
 def _check(hos):
-    if hos == 'Darwin' and hos == 'Linux':
-        if os.system("which git 1> /dev/null"):
-            return False
-    elif hos == 'Windows':
+    if shutil.which("git") == None:
         return False
     else:
         return True

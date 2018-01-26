@@ -13,6 +13,7 @@
 import os
 import sys
 import platform
+import shutil
 # User
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from misc import color  # noqa
@@ -21,7 +22,7 @@ from misc import color  # noqa
 # Install --------------------------------------------------------------------#
 def install(hos):
     print("  => Install " + color.ORANGE + "homebrew" + color.END)
-    if os.system("which brew 1> /dev/null"):
+    if shutil.which("brew") == None:
         os.system("/usr/bin/ruby -e '$(curl -fsSL   \
                   https://raw.githubusercontent.com/Homebrew/install/   \
                   master/install)'")

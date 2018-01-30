@@ -32,8 +32,8 @@ hGit_GetBranchName() {
 
 hGit_GetRemote() {
 	if [ ! -z $(git remote) ]; then
-		local ahead=$(git rev-list --left-right --count master...origin | cut -d '	' -f1)
-		local behind=$(git rev-list --left-right --count master...origin | cut -d '	' -f2)
+		local ahead=$(git rev-list --left-right --count master...origin/master | cut -d '	' -f1)
+		local behind=$(git rev-list --left-right --count master...origin/master | cut -d '	' -f2)
 		if [ $ahead -gt 0 ]; then
 			echo " ↑$ahead"
 		fi

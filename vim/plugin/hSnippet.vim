@@ -9,18 +9,18 @@
 
 "	Makefile --------------------------------------------------------------------"
 if has ("autocmd")
-	au	FileType	makefile		nnoremap <buffer> / I#<ESC>
+	au	FileType	makefile		nnoremap <buffer> <leader>/ I#<ESC>
 endif
 "------------------------------------------------------------------------------"
 
 "	Vim -------------------------------------------------------------------------"
 if has ("autocmd")
-	au	FileType	vim			nnoremap <buffer> /	I"<ESC>
+	au	FileType	vim					nnoremap <buffer> <leader>/	I"<ESC>
 endif
 "------------------------------------------------------------------------------"
 
 "	C ---------------------------------------------------------------------------"
 if has ("autocmd")
-	au	FileType	c			nnoremap <buffer> /	I//<ESC>
+	au	FileType	c						nnoremap <buffer> <leader>/	I//<ESC>
 endif
 "------------------------------------------------------------------------------"

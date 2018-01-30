@@ -40,8 +40,8 @@ def _install(hos):
     if hos == 'Darwin':
         os.system("brew install git git-lfs tig")
     elif hos == 'Linux':
-        os.system("curl -s https://packagecloud.io/install/repositories/github/    \
-                  git-lfs/script.deb.sh | sudo bash")
+        os.system("curl -s https://packagecloud.io/install/repositories/    \
+                  github/git-lfs/script.deb.sh | sudo bash")
         os.system("sudo apt install git git-lfs tig")
     else:
         print(color.RED + "    Error: Not supported tool" + color.END)

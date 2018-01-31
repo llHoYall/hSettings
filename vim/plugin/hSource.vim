@@ -35,3 +35,8 @@ call NERDTreeHighlightFile('md', 'blue', 'none', 'blue', '#151515')
 call NERDTreeHighlightFile('sh', 'yellow', 'none', 'yellow', '#151515')
 call NERDTreeHighlightFile('ps1', 'yellow', 'none', 'yellow', '#151515')
 "------------------------------------------------------------------------------"
+
+" Folding ---------------------------------------------------------------------"
+se		fdm=marker
+map		<leader>f		v]}zf
+"------------------------------------------------------------------------------"

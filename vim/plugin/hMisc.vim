@@ -19,14 +19,14 @@ nnoremap	<S-Down>	ddp
 "------------------------------------------------------------------------------"
 
 " Backspace -------------------------------------------------------------------"
-nnoremap	<BS>			X
+nnoremap	<BS>		X
 "------------------------------------------------------------------------------"
 
 " To Lower/Upper Case ---------------------------------------------------------"
-nnoremap	<C-u>			viwUw
-inoremap	<C-u>			<ESC>viwUwa
-nnoremap	<C-i>			viwuw
-inoremap	<C-i>			<ESC>viwuwa
+nnoremap	<leader>u		viwUe
+inoremap	<leader>u		<ESC>viwUea
+nnoremap	<leader>l		viwue
+inoremap	<leader>l		<ESC>viwuea
 "------------------------------------------------------------------------------"
 
 "	Show Invisible Character ----------------------------------------------------"

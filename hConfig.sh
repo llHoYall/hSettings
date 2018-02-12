@@ -1,33 +1,57 @@
 #!/bin/bash
 
-# Color Definition ------------------------------------------------------------#
-red='\033[0;31m'
-yellow='\033[0;33m'
-nc='\033[0m'
+# Includes --------------------------------------------------------------------#
+path=$PWD
+cd $(dirname $0)
+. misc/color.sh
 
 # Usage Function --------------------------------------------------------------#
 function usage() {
-	echo "[Usage]"
-	echo "for MAC or Linux"
-	echo "  usage: ./install.sh [list of tools]"
-	echo "    list of supported tools"
-	echo "    - all"
-	echo "		- terminal"
-	echo "    - shell"
-	echo "    - git"
-	echo "    - vim"
-	echo "  ex: ./install.sh all"
-	echo "  ex: ./install.sh git vim"
+	echo
+	echo -ne $BR_WHITE"  Usage: "$END
+	echo -e $YELLOW"./hConfig.sh [opt] [tools]"$END
+	echo
+	echo -e $GREEN"    opt"$END
+	echo -e "    -a\tInstall and Configure. (Default)"
+	echo -e "    -i\tInstall only"
+	echo -e "    -c\tConfigure only"
+	echo -e "    -h\tHelp"
+	echo
+	echo -e $GREEN"    tools"$END
+	echo -e "    essential\tInstall"
 }
 
+# Check Argument --------------------------------------------------------------#
+args=None
+opt=a
+if [ $# -gt 0 ]; then
+	if [ $1 == "-i" ]; then
+		opt=i
+	elif [ $1 == "-c" ]; then
+		opt=c
+	else
+		usage
+		exit
+	fi
+fi
+if [ $# -eq 1 -a $1 == '-h' ]; then
+	usage
+	exit
+fi
+
+args=( "$@" )
+if [ $# -eq 1 -a $1 == "all" ]; then
+	args=( terminal shell git vim )
+fi
+
 # Check OS --------------------------------------------------------------------#
-os=None
+hos=None
 if [ "$(uname -s)" == "Darwin" ]; then
-	os=MAC
+	hos=MAC
 	echo "Install tools for MAC"
 	echo
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-	os=LINUX
+elif [ "$(uname -s)" == "Linux" ]; then
+	hos=LINUX
 	echo "Install tools for Linux"
 	echo
 else
@@ -36,95 +60,92 @@ else
 	exit 1
 fi
 
-# Check Argument --------------------------------------------------------------#
-args=None
-if [ $# -lt 1 -o $# -gt 4 ]; then
-	usage
-	exit 2
-fi
-
 # Install Tools ---------------------------------------------------------------#
-path=$PWD
-cd $(dirname $0)
-
-# brew
-if [ ${os} = MAC ]; then
-	echo -e "==> Install ${yellow}brew${nc}"
-	if [ -z "$(command -v brew)" ]; then
-		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	else
-		echo -e "${yellow}brew${nc} has been installed"
-		echo
-	fi
-fi
-
 # fzf
-echo -e "==> Install ${yellow}fzf${nc}"
-if [ -z "$(command -v fzf)" ]; then
-	if [ ${os} = MAC ]; then
-		brew install fzf
-		$(brew --prefix)/opt/fzf/install
-	elif [ ${os} = LINUX ]; then
-		if [ -z "$(command -v git)" ]; then
-			sudo apt install git -y
-		fi
-		git clone --depth 1 https://github.com/junegunn/fzf ~/.fzf
-		~/.fzf/install
-	fi
-else
-	echo -e "${yellow}fzf${nc} has been installed"
-	echo
-	if [ ${os} = MAC ]; then
-		brew reinstall fzf
-	elif [ ${os} = LINUX ]; then
-		cd ~/.fzf && git pull && ./install
-		cd -
-	fi
-fi
+#echo -e "==> Install ${yellow}fzf${nc}"
+#if [ -z "$(command -v fzf)" ]; then
+#	if [ ${os} = MAC ]; then
+#   brew install fzf
+#		$(brew --prefix)/opt/fzf/install
+#	elif [ ${os} = LINUX ]; then
+#		if [ -z "$(command -v git)" ]; then
+#			sudo apt install git -y
+#		fi
+#		git clone --depth 1 https://github.com/junegunn/fzf ~/.fzf
+#		~/.fzf/install
+#	fi
+#else
+#	echo -e "${yellow}fzf${nc} has been installed"
+#	echo
+#	if [ ${os} = MAC ]; then
+#		brew reinstall fzf
+#	elif [ ${os} = LINUX ]; then
+#		cd ~/.fzf && git pull && ./install
+#		cd -
+#	fi
+#fi
 
 # fasd
-echo -e "==> Install ${yellow}fasd${nc}"
-if [ -z "$(command -v fasd)" ]; then
-	if [ ${os} = MAC ]; then
-		brew install fasd
-	elif [ ${os} = LINUX ]; then
-		if [ -z "$(command -v git)" ]; then
-			sudo apt install git -y
-		fi
-		git clone --depth 1 https://github.com/clvv/fasd ~/.fasd
-		cd ~/.fasd && sudo make install
-		cd -
-	fi
+#echo -e "==> Install ${yellow}fasd${nc}"
+#if [ -z "$(command -v fasd)" ]; then
+#	if [ ${os} = MAC ]; then
+#		brew install fasd
+#	elif [ ${os} = LINUX ]; then
+#		if [ -z "$(command -v git)" ]; then
+#			sudo apt install git -y
+#		fi
+#		git clone --depth 1 https://github.com/clvv/fasd ~/.fasd
+#		cd ~/.fasd && sudo make install
+#		cd -
+#	fi
+#else
+#	echo -e "${yellow}fasd${nc} has been installed"
+#	echo
+#fi
+
+if [ $opt == 'i' ]; then
+	echo -n "Install tools for "
+elif [ $opt == 'c' ]; then
+	echo -n "Configure tools for "
 else
-	echo -e "${yellow}fasd${nc} has been installed"
-	echo
+	echo -n "Install & Configure tools for "
 fi
 
-args=( "$@" )
-if [ $# -eq 1 -a $1 == "all" ]; then
-	args=( terminal shell git vim )
+if [ $hos == 'MAC' ]; then
+	echo -e $MAGENTA"Mac"$END
+elif [ $hos == 'LINUX' ]; then
+	echo -e $MAGENTA"Linux"$END
 fi
 
-for i in "${args[@]}"; do
-	echo -e "==> Install ${yellow}$i${nc}"
-	case $i in
-		"terminal")
-			terminal/terminal_install.sh
-			;;
-		"shell")
-			shell/zsh_install.sh
-			;;
-		"git")
-			git/git_install.sh
-			;;
-		"vim")
-			vim/vim_install.sh
-			;;
-		*)
-			echo -e "${red}Error: Not supported tool${nc}"
-			echo
-	esac
-done
+if [ $opt == 'i' ]; then
+	install $hos $args
+elif [ $opt == 'c' ]; then
+	config $hos $args
+else
+	install $hos $args
+	config $hos $args
+fi
+
+#for i in "${args[@]}"; do
+#	echo -e "==> Install ${yellow}$i${nc}"
+#	case $i in
+#		"terminal")
+#			terminal/terminal_install.sh
+#			;;
+#		"shell")
+#			shell/zsh_install.sh
+#			;;
+#		"git")
+#			git/git_install.sh
+#			;;
+#		"vim")
+#			vim/vim_install.sh
+#			;;
+#		*)
+#			echo -e "${red}Error: Not supported tool${nc}"
+#			echo
+#	esac
+#done
 
 # Change Directory ------------------------------------------------------------#
 cd $path

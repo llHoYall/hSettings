@@ -24,5 +24,8 @@ _END='m'
 
 # Make Color ------------------------------------------------------------------#
 RED=$_START$_FG_RED$_END
+GREEN=$_START$_FG_GREEN$_END
 YELLOW=$_START$_FG_YELLOW$_END
+BR_YELLOW=$_START$_BOLD';'$_FG_YELLOW$_END
+BR_WHITE=$_START$_BOLD';'$_FG_WHITE$_END
 END=$_START$_RESET$_END

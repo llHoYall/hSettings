@@ -108,7 +108,7 @@ export EDITOR='vim'
 
 # HoYa #########################################################################
 # Terminal
-export TERM=xterm-256color
+export TERM=screen-256color
 
 # LS_COLORS -------------------------------------------------------------------#
 # Sexy Color Palette

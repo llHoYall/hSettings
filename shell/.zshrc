@@ -70,6 +70,7 @@ plugins=(
 	fasd
 	tmux
 	tmuxinator
+	virtualenv
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 )

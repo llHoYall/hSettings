@@ -12,6 +12,10 @@
 # %*	: current time of day in 24-hour format, with seconds.
 # %B	: start boldface mode.
 
+hGetVirtualenvName() {
+	[ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
+
 hGetUsername() {
 	local color_name
 	if [ $UID -eq 0 ]; then
@@ -94,6 +98,6 @@ hGit_GetStatus() {
 }
 
 PROMPT='
-$(hGetUsername) $(hGetPath)
+$(hGetVirtualenvName)$(hGetUsername) $(hGetPath)
 $(hGit_GetStatus) %(!.#.$) '
 RPROMPT='%{$fg[white]%}[%*]%{$reset_color%}'

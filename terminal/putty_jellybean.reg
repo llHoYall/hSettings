@@ -1,0 +1,27 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\jellybean]
+"Colour0"="222,222,222"
+"Colour1"="222,222,222"
+"Colour2"="18,18,18"
+"Colour3"="18,18,18"
+"Colour4"="18,18,18"
+"Colour5"="222,222,222"
+"Colour6"="146,146,146"
+"Colour7"="189,189,189"
+"Colour8"="226,115,115"
+"Colour9"="255,161,161"
+"Colour10"="148,185,121"
+"Colour11"="189,222,171"
+"Colour12"="255,186,123"
+"Colour13"="255,220,160"
+"Colour14"="151,190,220"
+"Colour15"="177,216,246"
+"Colour16"="225,192,250"
+"Colour17"="251,218,255"
+"Colour18"="0,152,142"
+"Colour19"="26,178,168"
+"Colour20"="222,222,222"
+"Colour21"="255,255,255"
+
+"Font"="D2Coding"

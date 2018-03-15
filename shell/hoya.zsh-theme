@@ -17,13 +17,13 @@ hGetVirtualenvName() {
 }
 
 hGetUsername() {
-	local color_name
 	if [ $UID -eq 0 ]; then
-		color_name="red"			# root
+		# root
+		echo "%{$fg[red]%}%n%{$reset_color%}"
 	else
-		color_name="green"		# user
+		# user
+		echo "%{$fg_bold[green]%}%n%{$reset_color%}"
 	fi
-	echo "%{$fg[$color_name]%}%n%{$reset_color%}"
 }
 
 hGetPath() {

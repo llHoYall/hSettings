@@ -28,14 +28,12 @@ def install(hos):
 
     # homebrew
     if hos == 'Darwin':
-        os.system(path + "/homebrew_install.sh")
+        subprocess.Popen(["/bin/bash", path + '/homebrew_install.sh'])
 
     # chocolatey
     if hos == 'Windows':
-        p = subprocess.Popen(["powershell.exe",
-                              path + "/chocolatey_install.ps1"],
-                             stdout=sys.stdout)
-        p.communicate()
+        subprocess.Popen(["powershell.exe",
+                          path + "/chocolatey_install.ps1"]).communicate()
 
 
 # Config ---------------------------------------------------------------------#

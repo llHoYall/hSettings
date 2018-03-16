@@ -1,12 +1,13 @@
 # hConfig
-This program configure my development environment.
+This program configures my development environment.
 
-&nbsp;
+
 
 ### Usage
 
 - Help
 > $ python3 hConfig -h
+> $ ./hConfig.py -h
 
 - Installation and COnfiguration
 > $ python3 hConfig -a
@@ -17,11 +18,11 @@ This program configure my development environment.
 - Configuration
 > $ python3 hConfig -c <tools>
 
-&nbsp;
+
 
 ### Support List
 
-##### MAC (17.3.0)
+##### MAC (Darwin Kernel 17.4.0)
 
 - HomeBrew
 - Xcode
@@ -42,6 +43,8 @@ This program configure my development environment.
 - st-link
 
 ##### Windows ()
+
+
 
 # Reference
 

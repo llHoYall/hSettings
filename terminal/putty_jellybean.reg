@@ -24,4 +24,5 @@ Windows Registry Editor Version 5.00
 "Colour20"="222,222,222"
 "Colour21"="255,255,255"
 
-"Font"="D2Coding"
+"Font"="D2Coding ligature"
+"TerminalType"="screen-256color"

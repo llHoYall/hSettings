@@ -25,7 +25,7 @@ from shell import shell
 # Usage ----------------------------------------------------------------------#
 def usage():
     print()
-    print(color.BOLD_WHITE + " Usage: " + color.END +
+    print(color.BR_WHITE + " Usage: " + color.END +
           color.ORANGE + "hConfig.py [opt] [tools]" + color.END)
     print()
     print(color.GREEN + "    [opt]" + color.END)

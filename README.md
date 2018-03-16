@@ -42,7 +42,9 @@ This program configures my development environment.
 - gcc-arm-embedded
 - st-link
 
-##### Windows ()
+##### Windows (Windows NT 6.1.7601)
+
+- chocolatey
 
 
 

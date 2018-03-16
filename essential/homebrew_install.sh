@@ -1,11 +1,11 @@
 #!/bin/bash
 ################################################################################
-#   @file       homebrew_install.sh
-#   @brief      This file installs and configures homebrew program.
-#   @author     llHoYall <hoya128@gmail.com>
-#   @version    v1.0
+#   @file     homebrew_install.sh
+#   @brief    This file installs homebrew program.
+#   @author   llHoYall <hoya128@gmail.com>
+#   @version	v1.0
 #   @note
-#       - 2018.03.07    Created.
+#       - 2018.03.07	Created.
 ################################################################################
 
 # Include Scripts -------------------------------------------------------------#

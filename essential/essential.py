@@ -11,6 +11,7 @@
 # Built-In
 import os
 import sys
+import subprocess
 # User
 sys.path.append(os.path.dirname(__file__))
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
@@ -27,7 +28,14 @@ def install(hos):
 
     # homebrew
     if hos == 'Darwin':
-        os.system(path + "/homebrew_install.sh ")
+        os.system(path + "/homebrew_install.sh")
+
+    # chocolatey
+    if hos == 'Windows':
+        p = subprocess.Popen(["powershell.exe",
+                              path + "/chocolatey_install.ps1"],
+                             stdout=sys.stdout)
+        p.communicate()
 
 
 # Config ---------------------------------------------------------------------#

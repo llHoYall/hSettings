@@ -1,26 +1,27 @@
 #!/bin/bash
+################################################################################
+#	@file			git_install.sh
+#	@brief		This file installs git program.
+#	@author		llHoYall <hoya128@gmail.com>
+#	@version	v1.0
+#	@note
+#		-	2018.03.16	Created.
+################################################################################
 
-# Color Definition ------------------------------------------------------------#
-red='\033[0;31m'
-yellow='\033[0;33m'
-nc='\033[0m'
+# Include Scripts -------------------------------------------------------------#
+cd $(dirname $0)
+. ../misc/color.sh
 
 # Install Git -----------------------------------------------------------------"
-if [ "$(uname -s)" == "Darwin" ]; then
-	if [ -z "$(command -v git)" ]; then
-		brew install git
-	else
-		echo -e "${yellow}git${nc} has been installed"
-		echo
-	fi
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-	if [ -z "$(command -v git)" ]; then
-		apt-get install git -y
-	else
-		echo -e "${yellow}git${nc} has been installed"
-		echo
+echo -e " => Install ${YELLOW}git${END}"
+
+if [ -z "$(command -v git)" ]; then
+	if [ "$(uname -s)" == "Darwin" ]; then
+		brew install git git-lfs tig
+	elif [ "$(uname -s)" == "Linux" ]; then
+		curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+		sudo apt install git git-lfs tig
 	fi
 else
-	echo -e "${red}Error: Not supported OS${nc}"
-	echo
+	echo -e "    Already installed."
 fi

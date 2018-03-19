@@ -1,5 +1,5 @@
 ###############################################################################
-#   @file       essential.py
+#   @file       essential/essential.py
 #   @brief      This file installs and configures essential program.
 #   @author     llHoYall <hoya128@gmail.com>
 #   @version    v1.0
@@ -13,7 +13,6 @@ import os
 import sys
 import subprocess
 # User
-sys.path.append(os.path.dirname(__file__))
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from misc import color  # noqa
 
@@ -28,7 +27,8 @@ def install(hos):
 
     # homebrew
     if hos == 'Darwin':
-        subprocess.Popen(["/bin/bash", path + '/homebrew_install.sh'])
+        subprocess.Popen(["/bin/bash", path + '/homebrew_install.sh'])  \
+                  .communicate()
 
     # chocolatey
     if hos == 'Windows':

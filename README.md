@@ -25,18 +25,18 @@ This program configures my development environment.
 ##### MAC (Darwin Kernel 17.4.0)
 
 - HomeBrew
-- Xcode
 - git
 - iTerm2
 - tmux (tmuxinator)
 - zsh (oh-my-zsh)
+- Xcode
 - gcc-arm-embedded
 - st-link
 
-##### Linux (Ubuntu 4.4.0)
+##### Linux (Mint 4.10.0-38-generic)
 
-- clang
 - git
+- clang
 - tmux (tmuxinator)
 - zsh (oh-my-zsh)
 - gcc-arm-embedded
@@ -45,6 +45,7 @@ This program configures my development environment.
 ##### Windows (Windows NT 6.1.7601)
 
 - chocolatey
+- git
 
 
 
@@ -55,15 +56,16 @@ This program configures my development environment.
 - [homebrew (M)](https://brew.sh)
 - [choco (W)](https://chocolatey.org/install)
 
+### Dev Environments
+
+- [git (MLW)](https://git-scm.com/downloads)
+
 ### Dev Tools
 
 - [Xcode (M)](https://developer.apple.com/xcode)
-- [git (MLW)](https://git-scm.com/downloads)
 - [clang (L)](https://clang.llvm.org)
 - [gcc-arm-embedded (ML)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm)
 - [ST-Link (M)](http://www.st.com/en/development-tools/st-link-v2.html)
-
-### Dev Environments
 
 ### ETC
 

@@ -7,3 +7,5 @@ Else {
 	choco install git -y
 }
 Write-Host
+
+# choco instsall git-lfs

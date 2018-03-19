@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 ###############################################################################
 #   @file       hConfig.py
-#   @brief      This file is for configuring hoya's development environment.
+#   @brief      This file configures hoya's development environment.
 #   @author     llHoYall <hoya128@gmail.com>
 #   @version    v1.0
 #   @note

@@ -16,7 +16,16 @@ o	python3 hConfig.py -c essential (MLW)
 o	./homebrew\_install.sh (M)
 
 # Git (Git)
-o	python3 hConfig -i git (L)
-	python3 hConfig -c git
-o ./git\_install.sh (M)
-o	./git\_config.sh (M)
+o	python3 hConfig -i git (ML)
+o	python3 hConfig -c git (ML)
+o ./git\_install.sh (ML)
+o	./git\_config.sh (ML)
+	./git\_install.ps1
+	./git\_config.ps1
+
+# Terminal (iTerm2, Tmux, Tmuxinator, Putty)
+	python3 hConfig -i terminal
+	python3 hConfig -c terminal
+	./iTerm2\_install.sh
+	./tmux\_install.sh
+	./putty\_install.ps1

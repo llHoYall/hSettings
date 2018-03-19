@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 ###############################################################################
 #   @file       essential/essential.py
 #   @brief      This file installs and configures essential program.

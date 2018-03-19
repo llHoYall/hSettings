@@ -1,8 +1,8 @@
+#!/usr/bin/env python3
 ###############################################################################
-#   @file       terminal.py
+#   @file       terminal/terminal.py
 #   @brief      This file installs and configures terminal program.
 #   @author     llHoYall <hoya128@gmail.com>
-###############################################################################
 #   @version    v1.0
 #   @note
 #       - 2018.01.05    Created.
@@ -12,39 +12,48 @@
 # Built-In
 import os
 import sys
-import platform
+import subprocess
 # User
-sys.path.append(os.path.dirname(__file__))
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from misc import color  # noqa
-import iTerm2           # noqa
-import tmux             # noqa
+
+
+# Global Variables -----------------------------------------------------------#
+path = os.path.dirname(__file__)
 
 
 # Install --------------------------------------------------------------------#
 def install(hos):
-    print("==> Install " + color.ORANGE + "terminal" + color.END)
+    print("==> Install " + color.BR_CYAN + "terminal" + color.END)
 
     # iTerm2
     if hos == 'Darwin':
-        iTerm2.install(hos)
+        subprocess.Popen(['/bin/bash', path + '/terminal/iTerm2_install.sh']) \
+                  .communicate()
 
     # tmux (tmuxinator)
     if hos == 'Darwin' or hos == 'Linux':
-        tmux.install(hos)
+        subprocess.Popen(['/bin/bash', path + '/terminal/tmux_install.sh']) \
+                  .communicate()
+
+    # putty
+    if hos == 'Windows':
+        subprocess.Popen(['powershell.exe',
+                          path + '/terminal/putty_install.ps1'])    \
+                  .communicate()
 
 
 # Config ---------------------------------------------------------------------#
 def config(hos):
     print("==> Config " + color.ORANGE + "terminal" + color.END)
 
-    # tmux
+    # tmux (tmuxinator)
     if hos == 'Darwin' or hos == 'Linux':
-        tmux.config(hos)
+        subprocess.Popen(['/bin/bash', path + '/terminal/tmux_config.sh'])  \
+                  .communicate()
 
-
-# Main Routine ---------------------------------------------------------------#
-if __name__ == '__main__':
-    hos = platform.system()
-    install(hos)
-    config(hos)
+    # putty
+    if hos == 'Windows':
+        subprocess.Popen(['powershell.exe',
+                           path + '/terminal/putty_config.ps1'])    \
+                  .communicate()

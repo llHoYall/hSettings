@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 ###############################################################################
 #   @file       git/git.py
 #   @brief      This file installs and configures git program.
@@ -40,4 +41,4 @@ def config(hos):
         subprocess.Popen(["/bin/bash", path + '/git_config.sh']).communicate()
     elif hos == 'Windows':
         subprocess.Popen(["powershell.exe", path + "/git_config.ps1"])  \
-                  .Communicate()
+                  .communicate()

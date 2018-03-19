@@ -11,7 +11,7 @@
 # Include Scripts -------------------------------------------------------------#
 cd $(dirname $0)
 . ../misc/color.sh
-cd -
+cd - > /dev/null
 
 # Configure Git ---------------------------------------------------------------#
 echo -ne "    Input scope [(${BLUE}G${END})lobal | (${BLUE}L${END})ocal]: "

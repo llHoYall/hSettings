@@ -11,6 +11,8 @@
 # Include Scripts -------------------------------------------------------------#
 cd $(dirname $0)
 . ../misc/color.sh
+
+# Change Directory ------------------------------------------------------------#
 cd - > /dev/null
 
 # Configure Git ---------------------------------------------------------------#
@@ -26,6 +28,9 @@ case ${scope} in
 			git config --global user.name "HoYa"
 		elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
 			git config --global user.name "llHoYall"
+		else
+			echo -e "    ${RED}Invalid option${END}"
+			exit 1
 		fi
 
 		# user.email
@@ -33,6 +38,9 @@ case ${scope} in
 			git config --global user.email "hoya@ixys.net"
 		elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
 			git config --global user.email "hoya128@gmail.com"
+		else
+			echo -e "    ${RED}Invalid option${END}"
+			exit 1
 		fi
 
 		# color.ui
@@ -69,6 +77,9 @@ case ${scope} in
 			git config --local user.name "HoYa"
 		elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
 			git config --local user.name "llHoYall"
+		else
+			echo -e "    ${RED}Invalid option${END}"
+			exit 1
 		fi
 
 		# user.email
@@ -76,6 +87,12 @@ case ${scope} in
 			git config --local user.email "hoya@ixys.net"
 		elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
 			git config --local user.email "hoya128@gmail.com"
+		else
+			echo -e "    ${RED}Invalid option${END}"
+			exit 1
 		fi
 		;;
+	*)
+		echo -e "    ${RED}Invalid scope${END}"
+		exit 1
 esac

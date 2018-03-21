@@ -17,7 +17,6 @@ import subprocess
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from misc import color  # noqa
 
-
 # Global Vairables -----------------------------------------------------------#
 path = os.path.dirname(__file__)
 

@@ -8,43 +8,42 @@
  ##############################################################################>
 
 <# Change Directory ----------------------------------------------------------#>
-<#Set-Location $Args[0] #>
-(Get-Location).path
+If ($Args.count -gt 0) {
+	Set-Location $Args[0]
+}
 
 <# Configure  Git ------------------------------------------------------------#>
 Write-Host -NoNewline "    Input scope [("
-Write-Host -NoNewline -ForegroundColor BLUE "G"
+Write-Host -NoNewline -ForegroundColor Blue "G"
 Write-Host -NoNewline ")lobal | ("
-Write-Host -NoNewline -ForegroundColor BLUE "L"
+Write-Host -NoNewline -ForegroundColor Blue "L"
 Write-Host -NoNewline ")ocal]: "
 $scope = Read-Host
 Write-Host -NoNewline "    Input option [("
-Write-Host -NoNewline -ForegroundColor BLUE "R"
+Write-Host -NoNewline -ForegroundColor Blue "R"
 Write-Host -NoNewline ")P | ("
-Write-Host -NoNewline -ForegroundColor BLUE "H"
+Write-Host -NoNewline -ForegroundColor Blue "H"
 Write-Host -NoNewline ")oYa]: "
 $option = Read-Host
-switch ($scope) {
+Switch ($scope) {
 	{($_ -ceq "G") -or ($_ -ceq "Global")} {
 		# User Name
-		if ($option -ceq "R" -or $option -ceq "RP") {
+		If ($option -ceq "R" -or $option -ceq "RP") {
 			git config --global user.name "HoYa"
-		} elseif ($option -ceq "H" -or $option -ceq "HoYa") {
-			git config --global user.name "llChameleoNll"
-		} else {
-			Write-Host -ForegroundColor "    Invalid option"
+		} Elseif ($option -ceq "H" -or $option -ceq "HoYa") {
+			git config --global user.name "llHoYall"
+		} Else {
+			Write-Host -ForegroundColor Red "    Invalid option"
 			Exit 1
 		}
 
 		# User E-mail
-		if ($option -ceq "R" -or $option -ceq "RP") {
+		If ($option -ceq "R" -or $option -ceq "RP") {
 			git config --global user.email "hoya@ixys.net"
-		}
-		elseif ($option -ceq "H" -or $option -ceq "HoYa") {
+		}	Elseif ($option -ceq "H" -or $option -ceq "HoYa") {
 			git config --global user.email "hoya128@gmail.com"
-		}
-		else {
-			Write-Host -ForegroundColor "    Invalid option"
+		}	Else {
+			Write-Host -ForegroundColor Red "    Invalid option"
 			Exit 1
 		}
 
@@ -74,29 +73,27 @@ switch ($scope) {
 	}
 	{($_ -ceq "L") -or ($_ -ceq "Local")} {
 		# User Name
-		if ($option -ceq "R" -or $option -ceq "RP") {
+		If ($option -ceq "R" -or $option -ceq "RP") {
 			git config --local user.name "HoYa"
-		} elseif ($option -ceq "H" -or $option -ceq "HoYa") {
-			git config --local user.name "llChameleoNll"
-		} else {
-			Write-Host -ForegroundColor "    Invalid option"
+		} Elseif ($option -ceq "H" -or $option -ceq "HoYa") {
+			git config --local user.name "llHoYall"
+		} Else {
+			Write-Host -ForegroundColor Red "    Invalid option"
 			Exit 1
 		}
 
 		# User E-mail
-		if ($option -ceq "R" -or $option -ceq "RP") {
+		If ($option -ceq "R" -or $option -ceq "RP") {
 			git config --local user.email "hoya@ixys.net"
-		}
-		elseif ($option -ceq "H" -or $option -ceq "HoYa") {
+		}	Elseif ($option -ceq "H" -or $option -ceq "HoYa") {
 			git config --local user.email "hoya128@gmail.com"
-		}
-		else {
-			Write-Host -ForegroundColor "    Invalid option"
+		}	Else {
+			Write-Host -ForegroundColor Red "    Invalid option"
 			Exit 1
 		}
 	}
-	default {
-		Write-Host -ForegroundColor "    Invalid scope"
+	Default {
+		Write-Host -ForegroundColor Red "    Invalid scope"
 		Exit 1
 	}
 }

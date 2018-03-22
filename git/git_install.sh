@@ -12,15 +12,38 @@
 cd $(dirname $0)
 . ../misc/color.sh
 
-# Install Git -----------------------------------------------------------------"
+# Install Git -----------------------------------------------------------------#
 echo -e " => Install ${YELLOW}git${END}"
-
 if [ -z "$(command -v git)" ]; then
 	if [ "$(uname -s)" == "Darwin" ]; then
-		brew install git git-lfs tig
+		brew install git
+	elif [ "$(uname -s)" == "Linux" ]; then
+		sudo apt install -y git
+	fi
+else
+	echo -e "    Already installed."
+fi
+
+# Install Git-LFS -------------------------------------------------------------#
+echo -e " => Install ${YELLOW}git-lfs${END}"
+if [ -z "$(command -v git-lfs)" ]; then
+	if [ "$(uname -s)" == "Darwin" ]; then
+		brew install git-lfs
 	elif [ "$(uname -s)" == "Linux" ]; then
 		curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-		sudo apt install git git-lfs tig
+		sudo apt install -y git-lfs
+	fi
+else
+	echo -e "    Already installed."
+fi
+
+# Install Tig -----------------------------------------------------------------#
+echo -e " => Install ${YELLOW}tig${END}"
+if [ -z "$(command -v tig)" ]; then
+	if [ "$(uname -s)" == "Darwin" ]; then
+		brew install tig
+	elif [ "$(uname -s)" == "Linux" ]; then
+		sudo apt install -y tig
 	fi
 else
 	echo -e "    Already installed."

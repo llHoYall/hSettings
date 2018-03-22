@@ -17,7 +17,6 @@ import subprocess
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from misc import color  # noqa
 
-
 # Global Variables -----------------------------------------------------------#
 path = os.path.dirname(__file__)
 
@@ -28,32 +27,30 @@ def install(hos):
 
     # iTerm2
     if hos == 'Darwin':
-        subprocess.Popen(['/bin/bash', path + '/terminal/iTerm2_install.sh']) \
+        subprocess.Popen(['/bin/bash', path + '/iTerm2_install.sh']) \
                   .communicate()
 
     # tmux (tmuxinator)
     if hos == 'Darwin' or hos == 'Linux':
-        subprocess.Popen(['/bin/bash', path + '/terminal/tmux_install.sh']) \
+        subprocess.Popen(['/bin/bash', path + '/tmux_install.sh']) \
                   .communicate()
 
     # putty
     if hos == 'Windows':
         subprocess.Popen(['powershell.exe',
-                          path + '/terminal/putty_install.ps1'])    \
-                  .communicate()
+                          path + '/putty_install.ps1']).communicate()
 
 
 # Config ---------------------------------------------------------------------#
 def config(hos):
     print("==> Config " + color.ORANGE + "terminal" + color.END)
 
-    # tmux (tmuxinator)
+    # tmux
     if hos == 'Darwin' or hos == 'Linux':
-        subprocess.Popen(['/bin/bash', path + '/terminal/tmux_config.sh'])  \
+        subprocess.Popen(['/bin/bash', path + '/tmux_config.sh'])  \
                   .communicate()
 
     # putty
     if hos == 'Windows':
         subprocess.Popen(['powershell.exe',
-                           path + '/terminal/putty_config.ps1'])    \
-                  .communicate()
+                          path + '/putty_config.ps1']).communicate()

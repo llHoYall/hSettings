@@ -20,10 +20,12 @@ from misc import color  # noqa
 # Global Variables -----------------------------------------------------------#
 path = os.path.dirname(__file__)
 
+
 # Install --------------------------------------------------------------------#
 def install(hos):
     print("==> Install " + color.BR_CYAN + "git" + color.END)
 
+    # git (git-lfs, tig)
     if hos == 'Darwin' or hos == 'Linux':
         subprocess.Popen(['/bin/bash', path + '/git_install.sh']).communicate()
     elif hos == 'Windows':
@@ -35,6 +37,7 @@ def install(hos):
 def config(hos):
     print("==> Config " + color.BR_CYAN + "git" + color.END)
 
+    # git
     if hos == 'Darwin' or hos == 'Linux':
         subprocess.Popen(['/bin/bash', path + '/git_config.sh']).communicate()
     elif hos == 'Windows':

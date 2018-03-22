@@ -14,5 +14,15 @@ If (Get-Command git -errorAction SilentlyContinue) {
 	Write-Host "    Already installed."
 }
 Else {
-	choco install -y git git-lfs
+	choco install -y git
+}
+
+<# Install Git-LFS -----------------------------------------------------------#>
+Write-Host -NoNewline " => Install "
+Write-Host -ForegroundColor YELLOW "git-lfs"
+If (Get-Command git-lfs -errorAction SilentlyContinue) {
+	Write-Host "    Already installed."
+}
+Else {
+	choco install -y git-lfs
 }

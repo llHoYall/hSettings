@@ -20,8 +20,8 @@ o	python3 hConfig -i git (ML)
 o	python3 hConfig -c git (ML)
 o ./git\_install.sh (ML)
 o	./git\_config.sh (ML)
-	./git\_install.ps1
-	./git\_config.ps1
+o	./git\_install.ps1
+o	./git\_config.ps1
 
 # Terminal (iTerm2, Tmux, Tmuxinator, Putty)
 	python3 hConfig -i terminal

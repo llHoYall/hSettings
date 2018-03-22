@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-#	@file			git_install.sh
+#	@file			git/git_install.sh
 #	@brief		This file installs git program.
 #	@author		llHoYall <hoya128@gmail.com>
 #	@version	v1.0

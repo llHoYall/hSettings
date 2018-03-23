@@ -21,7 +21,7 @@ if [ -z "$(command -v git)" ]; then
 		sudo apt install -y git
 	fi
 else
-	echo -e "    Already installed."
+	echo "    Already installed."
 fi
 
 # Install Git-LFS -------------------------------------------------------------#
@@ -34,7 +34,7 @@ if [ -z "$(command -v git-lfs)" ]; then
 		sudo apt install -y git-lfs
 	fi
 else
-	echo -e "    Already installed."
+	echo "    Already installed."
 fi
 
 # Install Tig -----------------------------------------------------------------#
@@ -46,5 +46,5 @@ if [ -z "$(command -v tig)" ]; then
 		sudo apt install -y tig
 	fi
 else
-	echo -e "    Already installed."
+	echo "    Already installed."
 fi

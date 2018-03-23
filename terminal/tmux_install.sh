@@ -13,7 +13,7 @@ cd $(dirname $0)
 . ../misc/color.sh
 
 # Install Tmux ----------------------------------------------------------------#
-echo -e "==> Install ${YELLOW}tmux${END}"
+echo -e " => Install ${YELLOW}tmux${END}"
 if [ -z "$(command -v tmux)" ]; then
 	if [ "$(uname -s)" == "Darwin" ]; then
 		brew install tmux
@@ -21,11 +21,11 @@ if [ -z "$(command -v tmux)" ]; then
 		sudo apt install -y tmux
 	fi
 else
-	echo -e "    Already installed"
+	echo "    Already installed"
 fi
 
 # Install Tmuxinator ----------------------------------------------------------#
-echo -e "==> Install ${YELLOW}tmuxinator${END}"
+echo -e " => Install ${YELLOW}tmuxinator${END}"
 if [ -z "$(command -v tmuxinator)" ]; then
 	if [ "$(uname)" == "Darwin" ]; then
 		brew install ruby		# update ruby
@@ -34,5 +34,5 @@ if [ -z "$(command -v tmuxinator)" ]; then
 		sudo apt install -y tmuxinator
 	fi
 else
-	echo -e "    Already installed"
+	echo "    Already installed"
 fi

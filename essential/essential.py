@@ -38,4 +38,4 @@ def install(hos):
 
 # Config ---------------------------------------------------------------------#
 def config(hos):
-    print("==> Config " + color.ORANGE + "essential" + color.END)
+    print("==> Config " + color.BR_CYAN + "essential" + color.END)

@@ -24,8 +24,9 @@ o	./git\_install.ps1
 o	./git\_config.ps1
 
 # Terminal (iTerm2, Tmux, Tmuxinator, Putty)
-	python3 hConfig -i terminal
-	python3 hConfig -c terminal
+	python3 hConfig -i terminal (L)
+	python3 hConfig -c terminal (L)
 	./iTerm2\_install.sh
-	./tmux\_install.sh
+	./tmux\_install.sh (L)
+	./tmux\_config.sh (L)
 	./putty\_install.ps1

@@ -19,5 +19,5 @@ if [ -z "$(command -v brew)" ]; then
 		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubuwercontent.com/Homebrew/install/master/install)"
 	fi
 else
-	echo -e "    Already installed."
+	echo "    Already installed."
 fi

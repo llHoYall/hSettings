@@ -12,7 +12,9 @@ If ($Args.count -gt 0) {
 	Set-Location $Args[0]
 }
 
-<# Configure  Git ------------------------------------------------------------#>
+<# Configure Git -------------------------------------------------------------#>
+Write-Host -NoNewline " => Config "
+Write-Host -ForegroundColor YELLOW "git"
 Write-Host -NoNewline "    Input scope [("
 Write-Host -NoNewline -ForegroundColor Blue "G"
 Write-Host -NoNewline ")lobal | ("

@@ -14,9 +14,20 @@ cd $(dirname $0)
 
 # Install iTerm2 --------------------------------------------------------------#
 echo -e " => Install ${YELLOW}iTerm2${END}"
-if [ -z "$(command -v tmux)" ]; then
+if [ ! -d "/Applications/iTerm.app" ]; then
 	if [ "$(uname -s)" == "Darwin" ]; then
 		brew cask install iterm2
+	fi
+else
+	echo "    Already installed"
+fi
+
+# Install Fonts ---------------------------------------------------------------#
+echo -e " => Install ${YELLOW}fonts${END}"
+if [ ! -d "/usr/local/Caskroom/font-hack-nerd-font" ]; then
+	if [ "$(uname -s)" == "Darwin" ]; then
+		brew tap caskroom/fonts
+		brew cask install font-hack-nerd-font
 	fi
 else
 	echo "    Already installed"

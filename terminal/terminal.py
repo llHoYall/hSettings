@@ -37,12 +37,12 @@ def install(hos):
 
     # ConEmu
     if hos == 'Windows':
-        subprocess.Popen(['powershell.exe', path + '/conemu_install.ps1')   \
+        subprocess.Popen(['powershell.exe', path + '/conemu_install.ps1'])   \
                   .communicate()
 
     # WSL (Windows Subsystems for Linux)
     if hos == 'Windows':
-        subprocess.Popen(['powershell.exe', path + '/wsl_install.ps1')   \
+        subprocess.Popen(['powershell.exe', path + '/wsl_install.ps1'])   \
                   .communicate()
 
     # putty
@@ -62,12 +62,12 @@ def config(hos):
 
     # ConEmu
     if hos == 'Windows':
-        subprocess.Popen(['powershell.exe', path + '/conemu_config.ps1')   \
+        subprocess.Popen(['powershell.exe', path + '/conemu_config.ps1'])   \
                   .communicate()
 
     # WSL (Windows Subsystems for Linux)
     if hos == 'Windows':
-        subprocess.Popen(['powershell.exe', path + '/wsl_config.ps1')   \
+        subprocess.Popen(['powershell.exe', path + '/wsl_config.ps1'])   \
                   .communicate()
 
     # putty

@@ -17,7 +17,7 @@ echo -e " => Config ${YELLOW}tmux${END}"
 if [ ! -z "$(command -v tmux)" ]; then
 	rm -rf ~/.tmux ~/.tmux.conf
 	mkdir -p ~/.tmux
-	cp get-uptime.sh ~/.tmux/
+	ln tmux_config_statusbar.sh ~/.tmux
 	ln .tmux.conf ~
 else
 	echo "    Not installed."

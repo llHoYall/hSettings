@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2018-03-26 16:41:19" build="180318">
+		<key name=".Vanilla" modified="2018-03-27 11:05:22" build="180318">
 			<value name="StartType" type="hex" data="02"/>
 			<value name="CmdLine" type="string" data=""/>
 			<value name="StartTasksFile" type="string" data=""/>
@@ -9,7 +9,7 @@
 			<value name="StartFarFolders" type="hex" data="00"/>
 			<value name="StartFarEditors" type="hex" data="00"/>
 			<value name="ColorTable00" type="dword" data="00211f1d"/>
-			<value name="ColorTable01" type="dword" data="009d8a5f"/>
+			<value name="ColorTable01" type="dword" data="009d815f"/>
 			<value name="ColorTable02" type="dword" data="0040948c"/>
 			<value name="ColorTable03" type="dword" data="005f93de"/>
 			<value name="ColorTable04" type="dword" data="004242a5"/>
@@ -59,7 +59,7 @@
 			<value name="FontSize" type="ulong" data="14"/>
 			<value name="StatusFontHeight" type="long" data="14"/>
 			<value name="TabFontHeight" type="long" data="13"/>
-			<key name="HotKeys" modified="2018-03-26 15:20:50" build="180318">
+			<key name="HotKeys" modified="2018-03-27 11:05:22" build="180318">
 				<value name="MinimizeRestore" type="dword" data="000011c0"/>
 				<value name="KeyMacroVersion" type="hex" data="02"/>
 				<value name="Multi.Modifier" type="dword" data="000000a2"/>
@@ -86,8 +86,8 @@
 				<value name="Multi.SplitSizeVD" type="dword" data="00105d28"/>
 				<value name="Multi.SplitSizeHL" type="dword" data="00105d25"/>
 				<value name="Multi.SplitSizeHR" type="dword" data="00105d27"/>
-				<value name="Key.TabPane1" type="dword" data="00005d09"/>
-				<value name="Key.TabPane2" type="dword" data="00105d09"/>
+				<value name="Key.TabPane1" type="dword" data="00001227"/>
+				<value name="Key.TabPane2" type="dword" data="00001225"/>
 				<value name="Multi.SplitFocusU" type="dword" data="00005d26"/>
 				<value name="Multi.SplitFocusD" type="dword" data="00005d28"/>
 				<value name="Multi.SplitFocusL" type="dword" data="00005d25"/>
@@ -723,25 +723,25 @@
 			</key>
 			<key name="Colors" modified="2018-03-26 15:30:56" build="180318">
 				<value name="Count" type="long" data="1"/>
-				<key name="Palette1" modified="2018-03-26 16:24:46" build="180318">
+				<key name="Palette1" modified="2018-03-27 11:05:22" build="180318">
 					<value name="Name" type="string" data="HoYa"/>
 					<value name="TextColorIdx" type="hex" data="10"/>
 					<value name="BackColorIdx" type="hex" data="10"/>
 					<value name="PopTextColorIdx" type="hex" data="10"/>
 					<value name="PopBackColorIdx" type="hex" data="10"/>
 					<value name="ColorTable00" type="dword" data="00211f1d"/>
-					<value name="ColorTable01" type="dword" data="004242a5"/>
+					<value name="ColorTable01" type="dword" data="009d815f"/>
 					<value name="ColorTable02" type="dword" data="0040948c"/>
 					<value name="ColorTable03" type="dword" data="005f93de"/>
-					<value name="ColorTable04" type="dword" data="009d815f"/>
+					<value name="ColorTable04" type="dword" data="004242a5"/>
 					<value name="ColorTable05" type="dword" data="008f6785"/>
 					<value name="ColorTable06" type="dword" data="00878d5e"/>
 					<value name="ColorTable07" type="dword" data="00807870"/>
 					<value name="ColorTable08" type="dword" data="00413b37"/>
-					<value name="ColorTable09" type="dword" data="006666cc"/>
+					<value name="ColorTable09" type="dword" data="00bea281"/>
 					<value name="ColorTable10" type="dword" data="0068bdb5"/>
 					<value name="ColorTable11" type="dword" data="0074c6f0"/>
-					<value name="ColorTable12" type="dword" data="00bea281"/>
+					<value name="ColorTable12" type="dword" data="006666cc"/>
 					<value name="ColorTable13" type="dword" data="00bb94b2"/>
 					<value name="ColorTable14" type="dword" data="00b7be8a"/>
 					<value name="ColorTable15" type="dword" data="00c6c8c5"/>

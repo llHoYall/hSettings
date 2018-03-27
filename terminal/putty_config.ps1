@@ -10,9 +10,8 @@
 <# Configure ConEmu ----------------------------------------------------------#>
 Write-Host -NoNewline " => Config "
 Write-Host -ForegroundColor YELLOW "ConEmu"
-If (Test-Path -Path "C:\Program Files\ConEmu") {
-	Remove-Item "C:\Users\$($env:UserName)\AppData\Roaming\conemu_sexy.xml"
-	cmd /c mklink /H "C:\Users\$($env:UserName)\AppData\Roaming\conemu_sexy.xml" "$($PSScriptRoot)\conemu_sexy.xml"
+If (Get-Command putty -errorAction SilentlyContinue) {
+	regedit.exe "$($PSScriptRoot)\putty_sexy.xml"
 }
 Else {
 	Write-Host "    Not installed."

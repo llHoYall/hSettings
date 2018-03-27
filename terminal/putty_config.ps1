@@ -11,7 +11,7 @@
 Write-Host -NoNewline " => Config "
 Write-Host -ForegroundColor YELLOW "ConEmu"
 If (Get-Command putty -errorAction SilentlyContinue) {
-	regedit.exe "$($PSScriptRoot)\putty_sexy.xml"
+	regedit.exe "$($PSScriptRoot)\putty_sexy.reg"
 }
 Else {
 	Write-Host "    Not installed."

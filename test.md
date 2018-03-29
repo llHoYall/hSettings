@@ -29,6 +29,11 @@ o	./git\_config.ps1
 o	./iTerm2\_install.sh (M)
 o	./tmux\_install.sh (ML)
 o	./tmux\_config.sh (ML)
-	./putty\_install.ps1
+o	./putty\_install.ps1
+o	./putty\_config.ps1
+o	./conemu\_install.ps1
+o	./conemu\_config.ps1
+	./wsl\_install.ps1
+	./wsl\_config.ps1
 
 # Shell (Zsh)

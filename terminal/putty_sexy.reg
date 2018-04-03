@@ -26,3 +26,4 @@ Windows Registry Editor Version 5.00
 
 "Font"="D2Coding ligature"
 "TerminalType"="screen-256color"
+"PingIntervalSecs"=dword:0000000a

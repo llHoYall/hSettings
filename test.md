@@ -39,9 +39,9 @@ o	./conemu\_config.ps1
 	./wsl\_config.ps1
 
 # Shell (Zsh, PowerShell)
-	./hConfig -i shell (L)
-	./hConfig -c shell (L)
-	./zsh\_install.sh (L)
-	./zsh\_config.sh (L)
+	./hConfig -i shell (ML)
+	./hConfig -c shell (ML)
+o	./zsh\_install.sh (ML)
+o	./zsh\_config.sh (ML)
 	./powershell\_install.ps1
 	./powershell\_config.ps1

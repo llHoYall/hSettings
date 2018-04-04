@@ -32,6 +32,14 @@ hGetPath() {
 
 hGit_GetStatus() {
 	if git rev-parse --is-inside-work-tree &> /dev/null; then
+		# Fetch Git Repository
+		local prev_git=$(cat ~/.oh-my-zsh/tmp)
+		local cur_git=$(command git rev-parse --show-toplevel)
+		if [ "$prev_git" != "$cur_git" ]; then
+			echo $cur_git > ~/.oh-my-zsh/tmp
+			git fetch
+		fi
+
 		local isClean=y
 
 		# Get Branch Name

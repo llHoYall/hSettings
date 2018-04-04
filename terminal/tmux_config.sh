@@ -22,3 +22,5 @@ if [ ! -z "$(command -v tmux)" ]; then
 else
 	echo "    Not installed."
 fi
+
+echo -e "    ${RED}<CTRL-b> + r${END}"

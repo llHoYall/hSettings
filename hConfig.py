@@ -35,11 +35,11 @@ def usage():
     print("    -h\tHelp")
     print()
     print(color.GREEN + "    [tools] (whitespace separated)" + color.END)
-    print("    essential\tInstall only")
-    print("    git\t\tInstall, Configure")
-    print("    terminal\tInstall, Configure")
-    print("    shell\tInstall, Configure")
-    print("    devtool\tInstall only")
+    print("    essential")
+    print("    git")
+    print("    terminal")
+    print("    shell")
+    print("    devtool")
 
 
 # Install --------------------------------------------------------------------#

@@ -1,45 +1,51 @@
+#!/usr/bin/env python3
 ###############################################################################
-#   @file       shell.py
+#   @file       shell/shell.py
 #   @brief      This file installs and configures shell program.
 #   @author     llHoYall <hoya128@gmail.com>
-###############################################################################
 #   @version    v1.0
 #   @note
-#       - 2018.01.11    Created.
+#       - 2018.04.04    Created.
 ###############################################################################
 
 # Import Module --------------------------------------------------------------#
 # Built-In
 import os
 import sys
-import platform
+import subprocess
 # User
-sys.path.append(os.path.dirname(__file__))
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from misc import color  # noqa
-import zsh              # noqa
+
+# Global Variables -----------------------------------------------------------#
+path = os.path.dirname(__file__)
 
 
 # Install --------------------------------------------------------------------#
 def install(hos):
-    print("==> Install " + color.ORANGE + "shell" + color.END)
+    print("==> Install " + color.BR_CYAN + "shell" + color.END)
 
-    # zsh
+    # zsh (oh-my-zsh)
     if hos == 'Darwin' or hos == 'Linux':
-        zsh.install(hos)
+        subprocess.Popen(['/bin/bash', path + '/zsh_install.sh']) \
+                  .communicate()
+
+    # PowerShell
+    if hos == 'Windows':
+        subprocess.Popen(['powershell.exe',
+                          path + '/powershell_install.ps1']).communicate()
 
 
 # Config ---------------------------------------------------------------------#
 def config(hos):
-    print("==> Config " + color.ORANGE + "shell" + color.END)
+    print("==> Config " + color.BR_CYAN + "shell" + color.END)
 
-    # zsh
+    # zsh (oh-my-zsh)
     if hos == 'Darwin' or hos == 'Linux':
-        zsh.config(hos)
+        subprocess.Popen(['/bin/bash', path + '/zsh_config.sh']) \
+                  .communicate()
 
-
-# Main Routine ---------------------------------------------------------------#
-if __name__ == '__main__':
-    hos = platform.system()
-    install(hos)
-    config(hos)
+    # PowerShell
+    if hos == 'Windows':
+        subprocess.Popen(['powershell.exe',
+                          path + '/powershell_config.ps1']).communicate()

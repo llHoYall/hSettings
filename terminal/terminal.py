@@ -53,7 +53,7 @@ def install(hos):
 
 # Config ---------------------------------------------------------------------#
 def config(hos):
-    print("==> Config " + color.ORANGE + "terminal" + color.END)
+    print("==> Config " + color.BR_CYAN + "terminal" + color.END)
 
     # tmux
     if hos == 'Darwin' or hos == 'Linux':

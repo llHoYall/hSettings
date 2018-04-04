@@ -1,26 +1,36 @@
 #!/bin/bash
+################################################################################
+#	@file			shell/zsh_install.sh
+#	@brief		This file installs zsh program.
+#	@author		llHoYall <hoya128@gmail.com>
+#	@version	v1.0
+#	@note
+#		- 2018.04.04	Created.
+################################################################################
 
-# Color Definition ------------------------------------------------------------#
-red='\033[0;31m'
-yellow='\033[0;33m'
-nc='\033[0m'
+# Include Scripts -------------------------------------------------------------#
+cd $(dirname $0)
+. ../misc/color.sh
 
-# Install zsh -----------------------------------------------------------------#
+# Install Zsh -----------------------------------------------------------------#
+echo -e " => Install ${YELLOW}zsh${END}"
 if [ -z "$(command -v zsh)" ]; then
 	if [ "$(uname)" == "Darwin" ]; then
 		brew install zsh
 	elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-		sudo apt-get install zsh
+		sudo apt install -y zsh
 	fi
 	chsh -s $(which zsh)
 else
-	echo -e "${yellow}zsh${nc} has been installed"
-	echo
+	echo "    Already installed"
 fi
 
 # Install oh-my-zsh -----------------------------------------------------------#
+echo -e " => Install ${YELLOW}oh-my-zsh${END}"
 if [ ! -d ~/.oh-my-zsh ]; then
 	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+else
+	echo "    Already installed"
 fi
 
 # zsh-syntax-highlighting plugin
@@ -32,7 +42,3 @@ fi
 if [ ! -d ~/.oh-my-zsh/plugins/zsh-autosuggestions ]; then
 	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
 fi
-
-# Setting file ----------------------------------------------------------------#
-cp shell/hoya.zsh-theme ~/.oh-my-zsh/themes/
-cp shell/.zshrc ~/

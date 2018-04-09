@@ -1,28 +1,28 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Console]
-"ColorTable00"=dword:00362b00
-"ColorTable01"=dword:00969483
-"ColorTable02"=dword:00756e58
-"ColorTable03"=dword:00a1a193
-"ColorTable04"=dword:00164bcb
-"ColorTable05"=dword:00c4716c
-"ColorTable06"=dword:00837b65
-"ColorTable07"=dword:00d5e8ee
-"ColorTable08"=dword:00423607
-"ColorTable09"=dword:00d28b26
-"ColorTable10"=dword:00009985
-"ColorTable11"=dword:0098a12a
-"ColorTable12"=dword:002f32dc
-"ColorTable13"=dword:008236d3
-"ColorTable14"=dword:000089b5
-"ColorTable15"=dword:00e3f6fd
-"ScreenColors"=dword:00000001
+"ColorTable00"=dword:00413b37
+"ColorTable01"=dword:00bea281
+"ColorTable02"=dword:0068bdb5
+"ColorTable03"=dword:00b7be8a
+"ColorTable04"=dword:006666cc
+"ColorTable05"=dword:00bb94b2
+"ColorTable06"=dword:0074c6f0
+"ColorTable07"=dword:00807870
+"ColorTable08"=dword:002e2a28
+"ColorTable09"=dword:009d8a5f
+"ColorTable10"=dword:0040948c
+"ColorTable11"=dword:00878d5e
+"ColorTable12"=dword:004242a5
+"ColorTable13"=dword:008f6785
+"ColorTable14"=dword:005f93de
+"ColorTable15"=dword:00c6c8c5
+"ScreenColors"=dword:00211f1d
 "PopupColors"=dword:000000f6
 
 "WindowSize"=dword:00400080
 "ScreenBufferSize"=dword:00400080
 
 "CodePage"=dword:0000fde9
-"FaceName"="Consolas"
+"FaceName"="D2Coding ligature"
 "FontSize"=dword:00100000

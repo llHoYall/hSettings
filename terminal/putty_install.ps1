@@ -7,7 +7,7 @@
  #		- 2018.03.27	Created.
  ##############################################################################>
 
-<# Install putty -------------------------------------------------------------#>
+<# Install Putty -------------------------------------------------------------#>
 Write-Host -NoNewline " => Install "
 Write-Host -ForegroundColor YELLOW "putty"
 If (Get-Command putty -errorAction SilentlyContinue) {

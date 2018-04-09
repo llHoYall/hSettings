@@ -19,7 +19,7 @@ function prompt {
 		$curPath = "~" + $curPath.SubString($Home.Length)
 	}
 
-	Write-Host -NoNewline -ForegroundColor Green "$env:/username "
+	Write-Host -NoNewline -ForegroundColor Green "$env:username "
 	Write-Host -ForegroundColor Blue $curPath
 	Write-VcsStatus
 	$LASTEXITCODE = $origLastExitCode

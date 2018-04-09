@@ -1,6 +1,6 @@
 <###############################################################################
- #	@file			terminal/conemu_config.ps1
- #	@brief		This file configures ConEmu program.
+ #	@file			terminal/putty_config.ps1
+ #	@brief		This file configures putty program.
  #	@author		llHoYall <hoya128@gmail.com>
  #	@version	v1.0
  #	@note
@@ -9,7 +9,7 @@
 
 <# Configure ConEmu ----------------------------------------------------------#>
 Write-Host -NoNewline " => Config "
-Write-Host -ForegroundColor YELLOW "ConEmu"
+Write-Host -ForegroundColor YELLOW "putty"
 If (Get-Command putty -errorAction SilentlyContinue) {
 	regedit.exe "$($PSScriptRoot)\putty_sexy.reg"
 }

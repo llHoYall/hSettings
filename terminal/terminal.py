@@ -55,6 +55,10 @@ def install(hos):
 def config(hos):
     print("==> Config " + color.BR_CYAN + "terminal" + color.END)
 
+    # iTerm2
+    if hos == 'Darwin':
+        subprocess.Popen(['/bin/bash', path + '/iTerm2_config.sh']) \
+                  .communicate()
     # tmux
     if hos == 'Darwin' or hos == 'Linux':
         subprocess.Popen(['/bin/bash', path + '/tmux_config.sh'])  \

@@ -40,6 +40,7 @@ def usage():
     print("    terminal")
     print("    shell")
     print("    devtool")
+    print()
 
 
 # Install --------------------------------------------------------------------#
@@ -92,9 +93,14 @@ if hos == 'Windows':
               + color.END)
         exit()
 
+    # Set Execution Policy
+    subprocess.run(['powershell', 
+                    'Set-ExecutionPolicy -ExecutionPolicy RemoteSigned'])
+                    
+
 # Check Arguments ------------------------------------------------------------#
 argc = len(sys.argv)
-opt = 'a'
+opt = None
 args = None
 if argc > 1:
     if sys.argv[1].startswith('-') and len(sys.argv[1]) == 2:
@@ -117,13 +123,18 @@ else:
     args = sys.argv[1:]
 
 # Configuration --------------------------------------------------------------#
-print()
 if opt == 'i':
+    print()
     print("Install tools for ", end='')
 elif opt == 'c':
+    print()
     print("Configure tools for ", end='')
-else:
+elif opt == 'a':
+    print()
     print("Install & Configure tools for ", end='')
+else:
+    usage()
+    exit()
 
 if hos == 'Darwin':
     print(color.MAGENTA + "Mac" + color.END)

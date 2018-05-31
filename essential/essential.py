@@ -33,7 +33,7 @@ def install(hos):
     # chocolatey
     if hos == 'Windows':
         subprocess.Popen(["powershell.exe",
-                          path + "/chocolatey_install.ps1"]).communicate()
+                          path + "\chocolatey_install.ps1"]).communicate()
 
 
 # Config ---------------------------------------------------------------------#

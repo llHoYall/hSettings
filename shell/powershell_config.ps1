@@ -11,7 +11,9 @@
 Write-Host -NoNewline " => Config "
 Write-Host -ForegroundColor YELLOW "powershell"
 If (Get-Command powershell -errorAction SilentlyContinue) {
-	Remove-Item $PROFILE
+	If (Test-Path $PROFILE) {
+		Remove-Item $PROFILE
+	}
 	cmd /c mklink /H $PROFILE "$($PSScriptRoot)\Microsoft.Powershell_profile.ps1"
 }
 Else {

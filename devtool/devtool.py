@@ -46,6 +46,11 @@ def install(hos):
         subprocess.Popen(["powershell.exe",
                           path + "\\neovim\\neovim_install.ps1"]).communicate()
 
+    # web
+    if hos == 'Windows':
+        subprocess.Popen(["powershell.exe",
+                          path + "\\web\\web_install.ps1"]).communicate()
+
 
 # Config ---------------------------------------------------------------------#
 def config(hos):

@@ -20,6 +20,7 @@ from essential import essential
 from git import git
 from terminal import terminal
 from shell import shell
+from devtool import devtool
 
 
 # Usage ----------------------------------------------------------------------#
@@ -54,6 +55,8 @@ def install(hos, args):
             terminal.install(hos)
         elif "shell" == arg:
             shell.install(hos)
+        elif "devtool" == arg:
+            devtool.install(hos)
         else:
             print("==> Install " + color.ORANGE + arg + color.END)
             print(color.RED + "    Error: Not supported tool" + color.END)
@@ -70,6 +73,8 @@ def config(hos, args):
             terminal.config(hos)
         elif "shell" == arg:
             shell.config(hos)
+        elif "devtool" == arg:
+            devtool.config(hos)
         else:
             print("==> Configure " + color.ORANGE + arg + color.END)
             print(color.RED + "    Error: Not supported tool" + color.END)
@@ -94,9 +99,9 @@ if hos == 'Windows':
         exit()
 
     # Set Execution Policy
-    subprocess.run(['powershell', 
+    subprocess.run(['powershell',
                     'Set-ExecutionPolicy -ExecutionPolicy RemoteSigned'])
-                    
+
 
 # Check Arguments ------------------------------------------------------------#
 argc = len(sys.argv)

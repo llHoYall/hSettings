@@ -1,47 +1,45 @@
-# Help Menu (In/Out Dir.)
-o	python3 hConfig.py -h
-o	./hConfig.py -h
+### Help Menu (In/Out Dir.)
+- [x]	python3 hConfig.py -h
+- [x]	./hConfig.py -h
 
-# Wrong Argument (In/Out Dir.)
-o	./hConfig.py -k
-o	./hConfig.py -i
-o	./hConfig.py -c
+### Wrong Argument (In/Out Dir.)
+- [x] ./hConfig.py -k
+- [x] ./hConfig.py -i
+- [x] ./hConfig.py -c
 
-# All
-	./hConfig.py
-	./hConfig.py -a
+### All
+- [x]	./hConfig.py -a
 
-# Essential (Homebrew)
-o	./hConfig.py -i essential (MLW)
-o	./hConfig.py -c essential (MLW)
-o	./homebrew\_install.sh (M)
+### Essential (Homebrew)
+- [x]	./hConfig.py -i essential (MLW)
+- [x]	./hConfig.py -c essential (MLW)
+- [x]	./homebrew\_install.sh (M)
+- [x] .\\chocolatey\_install.ps1 (W)
 
-# Git (Git)
-o	./hConfig -i git (MLW)
-o	./hConfig -c git (MLW)
-o ./git\_install.sh (ML)
-o	./git\_config.sh (ML)
-o	./git\_install.ps1
-o	./git\_config.ps1
+### Git (Git)
+- [x]	./hConfig -i git (MLW)
+- [x]	./hConfig -c git (MLW)
+- [x] ./git\_install.sh (ML)
+- [x]	./git\_config.sh (ML)
+- [x]	.\\git\_install.ps1 (W)
+- [x]	.\\git\_config.ps1 (W)
 
-# Terminal (iTerm2, Tmux, Tmuxinator, Putty)
-	./hConfig -i terminal (ML)
-	./hConfig -c terminal (ML)
-o	./iTerm2\_install.sh (M)
-o	./iTerm2\_config.sh (M)
-o	./tmux\_install.sh (ML)
-o	./tmux\_config.sh (ML)
-o	./putty\_install.ps1
-o	./putty\_config.ps1
-o	./conemu\_install.ps1
-o	./conemu\_config.ps1
-	./wsl\_install.ps1
-	./wsl\_config.ps1
+### Terminal (iTerm2, Tmux, Tmuxinator, Putty)
+- [x]	./hConfig -i terminal (MLW)
+- [x]	./hConfig -c terminal (MLW)
+- [x]	./iTerm2\_install.sh (M)
+- [x]	./iTerm2\_config.sh (M)
+- [x]	./tmux\_install.sh (ML)
+- [x]	./tmux\_config.sh (ML)
+- [x]	.\\putty\_install.ps1 (W)
+- [x]	.\\putty\_config.ps1 (W)
+- [x]	.\\conemu\_install.ps1 (W)
+- [x]	.\\conemu\_config.ps1 (W)
 
-# Shell (Zsh, PowerShell)
-o	./hConfig -i shell (MLW)
-o	./hConfig -c shell (MLW)
-o	./zsh\_install.sh (ML)
-o	./zsh\_config.sh (ML)
-o	./powershell\_install.ps1
-o	./powershell\_config.ps1
+### Shell (Zsh, PowerShell)
+- [x]	./hConfig -i shell (MLW)
+- [x]	./hConfig -c shell (MLW)
+- [x]	./zsh\_install.sh (ML)
+- [x]	./zsh\_config.sh (ML)
+- [x]	.\\powershell\_install.ps1 (W)
+- [x]	.\\powershell\_config.ps1 (W)

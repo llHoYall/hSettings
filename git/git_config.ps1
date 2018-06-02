@@ -108,7 +108,6 @@ If (Get-Command git -errorAction SilentlyContinue) {
 			Exit 1
 		}
 	}
-}
-Else {
+} Else {
 	Write-Host "    Not installed."
 }

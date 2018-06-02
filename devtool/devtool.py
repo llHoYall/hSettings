@@ -42,9 +42,9 @@ def install(hos):
         embedded.install(hos)
 
     # neovim
-    # if hos == 'Darwin' or hos == 'Linux' or hos == 'Windows':
-    #     subprocess.Popen(["powershell.exe",
-    #                       path + "vim_install.ps1"]).communicate()
+    if hos == 'Windows':
+        subprocess.Popen(["powershell.exe",
+                          path + "\\neovim\\neovim_install.ps1"]).communicate()
 
 
 # Config ---------------------------------------------------------------------#

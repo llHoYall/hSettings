@@ -15,31 +15,16 @@ If (Get-Command powershell -errorAction SilentlyContinue) {
 }
 
 <# Posh-Git Module #>
-Write-Host -NoNewline " => Install "
-Write-Host -ForegroundColor YELLOW "posh-git"
-If (Get-Module -Name "posh-git") {
-	Write-Host "    Alread installed."
-}
-Else {
+If (!(Get-Module -Name "posh-git")) {
 	Install-Module -Name "posh-git" -Scope AllUsers
 }
 
 <# PSColor Module #>
-Write-Host -NoNewline " => Install "
-Write-Host -ForegroundColor YELLOW "PSColor"
-If (Get-Module -Name "PSColor") {
-	Write-Host "    Alread installed."
-}
-Else {
+If (!(Get-Module -Name "PSColor")) {
 	Install-Module -Name "PSColor" -Scope AllUsers
 }
 
 <# PSReadLine Module #>
-Write-Host -NoNewline " => Install "
-Write-Host -ForegroundColor YELLOW "PSReadLine"
-If (Get-Module -Name "PSReadLine") {
-	Write-Host "    Alread installed."
-}
-Else {
+If (!(Get-Module -Name "PSReadLine")) {
 	Install-Module -Name "PSReadLine" -Scope AllUsers
 }

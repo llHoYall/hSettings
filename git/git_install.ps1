@@ -12,8 +12,7 @@ Write-Host -NoNewline " => Install "
 Write-Host -ForegroundColor YELLOW "git"
 If (Get-Command git -errorAction SilentlyContinue) {
 	Write-Host "    Already installed."
-}
-Else {
+} Else {
 	choco install -y git
 }
 
@@ -22,7 +21,6 @@ Write-Host -NoNewline " => Install "
 Write-Host -ForegroundColor YELLOW "git-lfs"
 If (Get-Command git-lfs -errorAction SilentlyContinue) {
 	Write-Host "    Already installed."
-}
-Else {
+} Else {
 	choco install -y git-lfs
 }

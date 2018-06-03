@@ -14,6 +14,7 @@ If (Get-Command code -errorAction SilentlyContinue) {
 	code --install-extension ms-vscode.cpptools 
 	code --install-extension ms-python.python
 	code --install-extension ms-vscode.powershell
+	code --install-extension esbenp.prettier-vscode
 } Else {
 	Write-Host "    Not installed."
 }

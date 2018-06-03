@@ -7,6 +7,15 @@
  #		- 2018.03.20	Created.
  ##############################################################################>
 
+<# Install NodeJS ------------------------------------------------------------#>
+Write-Host -NoNewline " => Install "
+Write-Host -ForegroundColor YELLOW "nodejs"
+If (Get-Command node -errorAction SilentlyContinue) {
+	Write-Host "    Already installed."
+} Else {
+	choco install -y nodejs
+}
+
 <# Install Yarn --------------------------------------------------------------#>
 Write-Host -NoNewline " => Install "
 Write-Host -ForegroundColor YELLOW "yarn"

@@ -10,7 +10,7 @@
 <# Install NeoVim ------------------------------------------------------------#>
 Write-Host -NoNewline " => Install "
 Write-Host -ForegroundColor YELLOW "neovim"
-If (Get-Command neovim -errorAction SilentlyContinue) {
+If (Get-Command nvim -errorAction SilentlyContinue) {
 	Write-Host "    Already installed."
 } Else {
 	choco install -y neovim

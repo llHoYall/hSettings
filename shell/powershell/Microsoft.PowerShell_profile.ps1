@@ -1,5 +1,6 @@
 <# Aliasing ------------------------------------------------------------------#>
-Set-Alias vim 'C:\Program Files (x86)\vim\vim80\vim.exe'
+# Set-Alias vim 'C:\Program Files (x86)\vim\vim80\vim.exe'
+Set-Alias vim 'C:\tools\neovim\Neovim\bin\nvim.exe'
 
 <# Chocolatey Profile --------------------------------------------------------#>
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"

@@ -1,6 +1,5 @@
-<# Aliasing ------------------------------------------------------------------#>
-# Set-Alias vim 'C:\Program Files (x86)\vim\vim80\vim.exe'
-Set-Alias vim 'C:\tools\neovim\Neovim\bin\nvim.exe'
+<# Default Starting Location -------------------------------------------------#>
+Set-Location $HOME
 
 <# Chocolatey Profile --------------------------------------------------------#>
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
@@ -34,5 +33,7 @@ $global:GitPromptSettings.AfterText  = '] '
 <# PSReadLink ----------------------------------------------------------------#>
 Import-Module -Name PSReadLine
 
-<# Default Stating Location --------------------------------------------------#>
-Set-Location $HOME
+<# Aliasing ------------------------------------------------------------------#>
+# Set-Alias vim 'C:\Program Files (x86)\vim\vim80\vim.exe'
+Set-Alias vim 'C:\tools\neovim\Neovim\bin\nvim.exe'
+Set-Alias meld 'C:\Program Files (x86)\Meld\Meld.exe'

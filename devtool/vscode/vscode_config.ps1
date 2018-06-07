@@ -11,10 +11,15 @@
 Write-Host -NoNewline " => Config "
 Write-Host -ForegroundColor YELLOW "vscode"
 If (Get-Command code -errorAction SilentlyContinue) {
-	code --install-extension ms-vscode.cpptools 
+	code --install-extension ms-vscode.cpptools
 	code --install-extension ms-python.python
 	code --install-extension ms-vscode.powershell
 	code --install-extension esbenp.prettier-vscode
+
+	If (Test-Path "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\settings.json") {
+		Remove-Item "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\settings.json"
+	}
+	cmd /c mklink /H "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\settings.json" "$($PSScriptRoot)\settings.json"
 } Else {
 	Write-Host "    Not installed."
 }

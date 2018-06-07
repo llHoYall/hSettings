@@ -49,7 +49,7 @@ def install(hos):
     # meld
     if hos == 'Windows':
         subprocess.Popen(["powershell.exe",
-                          path + "\\meld\\meld_install.ps1"]).communicate()                          
+                          path + "\\meld\\meld_install.ps1"]).communicate()
 
     # web
     if hos == 'Windows':

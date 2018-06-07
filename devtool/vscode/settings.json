@@ -1,25 +1,46 @@
 {
+	// Debug
+	"debug.inlineValues": true,
+
 	// Editor
-	"editor.tabCompletion": true,
 	"editor.fontFamily": "D2Coding ligature, D2Coding, Consolas",
-	"editor.fontSize": 12,
-	"editor.rulers": [80],
-	"editor.tabSize": 2,
-	"editor.insertSpaces": false,
-	"editor.scrollBeyondLastLine": false,
-	"editor.minimap.enabled": true,
-	"editor.wordWrap": "on",		// "off"
-	"editor.wrappingIndent": "indent",		// "none", "same"
-	"editor.quickSuggestionsDelay": 100,
-	"editor.formatOnType": true,
+	"editor.fontLigatures": true,
 	"editor.formatOnPaste": true,
-	"editor.emptySelectionClipboard": false,
-	"editor.cursorStyle": "block",		// "line", "underline"
-	"editor.renderIndentGuides": true,
+	"editor.rulers": [80],
+	"editor.scrollBeyondLastLine": false,
+	"editor.tabCompletion": true,
+	"editor.tabSize": 2,
+	"editor.wrappingIndent": "indent",		// "none", "same", "deepIndent"
+
+	// Extensions
+	"extensions.ignoreRecommendations": true,
+
+	// External Terminal
+	"terminal.external.osxExec": "iTerm.app",
+	"terminal.external.windowsExec": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
 
 	// Files
+	"files.associations": {
+		"*.mk": "makefile"
+	},
 	"files.eol": "\n",
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/node_modules": true
+	},
 	"files.trimTrailingWhitespace": true,
+
+	// Git
+	"git.autofetch": true,
+
+	// Integrated Terminal
+	"terminal.integrated.shell.linux": "/bin/zsh",
+	"terminal.integrated.shell.osx": "/bin/zsh",
+	"terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
 
 	// Search
 	"search.exclude": {
@@ -28,14 +49,27 @@
 	},
 	"search.quickOpen.includeSymbols": true,
 
-	// Debug
-	"debug.inlineValues": true,
+	// Workbench
+	"workbench.colorTheme": "Default Dark+",
 
-	// External Terminal
-	"terminal.external.osxExec": "iTerm.app",
-
-	// Integrated Terminal
-	"terminal.integrated.shell.linux": "/bin/zsh",
-	"terminal.integrated.shell.osx": "/bin/zsh",
-	"terminal.integrated.shell.windows": "C:\\Windows\\sysnative\\WindowsPowerShell\\v1.0\\PowerShell.exe"
+	// Language
+	"C_Cpp.clang_format_fallbackStyle": "Visual Studio",	// "none", LLVM", "Google", "Chromium", "Mozilla", "WebKit"
+	"[c]": {
+		"editor.autoIndent": true,
+		"editor.formatOnSave": true
+	},
+	"[cpp]": {
+		"editor.autoIndent": true,
+		"editor.formatOnSave": true
+	},
+	"[javascript]": {
+		"editor.formatOnSave": true
+	},
+	"python.autoComplete.addBrackets": true,
+	"python.venvFolders": [
+		"venv",
+	],
+	"[python]": {
+		"editor.formatOnSave": true
+	}
 }

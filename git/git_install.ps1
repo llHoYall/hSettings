@@ -24,3 +24,12 @@ If (Get-Command git-lfs -errorAction SilentlyContinue) {
 } Else {
 	choco install -y git-lfs
 }
+
+<# Install Source Tree -------------------------------------------------------#>
+Write-Host -NoNewline " => Install "
+Write-Host -ForegroundColor YELLOW "source tree"
+If (Get-Command SourceTree -errorAction SilentlyContinue) {
+	Write-Host "    Already installed."
+} Else {
+	choco install -y sourcetree
+}

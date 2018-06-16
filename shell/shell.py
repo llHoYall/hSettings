@@ -27,7 +27,7 @@ def install(hos):
 
     # zsh (oh-my-zsh)
     if hos == 'Darwin' or hos == 'Linux':
-        subprocess.Popen(['/bin/bash', path + '/zsh_install.sh']) \
+        subprocess.Popen(['/bin/bash', path + '/zsh/zsh_install.sh']) \
                   .communicate()
 
     # PowerShell
@@ -43,7 +43,7 @@ def config(hos):
 
     # zsh (oh-my-zsh)
     if hos == 'Darwin' or hos == 'Linux':
-        subprocess.Popen(['/bin/bash', path + '/zsh_config.sh']) \
+        subprocess.Popen(['/bin/bash', path + '/zsh/zsh_config.sh']) \
                   .communicate()
 
     # PowerShell

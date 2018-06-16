@@ -10,13 +10,13 @@
 
 # Include Scripts -------------------------------------------------------------#
 cd $(dirname $0)
-. ../misc/color.sh
+. ../../misc/color.sh
 
 # Configure Zsh ---------------------------------------------------------------#
 echo -e " => Config ${YELLOW}zsh${END}"
 if [ ! -z "$(command -v zsh)" ]; then
 	rm -rf ~/.zshrc
-	ln .zshrc ~/
+	ln .zshrc ~
 else
 	echo "    Not installed."
 fi
@@ -25,7 +25,7 @@ fi
 echo -e " => Config ${YELLOW}oh-my-zsh${END}"
 if [ -d ~/.oh-my-zsh ]; then
 	rm -rf ~/.oh-my-zsh/themes/hoya.zsh-theme
-	ln hoya.zsh-theme ~/.oh-my-zsh/themes/
+	sudo ln hoya.zsh-theme ~/.oh-my-zsh/themes/
 else
 	echo "    Not installed."
 fi

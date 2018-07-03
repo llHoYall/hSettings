@@ -23,15 +23,15 @@ If (Get-Command git -errorAction SilentlyContinue) {
 	Write-Host -NoNewline ")ocal]: "
 	$scope = Read-Host
 	Write-Host -NoNewline "    Input option [("
-	Write-Host -NoNewline -ForegroundColor Blue "R"
-	Write-Host -NoNewline ")P | ("
+	Write-Host -NoNewline -ForegroundColor Blue "N"
+	Write-Host -NoNewline ")extChip | ("
 	Write-Host -NoNewline -ForegroundColor Blue "H"
 	Write-Host -NoNewline ")oYa]: "
 	$option = Read-Host
 	Switch ($scope) {
 		{($_ -ceq "G") -or ($_ -ceq "Global")} {
 			# User Name
-			If ($option -ceq "R" -or $option -ceq "RP") {
+			If ($option -ceq "N" -or $option -ceq "NC") {
 				git config --global user.name "HoYa"
 			}
 			Elseif ($option -ceq "H" -or $option -ceq "HoYa") {
@@ -43,8 +43,8 @@ If (Get-Command git -errorAction SilentlyContinue) {
 			}
 
 			# User E-mail
-			If ($option -ceq "R" -or $option -ceq "RP") {
-				git config --global user.email "hoya@ixys.net"
+			If ($option -ceq "N" -or $option -ceq "NC") {
+				git config --global user.email "hoya128@nextchip.com"
 			}
 			Elseif ($option -ceq "H" -or $option -ceq "HoYa") {
 				git config --global user.email "hoya128@gmail.com"
@@ -80,7 +80,7 @@ If (Get-Command git -errorAction SilentlyContinue) {
 		}
 		{($_ -ceq "L") -or ($_ -ceq "Local")} {
 			# User Name
-			If ($option -ceq "R" -or $option -ceq "RP") {
+			If ($option -ceq "N" -or $option -ceq "NC") {
 				git config --local user.name "HoYa"
 			}
 			Elseif ($option -ceq "H" -or $option -ceq "HoYa") {
@@ -92,8 +92,8 @@ If (Get-Command git -errorAction SilentlyContinue) {
 			}
 
 			# User E-mail
-			If ($option -ceq "R" -or $option -ceq "RP") {
-				git config --local user.email "hoya@ixys.net"
+			If ($option -ceq "N" -or $option -ceq "NC") {
+				git config --local user.email "hoya128@nextchip.com"
 			}
 			Elseif ($option -ceq "H" -or $option -ceq "HoYa") {
 				git config --local user.email "hoya128@gmail.com"

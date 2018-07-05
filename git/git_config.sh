@@ -20,7 +20,7 @@ echo -e " => Config ${YELLOW}git${END}"
 if [ ! -z "$(command -v git)" ]; then
 	echo -ne "    Input scope [(${BLUE}G${END})lobal | (${BLUE}L${END})ocal]: "
 	read scope
-	echo -ne "    Input option [(${BLUE}R${END})P | (${BLUE}H${END})oYa]: "
+	echo -ne "    Input option [(${BLUE}N${END})extChip | (${BLUE}H${END})oYa]: "
 	read option
 
 	case ${scope} in
@@ -37,7 +37,7 @@ if [ ! -z "$(command -v git)" ]; then
 
 			# user.email
 			if [ ${option} == "R" -o ${option} == "RP" ]; then
-				git config --global user.email "hoya@ixys.net"
+				git config --global user.email "hoya128@nextchip.com"
 			elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
 				git config --global user.email "hoya128@gmail.com"
 			else
@@ -75,7 +75,7 @@ if [ ! -z "$(command -v git)" ]; then
 			;;
 		L | Local)
 			# user.name
-			if [ ${option} == "R" -o ${option} == "RP" ]; then
+			if [ ${option} == "N" -o ${option} == "NC" ]; then
 				git config --local user.name "HoYa"
 			elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
 				git config --local user.name "llHoYall"
@@ -85,8 +85,8 @@ if [ ! -z "$(command -v git)" ]; then
 			fi
 
 			# user.email
-			if [ ${option} == "R" -o ${option} == "RP" ]; then
-				git config --local user.email "hoya@ixys.net"
+			if [ ${option} == "N" -o ${option} == "NC" ]; then
+				git config --local user.email "hoya128@nextchip.com"
 			elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
 				git config --local user.email "hoya128@gmail.com"
 			else

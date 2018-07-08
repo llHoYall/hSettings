@@ -28,24 +28,30 @@ def install(hos):
     # iTerm2
     if hos == 'Darwin':
         subprocess.Popen(['/bin/bash', path + '/iTerm2_install.sh']) \
-                  .communicate()
+            .communicate()
 
     # tmux (tmuxinator)
     if hos == 'Darwin' or hos == 'Linux':
         subprocess.Popen(['/bin/bash', path + '/tmux_install.sh']) \
-                  .communicate()
+            .communicate()
+
+    # Hyper
+    if hos == 'Windows':
+        subprocess.Popen(['powershell.exe',
+                          path + '\\hyper\\hyper_install.ps1']) \
+            .communicate()
 
     # ConEmu
     if hos == 'Windows':
         subprocess.Popen(['powershell.exe',
                           path + '\\conemu\\conemu_install.ps1'])   \
-                  .communicate()
+            .communicate()
 
     # putty
     if hos == 'Windows':
         subprocess.Popen(['powershell.exe',
                           path + '\\putty\\putty_install.ps1'])   \
-                  .communicate()
+            .communicate()
 
 
 # Config ---------------------------------------------------------------------#
@@ -55,20 +61,26 @@ def config(hos):
     # iTerm2
     if hos == 'Darwin':
         subprocess.Popen(['/bin/bash', path + '/iTerm2_config.sh']) \
-                  .communicate()
+            .communicate()
     # tmux
     if hos == 'Darwin' or hos == 'Linux':
         subprocess.Popen(['/bin/bash', path + '/tmux_config.sh'])  \
-                  .communicate()
+            .communicate()
+
+    # Hyper
+    if hos == 'Windows':
+        subprocess.Popen(['powershell.exe',
+                          path + '\\hyper\\hyper_config.ps1'])   \
+            .communicate()
 
     # ConEmu
     if hos == 'Windows':
         subprocess.Popen(['powershell.exe',
                           path + '\\conemu\\conemu_config.ps1'])   \
-                  .communicate()
+            .communicate()
 
     # putty
     if hos == 'Windows':
         subprocess.Popen(['powershell.exe',
                           path + '\\putty\\putty_config.ps1'])    \
-                  .communicate()
+            .communicate()

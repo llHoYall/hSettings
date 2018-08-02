@@ -15,6 +15,8 @@ If (Get-Command code -errorAction SilentlyContinue) {
 	code --install-extension ms-python.python
 	code --install-extension ms-vscode.powershell
 	code --install-extension esbenp.prettier-vscode
+	code --install-extension formulahendry.auto-rename-tag
+	code --install-extension formulahendry.auto-close-tag
 
 	If (Test-Path "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\settings.json") {
 		Remove-Item "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\settings.json"

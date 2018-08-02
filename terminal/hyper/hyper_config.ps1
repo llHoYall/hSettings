@@ -10,7 +10,7 @@
 <# Configure Hyper -----------------------------------------------------------#>
 Write-Host -NoNewline " => Config "
 Write-Host -ForegroundColor YELLOW "Hyper"
-If (Test-Path -Path "C:\Users\$($env:UserName)\AppData\Local\hyper") {
+If (Get-Command hyper -errorAction SilentlyContinue) {
 	If (Test-Path "C:\Users\$($env:UserName)\.hyper.js") {
 		Remove-Item "C:\Users\$($env:UserName)\.hyper.js"
 	}

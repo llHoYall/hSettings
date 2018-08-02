@@ -21,7 +21,8 @@
 
 	// Files
 	"files.associations": {
-		"*.mk": "makefile"
+		"*.mk": "makefile",
+		"*.jsx": "javascript"
 	},
 	"files.eol": "\n",
 	"files.exclude": {
@@ -72,5 +73,8 @@
 	],
 	"[python]": {
 		"editor.formatOnSave": true
-	}
+	},
+
+	// Extension
+	"auto-close-tag.fullMode":true
 }

@@ -10,7 +10,7 @@
 <# Install Hyper -------------------------------------------------------------#>
 Write-Host -NoNewline " => Install "
 Write-Host -ForegroundColor YELLOW "Hyper"
-If (Test-Path -Path "C:\Users\hoya1\AppData\Local\hyper") {
+If (Get-Command hyper -errorAction SilentlyContinue) {
 	Write-Host "    Already installed."
 }
 Else {

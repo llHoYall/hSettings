@@ -18,10 +18,22 @@ If (Get-Command code -errorAction SilentlyContinue) {
 	code --install-extension formulahendry.auto-rename-tag
 	code --install-extension formulahendry.auto-close-tag
 
+  If (Test-Path "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\locale.json") {
+    Remove-Item "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\locale.json"
+  }
+  cmd /c mklink /H "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\locale.json" "$($PSScriptRoot)\locale.json"
+
 	If (Test-Path "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\settings.json") {
 		Remove-Item "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\settings.json"
 	}
 	cmd /c mklink /H "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\settings.json" "$($PSScriptRoot)\settings.json"
+
+  If (Test-Path "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\snippets") {
+    Remove-Item "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\snippets\*"
+  } Else {
+    New-Item -ItemType Directory -Path "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\snippets"
+	}
+  cmd /c mklink /H "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\snippets\c.json" "$($PSScriptRoot)\snippets\c.json"
 } Else {
 	Write-Host "    Not installed."
 }

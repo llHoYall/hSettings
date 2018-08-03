@@ -1,0 +1,11 @@
+{
+	"for loop": {
+		"description": "For loop: Increment",
+		"prefix": "for+",
+		"body": [
+			"for (int i = 0; i < ${1:limit}; ++i) {",
+			"\t$2",
+			"}"
+		]
+	}
+}

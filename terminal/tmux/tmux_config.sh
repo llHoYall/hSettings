@@ -10,7 +10,7 @@
 
 # Include Scripts -------------------------------------------------------------#
 cd $(dirname $0)
-. ../misc/color.sh
+. ../../misc/color.sh
 
 # Configure Tmux --------------------------------------------------------------#
 echo -e " => Config ${YELLOW}tmux${END}"

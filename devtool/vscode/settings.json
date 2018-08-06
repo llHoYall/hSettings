@@ -57,7 +57,7 @@
 	"C_Cpp.clang_format_fallbackStyle": "Visual Studio",	// "none", LLVM", "Google", "Chromium", "Mozilla", "WebKit"
 	"[c]": {
 		"editor.autoIndent": true,
-		"editor.formatOnSave": true
+		"editor.formatOnSave": false
 	},
 	"[cpp]": {
 		"editor.autoIndent": true,

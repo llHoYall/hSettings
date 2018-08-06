@@ -61,7 +61,7 @@
 	},
 	"[cpp]": {
 		"editor.autoIndent": true,
-		"editor.formatOnSave": true
+		"editor.formatOnSave": false
 	},
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"[javascript]": {

@@ -90,7 +90,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='nvim'
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -116,14 +116,14 @@ export TERM=screen-256color
 export LS_COLORS=$LS_COLORS:"di=34:*.sh=32:*.ps1=32"
 
 # fzf -------------------------------------------------------------------------#
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # tmux ------------------------------------------------------------------------#
-if [ -z "$TMUX" ]; then
-	tmux attach -t hTMUX || tmux new -s hTMUX
-fi
+#if [ -z "$TMUX" ]; then
+#	tmux attach -t hTMUX || tmux new -s hTMUX
+#fi
 
 # TextMate2 -------------------------------------------------------------------#
-if [[ "$(uname)" == "Darwin" ]]; then
+if [[ "$(uname -s)" == "Darwin" ]]; then
 	export EDITOR="/usr/local/bin/mate -w"
 fi

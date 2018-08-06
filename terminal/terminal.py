@@ -32,7 +32,7 @@ def install(hos):
 
     # tmux (tmuxinator)
     if hos == 'Darwin' or hos == 'Linux':
-        subprocess.Popen(['/bin/bash', path + '/tmux_install.sh']) \
+        subprocess.Popen(['/bin/bash', path + '/tmux/tmux_install.sh']) \
             .communicate()
 
     # Hyper
@@ -64,7 +64,7 @@ def config(hos):
             .communicate()
     # tmux
     if hos == 'Darwin' or hos == 'Linux':
-        subprocess.Popen(['/bin/bash', path + '/tmux_config.sh'])  \
+        subprocess.Popen(['/bin/bash', path + '/tmux/tmux_config.sh'])  \
             .communicate()
 
     # Hyper

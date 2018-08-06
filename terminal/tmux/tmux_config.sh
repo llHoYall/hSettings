@@ -23,4 +23,4 @@ else
 	echo "    Not installed."
 fi
 
-echo -e "    ${RED}<CTRL-b> + r${END}"
+echo -e "    ${GREEN}<CTRL-b> + r${END}"

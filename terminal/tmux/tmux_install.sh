@@ -27,10 +27,10 @@ fi
 # Install Tmuxinator ----------------------------------------------------------#
 echo -e " => Install ${YELLOW}tmuxinator${END}"
 if [ -z "$(command -v tmuxinator)" ]; then
-	if [ "$(uname)" == "Darwin" ]; then
-		brew install ruby		# update ruby
+	if [ "$(uname -s)" == "Darwin" ]; then
+		brew install ruby
 		gem install tmuxinator
-	elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+	elif [ "$(uname -s)" == "Linux" ]; then
 		sudo apt install -y tmuxinator
 	fi
 else

@@ -23,4 +23,4 @@ else
 	echo "    Not installed."
 fi
 
-echo -e "    ${GREEN}<CTRL-b> + r${END}"
+echo -e "    Press ${GREEN}<CTRL-b> + r${END} in tmux"

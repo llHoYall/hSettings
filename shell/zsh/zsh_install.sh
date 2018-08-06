@@ -10,14 +10,14 @@
 
 # Include Scripts -------------------------------------------------------------#
 cd $(dirname $0)
-. ../misc/color.sh
+. ../../misc/color.sh
 
 # Install Zsh -----------------------------------------------------------------#
 echo -e " => Install ${YELLOW}zsh${END}"
 if [ -z "$(command -v zsh)" ]; then
-	if [ "$(uname)" == "Darwin" ]; then
+	if [ "$(uname -s)" == "Darwin" ]; then
 		brew install zsh
-	elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+	elif [ "$(uname -s)" == "Linux" ]; then
 		sudo apt install -y zsh
 	fi
 	chsh -s $(which zsh)
@@ -28,7 +28,7 @@ fi
 # Install oh-my-zsh -----------------------------------------------------------#
 echo -e " => Install ${YELLOW}oh-my-zsh${END}"
 if [ ! -d ~/.oh-my-zsh ]; then
-	curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+	curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 else
 	echo "    Already installed"
 fi

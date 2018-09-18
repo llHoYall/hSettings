@@ -1,80 +1,43 @@
 {
-	// Debug
-	"debug.inlineValues": true,
+  "breadcrumbs.enabled": true,
 
-	// Editor
-	"editor.fontFamily": "D2Coding ligature, D2Coding, Consolas",
-	"editor.fontLigatures": true,
-	"editor.formatOnPaste": true,
-	"editor.rulers": [80],
-	"editor.scrollBeyondLastLine": false,
-	"editor.tabCompletion": true,
-	"editor.tabSize": 2,
-	"editor.wrappingIndent": "indent",		// "none", "same", "deepIndent"
+  "editor.fontFamily": "D2Coding ligature, D2Coding, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.insertSpaces": false,
+  "editor.rulers": [80],
+  "editor.scrollBeyondLastLine": false,
+  "editor.tabSize": 2,
 
-	// Extensions
-	"extensions.ignoreRecommendations": true,
+  "extensions.ignoreRecommendations": true,
 
-	// External Terminal
-	"terminal.external.osxExec": "iTerm.app",
-	"terminal.external.windowsExec": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "files.associations": {
+    "*.mk": "makefile",
+    "*.jsx": "javascript"
+  },
+  "files.trimTrailingWhitespace": true,
 
-	// Files
-	"files.associations": {
-		"*.mk": "makefile",
-		"*.jsx": "javascript"
-	},
-	"files.eol": "\n",
-	"files.exclude": {
-		"**/.git": true,
-		"**/.svn": true,
-		"**/.hg": true,
-		"**/CVS": true,
-		"**/.DS_Store": true,
-		"**/node_modules": true
-	},
-	"files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
 
-	// Git
-	"git.autofetch": true,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.shell.linux": "/bin/zsh",
+  "terminal.integrated.shell.osx": "/bin/zsh",
 
-	// Integrated Terminal
-	"terminal.integrated.shell.linux": "/bin/zsh",
-	"terminal.integrated.shell.osx": "/bin/zsh",
-	"terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "[c]": {
+    "editor.autoIndent": true
+  },
 
-	// Search
-	"search.exclude": {
-		"**/node_modules": true,
-		"**/bower_components": true
-	},
-	"search.quickOpen.includeSymbols": true,
+  "[cpp]": {
+    "editor.autoIndent": true
+  },
 
-	// Workbench
-	"workbench.colorTheme": "Default Dark+",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
 
-	// Language
-	"C_Cpp.clang_format_fallbackStyle": "Visual Studio",	// "none", LLVM", "Google", "Chromium", "Mozilla", "WebKit"
-	"[c]": {
-		"editor.autoIndent": true,
-		"editor.formatOnSave": false
-	},
-	"[cpp]": {
-		"editor.autoIndent": true,
-		"editor.formatOnSave": false
-	},
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"[javascript]": {
-		"editor.formatOnSave": true
-	},
-	"python.autoComplete.addBrackets": true,
-	"python.venvFolders": [
-		"venv",
-	],
-	"[python]": {
-		"editor.formatOnSave": true
-	},
-
-	// Extension
-	"auto-close-tag.fullMode":true
+  "python.autoComplete.addBrackets": true,
+  "python.venvFolders": ["venv"],
+  "[python]": {
+    "editor.formatOnSave": true
+  }
 }

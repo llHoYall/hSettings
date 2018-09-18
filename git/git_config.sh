@@ -73,6 +73,9 @@ if [ ! -z "$(command -v git)" ]; then
 			# rerere.enabled
 			git config --global rerere.enabled true
 			;;
+
+			# alias
+			git config --global alias.st status
 		L | Local)
 			# user.name
 			if [ ${option} == "N" -o ${option} == "NC" ]; then

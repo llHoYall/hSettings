@@ -11,12 +11,21 @@
 Write-Host -NoNewline " => Config "
 Write-Host -ForegroundColor YELLOW "vscode"
 If (Get-Command code -errorAction SilentlyContinue) {
-	code --install-extension ms-vscode.cpptools
-	code --install-extension ms-python.python
+	<# Shell #>
 	code --install-extension ms-vscode.powershell
+	<# C/C++ #>
+	code --install-extension ms-vscode.cpptools
+	code --install-extension twxs.cmake
+	code --install-extension webfreak.debug
+	<# Web #>
+	code --install-extension xabikos.reactsnippets
+	code --install-extension dbaeumer.vscode-eslint
+	code --install-extension msjsdiag.debugger-for-chrome
 	code --install-extension esbenp.prettier-vscode
 	code --install-extension formulahendry.auto-rename-tag
 	code --install-extension formulahendry.auto-close-tag
+	<# Python #>
+	code --install-extension ms-python.python
 
   If (Test-Path "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\locale.json") {
     Remove-Item "C:\Users\$($env:UserName)\AppData\Roaming\Code\User\locale.json"

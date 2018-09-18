@@ -77,6 +77,9 @@ If (Get-Command git -errorAction SilentlyContinue) {
 
 			# rerere.enabled
 			git config --global rerere.enabled true
+
+			# alias
+			git config --global alias.st status
 		}
 		{($_ -ceq "L") -or ($_ -ceq "Local")} {
 			# User Name

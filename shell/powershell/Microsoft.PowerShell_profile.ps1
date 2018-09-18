@@ -1,5 +1,5 @@
 <# Default Starting Location -------------------------------------------------#>
-Set-Location $HOME
+# Set-Location $HOME
 
 <# Chocolatey Profile --------------------------------------------------------#>
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"

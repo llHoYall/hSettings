@@ -39,3 +39,6 @@ Set-Alias vim 'C:\tools\neovim\Neovim\bin\nvim.exe'
 Set-Alias meld 'C:\Program Files (x86)\Meld\Meld.exe'
 Set-Alias python2 'C:\Python27\python.exe'
 Set-Alias python3 'C:\Python37\python.exe'
+
+function git-status { git status }
+Set-Alias -Name gst -Value git-status

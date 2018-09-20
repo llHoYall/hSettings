@@ -9,7 +9,7 @@
 
 # Include Scripts -------------------------------------------------------------#
 cd $(dirname $0)
-. ../misc/color.sh
+. ../../misc/color.sh
 
 # Installation ----------------------------------------------------------------#
 echo -e " => Install ${YELLOW}homebrew${END}"

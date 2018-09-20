@@ -1,11 +1,10 @@
 #!/bin/bash
 ################################################################################
-#	@file			git/git_install.sh
-#	@brief		This file installs git program.
+#	@brief		Install git program.
 #	@author		llHoYall <hoya128@gmail.com>
 #	@version	v1.0
-#	@note
-#		-	2018.03.16	Created.
+#	@history
+#		2018.03.16	Created.
 ################################################################################
 
 # Include Scripts -------------------------------------------------------------#

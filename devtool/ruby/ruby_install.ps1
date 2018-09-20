@@ -1,16 +1,17 @@
 <###############################################################################
- #	@brief		Install meld program.
+ #	@brief		Install ruby program.
  #	@author		llHoYall <hoya128@gmail.com>
  #	@version	v1.0
- #	@note
- #		- 2018.06.04	Created.
+ #	@history
+ #		2018.09.20	Created.
  ##############################################################################>
 
-<# Install Meld --------------------------------------------------------------#>
+<# Install Ruby --------------------------------------------------------------#>
 Write-Host -NoNewline " => Install "
-Write-Host -ForegroundColor YELLOW "meld"
-If (Get-Command meld -errorAction SilentlyContinue) {
+Write-Host -ForegroundColor YELLOW "ruby"
+If (Get-Command ruby -errorAction SilentlyContinue) {
 	Write-Host "    Already installed."
-} Else {
-	choco install -y meld
+}
+Else {
+	choco install -y ruby
 }

@@ -32,7 +32,7 @@ def install(hos):
     # PowerShell
     if hos == 'Windows':
         subprocess.Popen(['powershell.exe',
-                          path + '\powershell\powershell_install.ps1']) \
+                          path + '/powershell/powershell_install.ps1']) \
             .communicate()
 
 
@@ -48,5 +48,5 @@ def config(hos):
     # PowerShell
     if hos == 'Windows':
         subprocess.Popen(['powershell.exe',
-                          path + '\powershell\powershell_config.ps1'])  \
+                          path + '/powershell/powershell_config.ps1'])  \
             .communicate()

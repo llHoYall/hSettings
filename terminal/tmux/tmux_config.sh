@@ -18,8 +18,7 @@ if [ ! -z "$(command -v tmux)" ]; then
 	mkdir -p ~/.tmux
 	ln tmux_config_statusbar.sh ~/.tmux
 	ln .tmux.conf ~
+	echo -e "    Press ${GREEN}<CTRL-b> + r${END} in tmux"
 else
 	echo "    Not installed."
 fi
-
-echo -e "    Press ${GREEN}<CTRL-b> + r${END} in tmux"

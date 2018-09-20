@@ -29,6 +29,11 @@ def install(hos):
         subprocess.Popen(["powershell.exe",
                           path + "\\neovim\\neovim_install.ps1"]).communicate()
 
+    # vscode
+    if hos == 'Windows':
+        subprocess.Popen(['powershell.exe', path + '/vscode/vscode_install.ps1'])  \
+                  .communicate()
+
     # xcode
     if hos == 'Darwin':
         xcode.install(hos)
@@ -57,14 +62,25 @@ def install(hos):
         subprocess.Popen(['powershell.exe', path + '/python/python_install.ps1'])  \
                   .communicate()
 
+    # ruby
+    if hos == 'Darwin' or hos == 'Linux':
+        subprocess.Popen(['/bin/bash', path + '/ruby/ruby_install.sh']) \
+                  .communicate()
+    elif hos == 'Windows':
+        subprocess.Popen(['powershell.exe', path + '/ruby/ruby_install.ps1'])  \
+                  .communicate()
+
     # embedded
     if hos == 'Darwin' or hos == 'Linux':
         embedded.install(hos)
 
     # meld
-    if hos == 'Windows':
-        subprocess.Popen(["powershell.exe",
-                          path + "\\meld\\meld_install.ps1"]).communicate()
+    if hos == 'Darwin' or hos == 'Linux':
+        subprocess.Popen(['/bin/bash', path + '/meld/meld_install.sh']) \
+                  .communicate()
+    elif hos == 'Windows':
+        subprocess.Popen(["powershell.exe", path + "/meld/meld_install.ps1"])   \
+                  .communicate()
 
     # web
     if hos == 'Windows':
@@ -77,9 +93,12 @@ def config(hos):
     print("==> Config " + color.BR_CYAN + "devtool" + color.END)
 
     # vscode
-    if hos == 'Windows':
-        subprocess.Popen(["powershell.exe",
-                          path + "\\vscode\\vscode_config.ps1"]).communicate()
+    if hos == 'Darwin':
+        subprocess.Popen(['/bin/bash', path + '/vscode/vscode_config.sh']) \
+                  .communicate()
+    elif hos == 'Windows':
+        subprocess.Popen(["powershell.exe", path + "/vscode/vscode_config.ps1"])  \
+                  .communicate()
 
     # python
     if hos == 'Darwin' or hos == 'Linux':

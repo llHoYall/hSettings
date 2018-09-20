@@ -109,9 +109,6 @@ export EDITOR='nvim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # HoYa #########################################################################
-# Terminal
-export TERM=screen-256color
-
 # LS_COLORS -------------------------------------------------------------------#
 # Sexy Color Palette
 export LS_COLORS=$LS_COLORS:"di=34:*.sh=32:*.ps1=32:ow=34:"

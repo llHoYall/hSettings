@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 ###############################################################################
-#   @file       devtool/devtool.py
-#   @brief      This file installs and configures devtools.
+#   @brief      Install and Configure devtools.
 #   @author     llHoYall <hoya128@gmail.com>
 #   @version    v1.0
-#   @note
-#       - 2018.01.18    Created.
+#   @history
+#       2018.01.18    Created.
 ###############################################################################
 
 # Import Module --------------------------------------------------------------#
@@ -25,26 +24,34 @@ path = os.path.dirname(__file__)
 def install(hos):
     print("==> Install " + color.BR_CYAN + "devtool" + color.END)
 
+    # neovim
+    if hos == 'Windows':
+        subprocess.Popen(["powershell.exe",
+                          path + "\\neovim\\neovim_install.ps1"]).communicate()
+
     # xcode
     if hos == 'Darwin':
         xcode.install(hos)
 
     # clang
-    if hos == 'Linux':
-        clang.install(hos)
+    if hos == 'Darwin' or hos == 'Linux':
+        subprocess.Popen(['/bin/bash', path + '/clang/clang_install.sh']) \
+                  .communicate()
+    elif hos == 'Windows':
+        subprocess.Popen(['powershell.exe', path + '/clang/clang_install.ps1'])  \
+                  .communicate()
 
     # cmake
     if hos == 'Darwin' or hos == 'Linux':
-        cmake.install(hos)
+        subprocess.Popen(['/bin/bash', path + '/cmake/cmake_install.sh']) \
+                  .communicate()
+    elif hos == 'Windows':
+        subprocess.Popen(['powershell.exe', path + '/cmake/cmake_install.ps1'])  \
+                  .communicate()
 
     # embedded
     if hos == 'Darwin' or hos == 'Linux':
         embedded.install(hos)
-
-    # neovim
-    if hos == 'Windows':
-        subprocess.Popen(["powershell.exe",
-                          path + "\\neovim\\neovim_install.ps1"]).communicate()
 
     # meld
     if hos == 'Windows':

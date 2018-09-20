@@ -1,10 +1,9 @@
 <###############################################################################
- #	@file			shell/powershell_install.ps1
- #	@brief		This file installs powershell program.
+ #	@brief		Install powershell program.
  #	@author		llHoYall <hoya128@gmail.com>
  #	@version	v1.0
- #	@note
- #		- 2018.04.06	Created.
+ #	@history
+ #		2018.04.06	Created.
  ##############################################################################>
 
 <# Install Powershell --------------------------------------------------------#>

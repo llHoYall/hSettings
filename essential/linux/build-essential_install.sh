@@ -15,7 +15,7 @@ cd $(dirname $0)
 echo -e " => Install ${YELLOW}build-essential${END}"
 if [ -z "$(command -v gcc)" ] && [ -z "$(command -v make)" ]; then
 	if [ "$(uname -s)" == "Linux" ]; then
-		sudo apt install -y build-essential
+		sudo apt install -y build-essential libtool autoconf
 	fi
 else
 	echo "    Already installed."

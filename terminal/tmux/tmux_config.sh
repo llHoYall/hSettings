@@ -1,11 +1,10 @@
 #!/bin/bash
 ################################################################################
-#	@file			terminal/tmux_config.sh
-#	@brief		This file configures tmux program.
+#	@brief		Configure tmux program.
 #	@author		llHoYall <hoya128@gmail.com>
 #	@version	v1.0
-#	@note
-#		-	2018.03.23	Created.
+#	@history
+#		2018.03.23	Created.
 ################################################################################
 
 # Include Scripts -------------------------------------------------------------#

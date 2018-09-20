@@ -68,6 +68,7 @@ ZSH_THEME="hoya"
 plugins=(
 	git
 	fasd
+	fzf
 	tmux
 	tmuxinator
 	virtualenv
@@ -90,7 +91,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

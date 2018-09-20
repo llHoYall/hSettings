@@ -1,11 +1,10 @@
 #!/bin/bash
 ################################################################################
-#	@file			shell/zsh_config.sh
-#	@brief		This file configures zsh program.
+#	@brief		Configure zsh program.
 #	@author		llHoYall <hoya128@gmail.com>
 #	@version	v1.0
-#	@note
-#		- 2018.04.04	Created.
+#	@history
+#		2018.04.04	Created.
 ################################################################################
 
 # Include Scripts -------------------------------------------------------------#

@@ -1,11 +1,10 @@
 #!/bin/bash
 ################################################################################
-#	@file			terminal/tmux_install.sh
-#	@brief		This file installs tmux program.
+#	@brief		Install tmux program.
 #	@author		llHoYall <hoya128@gmail.com>
 #	@version	v1.0
-#	@note
-#		-	2018.03.22	Created.
+#	@history
+#		2018.03.22	Created.
 ################################################################################
 
 # Include Scripts -------------------------------------------------------------#

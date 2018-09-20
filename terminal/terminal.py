@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 ###############################################################################
-#   @file       terminal/terminal.py
-#   @brief      This file installs and configures terminal program.
+#   @brief      Install and Configure terminal program.
 #   @author     llHoYall <hoya128@gmail.com>
 #   @version    v1.0
-#   @note
-#       - 2018.01.05    Created.
+#   @history
+#       2018.01.05    Created.
 ###############################################################################
 
 # Import Module --------------------------------------------------------------#

@@ -1,11 +1,10 @@
 #!/bin/bash
 ################################################################################
-#	@file			shell/zsh_install.sh
-#	@brief		This file installs zsh program.
+#	@brief		Install zsh program.
 #	@author		llHoYall <hoya128@gmail.com>
 #	@version	v1.0
-#	@note
-#		- 2018.04.04	Created.
+#	@history
+#		2018.04.04	Created.
 ################################################################################
 
 # Include Scripts -------------------------------------------------------------#
@@ -21,6 +20,7 @@ if [ -z "$(command -v zsh)" ]; then
 		sudo apt install -y zsh
 	fi
 	chsh -s $(which zsh)
+	exit 0
 else
 	echo "    Already installed"
 fi

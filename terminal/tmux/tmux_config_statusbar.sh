@@ -1,12 +1,11 @@
 #!/bin/bash
 ################################################################################
-#	@file			terminal/tmux_config_statusbar.sh
-#	@brief		This file is for configuring tmux's status bar.
+#	@brief		Configure tmux's status bar.
 #						Get uptime of server and show it to status bar.
 #	@author		llHoYall <hoya128@gmail.com>
 #	@version	v1.0
-#	@note
-#		-	2018.03.23	Created.
+#	@history
+#		2018.03.23	Created.
 ################################################################################
 
 uptime=$(uptime | tr -d "[:space:]")

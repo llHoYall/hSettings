@@ -22,3 +22,13 @@ if [ -z "$(command -v python3)" ]; then
 else
 	echo "    Already installed"
 fi
+
+# Install Pip3 ----------------------------------------------------------------#
+echo -e " => Install ${YELLOW}pip3${END}"
+if [ -z "$(command -v pip3)" ]; then
+	if [ "$(uname -s)" == "Linux" ]; then
+		sudo apt install -y python3-pip
+	fi
+else
+	echo "    Already installed"
+fi

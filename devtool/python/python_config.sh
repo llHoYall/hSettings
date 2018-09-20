@@ -15,9 +15,9 @@ cd $(dirname $0)
 echo -e " => Config ${YELLOW}python3${END}"
 if [ ! -z "$(command -v python3)" ]; then
 	if [ "$(uname -s)" == "Darwin" ]; then
-		pip3 install -y autopep8 pylint
+		sudo -H pip3 install autopep8 pylint
 	elif [ "$(uname -s)" == "Linux" ]; then
-		sudo pip3 install -y autopep8 pylint
+		sudo -H pip3 install autopep8 pylint
 	fi
 else
 	echo "    Not installed."

@@ -2,7 +2,7 @@
  #	@brief		Installs putty program.
  #	@author		llHoYall <hoya128@gmail.com>
  #	@version	v1.0
- #	@note
+ #	@history
  #		- 2018.03.27	Created.
  ##############################################################################>
 

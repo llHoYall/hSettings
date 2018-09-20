@@ -114,7 +114,7 @@ export TERM=screen-256color
 
 # LS_COLORS -------------------------------------------------------------------#
 # Sexy Color Palette
-export LS_COLORS=$LS_COLORS:"di=34:*.sh=32:*.ps1=32"
+export LS_COLORS=$LS_COLORS:"di=34:*.sh=32:*.ps1=32:ow=34:"
 
 # fzf -------------------------------------------------------------------------#
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

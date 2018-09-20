@@ -1,10 +1,9 @@
 <###############################################################################
- #	@file			essential/chocolatey_install.ps1
- #	@brief		This file installs chocolatey program.
+ #	@brief		Install chocolatey program.
  #	@author		llHoYall <hoya128@gmail.com>
  #	@version	v1.0
- #	@note
- #		- 2018.03.16	Created.
+ #	@history
+ #		2018.03.16	Created.
  ##############################################################################>
 
 <# Installation --------------------------------------------------------------#>

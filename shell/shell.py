@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 ###############################################################################
-#   @file       shell/shell.py
-#   @brief      This file installs and configures shell program.
+#   @brief      Install and configure shell program.
 #   @author     llHoYall <hoya128@gmail.com>
 #   @version    v1.0
-#   @note
-#       - 2018.04.04    Created.
+#   @history
+#       2018.04.04    Created.
 ###############################################################################
 
 # Import Module --------------------------------------------------------------#
@@ -34,7 +33,7 @@ def install(hos):
     if hos == 'Windows':
         subprocess.Popen(['powershell.exe',
                           path + '\powershell\powershell_install.ps1']) \
-                  .communicate()
+            .communicate()
 
 
 # Config ---------------------------------------------------------------------#
@@ -50,4 +49,4 @@ def config(hos):
     if hos == 'Windows':
         subprocess.Popen(['powershell.exe',
                           path + '\powershell\powershell_config.ps1'])  \
-                  .communicate()
+            .communicate()

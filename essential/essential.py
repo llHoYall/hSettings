@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 ###############################################################################
-#   @file       essential/essential.py
-#   @brief      This file installs and configures essential program.
+#   @brief      Install and configure essential program.
 #   @author     llHoYall <hoya128@gmail.com>
 #   @version    v1.0
-#   @note
-#       - 2018.01.05    Created.
+#   @history
+#       2018.01.05    Created.
 ###############################################################################
 
 # Import Module --------------------------------------------------------------#
@@ -25,15 +24,20 @@ path = os.path.dirname(__file__)
 def install(hos):
     print("==> Install " + color.BR_CYAN + "essential" + color.END)
 
-    # homebrew
+    # Mac - homebrew
     if hos == 'Darwin':
-        subprocess.Popen(["/bin/bash", path + '/homebrew_install.sh'])  \
+        subprocess.Popen(["/bin/bash", path + '/mac/homebrew_install.sh'])  \
                   .communicate()
 
-    # chocolatey
+    # Linux
+    if hos == 'Linux':
+        subprocess.Popen(["/bin/bash", path + '/linux/build-essential_install.sh'])  \
+                  .communicate()
+
+    # Windows - chocolatey
     if hos == 'Windows':
         subprocess.Popen(["powershell.exe",
-                          path + "\chocolatey_install.ps1"]).communicate()
+                          path + "\windows\chocolatey_install.ps1"]).communicate()
 
 
 # Config ---------------------------------------------------------------------#

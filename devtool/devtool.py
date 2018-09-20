@@ -49,6 +49,14 @@ def install(hos):
         subprocess.Popen(['powershell.exe', path + '/cmake/cmake_install.ps1'])  \
                   .communicate()
 
+    # python
+    if hos == 'Darwin' or hos == 'Linux':
+        subprocess.Popen(['/bin/bash', path + '/python/python_install.sh']) \
+                  .communicate()
+    elif hos == 'Windows':
+        subprocess.Popen(['powershell.exe', path + '/python/python_install.ps1'])  \
+                  .communicate()
+
     # embedded
     if hos == 'Darwin' or hos == 'Linux':
         embedded.install(hos)
@@ -73,4 +81,10 @@ def config(hos):
         subprocess.Popen(["powershell.exe",
                           path + "\\vscode\\vscode_config.ps1"]).communicate()
 
-    # neovim
+    # python
+    if hos == 'Darwin' or hos == 'Linux':
+        subprocess.Popen(['/bin/bash', path + '/python/python_config.sh']) \
+                  .communicate()
+    elif hos == 'Windows':
+        subprocess.Popen(['powershell.exe', path + '/python/python_config.ps1'])  \
+                  .communicate()

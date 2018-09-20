@@ -1,10 +1,9 @@
 <###############################################################################
- #	@file			terminal/putty_config.ps1
- #	@brief		This file configures putty program.
+ #	@brief		Configure putty program.
  #	@author		llHoYall <hoya128@gmail.com>
  #	@version	v1.0
- #	@note
- #		- 2018.03.26	Created.
+ #	@history
+ #		2018.03.26	Created.
  ##############################################################################>
 
 <# Configure ConEmu ----------------------------------------------------------#>

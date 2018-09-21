@@ -15,8 +15,9 @@ If (Get-Command code -errorAction SilentlyContinue) {
 	<# Web #>
 	code --install-extension xabikos.reactsnippets
 	code --install-extension dbaeumer.vscode-eslint
-	code --install-extension msjsdiag.debugger-for-chrome
+	code --install-extension shinnn.stylelint
 	code --install-extension esbenp.prettier-vscode
+	code --install-extension msjsdiag.debugger-for-chrome
 	code --install-extension formulahendry.auto-rename-tag
 	code --install-extension formulahendry.auto-close-tag
 	<# Python #>

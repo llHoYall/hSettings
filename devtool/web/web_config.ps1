@@ -6,11 +6,15 @@
  #		2018.03.20	Created.
  ##############################################################################>
 
-<# Install NVM ---------------------------------------------------------------#>
+<# Install Node.js -----------------------------------------------------------#>
 Write-Host -NoNewline " => Install "
 Write-Host -ForegroundColor YELLOW "nvm"
 If (Get-Command nvm -errorAction SilentlyContinue) {
-	Write-Host "    Already installed."
-} Else {
-	choco install -y nvm
+	nvm install latest
+	If (Get-Command node -errorAction SilentlyContinue) {
+		npm i -g yarn eslint
+	}
+}
+Else {
+	Write-Host "    Not installed."
 }

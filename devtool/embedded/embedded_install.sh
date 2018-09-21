@@ -32,13 +32,17 @@ if [ -z "$(command -v st-flash)" ]; then
 	if [ "$(uname -s)" == "Darwin" ]; then
 		brew install stlink
 	elif [ "$(uname -s)" == "Linux" ]; then
-		sudo apt-get install git libusb-1.0.0-dev
+		sudo apt install libusb-1.0.0-dev pkg-config gtk+-3.0
 		git clone --depth 1 https://github.com/texane/stlink && cd stlink
-		./.travis.sh
+		make release
 		cd build/Release
-		sudo cp * /etc/udev/rules.d/
+		sudo make install
+		cd ../..
+		sudo cp etc/udev/rules.d/* /etc/udev/rules.d
 		sudo udevadm control --reload-rules
 		sudo udevadm trigger
+		cd ..
+		rm -rf stlink
 	fi
 else
 	echo "    Already installed"

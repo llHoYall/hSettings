@@ -38,6 +38,22 @@ def install(hos):
     if hos == 'Darwin':
         xcode.install(hos)
 
+    # web
+    if hos == 'Darwin' or hos == 'Linux':
+        subprocess.Popen(['/bin/bash', path + '/web/web_install.sh']) \
+                  .communicate()
+    elif hos == 'Windows':
+        subprocess.Popen(["powershell.exe", path + "/web/web_install.ps1"])   \
+                  .communicate()
+
+    # python
+    if hos == 'Darwin' or hos == 'Linux':
+        subprocess.Popen(['/bin/bash', path + '/python/python_install.sh']) \
+                  .communicate()
+    elif hos == 'Windows':
+        subprocess.Popen(['powershell.exe', path + '/python/python_install.ps1'])  \
+                  .communicate()
+
     # clang
     if hos == 'Darwin' or hos == 'Linux':
         subprocess.Popen(['/bin/bash', path + '/clang/clang_install.sh']) \
@@ -52,14 +68,6 @@ def install(hos):
                   .communicate()
     elif hos == 'Windows':
         subprocess.Popen(['powershell.exe', path + '/cmake/cmake_install.ps1'])  \
-                  .communicate()
-
-    # python
-    if hos == 'Darwin' or hos == 'Linux':
-        subprocess.Popen(['/bin/bash', path + '/python/python_install.sh']) \
-                  .communicate()
-    elif hos == 'Windows':
-        subprocess.Popen(['powershell.exe', path + '/python/python_install.ps1'])  \
                   .communicate()
 
     # ruby
@@ -82,11 +90,6 @@ def install(hos):
         subprocess.Popen(["powershell.exe", path + "/meld/meld_install.ps1"])   \
                   .communicate()
 
-    # web
-    if hos == 'Windows':
-        subprocess.Popen(["powershell.exe",
-                          path + "\\web\\web_install.ps1"]).communicate()
-
 
 # Config ---------------------------------------------------------------------#
 def config(hos):
@@ -98,6 +101,14 @@ def config(hos):
                   .communicate()
     elif hos == 'Windows':
         subprocess.Popen(["powershell.exe", path + "/vscode/vscode_config.ps1"])  \
+                  .communicate()
+
+    # web
+    if hos == 'Darwin' or hos == 'Linux':
+        subprocess.Popen(['/bin/bash', path + '/web/web_config.sh']) \
+                  .communicate()
+    elif hos == 'Windows':
+        subprocess.Popen(["powershell.exe", path + "/web/web_config.ps1"])   \
                   .communicate()
 
     # python

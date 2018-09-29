@@ -29,6 +29,7 @@ fi
 echo -e " => Install ${YELLOW}oh-my-zsh${END}"
 if [ ! -d ~/.oh-my-zsh ]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	cd -
 else
 	echo "    Already installed"
 fi

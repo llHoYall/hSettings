@@ -26,7 +26,7 @@ def install(hos):
 
     # iTerm2
     if hos == 'Darwin':
-        subprocess.Popen(['/bin/bash', path + '/iTerm2_install.sh']) \
+        subprocess.Popen(['/bin/bash', path + '/iTerm2/iTerm2_install.sh']) \
             .communicate()
 
     # tmux (tmuxinator)
@@ -59,7 +59,7 @@ def config(hos):
 
     # iTerm2
     if hos == 'Darwin':
-        subprocess.Popen(['/bin/bash', path + '/iTerm2_config.sh']) \
+        subprocess.Popen(['/bin/bash', path + '/iTerm2/iTerm2_config.sh']) \
             .communicate()
     # tmux
     if hos == 'Darwin' or hos == 'Linux':

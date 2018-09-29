@@ -18,9 +18,9 @@ if [ -z "$(command -v arm-none-eabi-gcc)" ]; then
 		brew cask install gcc-arm-embedded
 	elif [ "$(uname -s)" == "Linux" ]; then
 		sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa
-    sudo apt update
-    sudo apt remove gcc-arm-embedded
-    sudo apt install -y gcc-arm-embedded
+		sudo apt update
+		sudo apt remove gcc-arm-embedded
+		sudo apt install -y gcc-arm-embedded
 	fi
 else
 	echo "    Already installed"

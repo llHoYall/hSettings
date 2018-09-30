@@ -1,7 +1,7 @@
 {
   "breadcrumbs.enabled": true,
 
-  "editor.fontFamily": "D2Coding ligature, D2Coding, Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "'D2Coding ligature', D2Coding, Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.insertSpaces": false,
   "editor.rulers": [80],

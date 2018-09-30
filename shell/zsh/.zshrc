@@ -113,6 +113,10 @@ export EDITOR='nvim'
 # Sexy Color Palette
 export LS_COLORS=$LS_COLORS:"di=34:*.sh=32:*.ps1=32:ow=34:"
 
+# NVM -------------------------------------------------------------------------#
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
 # fzf -------------------------------------------------------------------------#
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

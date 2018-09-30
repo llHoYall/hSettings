@@ -15,7 +15,7 @@ cd $(dirname $0)
 echo -e " => Install ${YELLOW}meld${END}"
 if [ -z "$(command -v meld)" ]; then
 	if [ "$(uname -s)" == "Darwin" ]; then
-		brew install meld
+		brew cask install meld
 	elif [ "$(uname -s)" == "Linux" ]; then
 		sudo apt install -y meld
 	fi

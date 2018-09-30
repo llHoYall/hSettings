@@ -16,7 +16,7 @@ echo -e " => Config ${YELLOW}node${END}"
 if [ ! -z "$(command -v nvm)" ]; then
 	nvm install latest
 	if [ ! -z "$(command -v node)" ]; then
-		npm i -g yarn eslint
+		npm i -g yarn
 	fi
 else
 	echo "    Not installed."

@@ -13,7 +13,7 @@ If (Get-Command nvim -errorAction SilentlyContinue) {
 	If (Test-Path "C:\Users\$($env:UserName)\.config\nvim\pack\bundle\start\fzf") {
 		Remove-Item "C:\Users\$($env:UserName)\.config\nvim\pack\bundle\start\fzf"
 	}
-	git clone https://github.com/junegunn/fzf "C:\Users\$($env:UserName)\.config\nvim\pack\bundle\start\fzf"
+	git clone --depth 1 https://github.com/junegunn/fzf "C:\Users\$($env:UserName)\.config\nvim\pack\bundle\start\fzf"
 } Else {
 	Write-Host "    Not installed."
 }

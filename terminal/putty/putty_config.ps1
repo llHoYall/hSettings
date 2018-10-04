@@ -11,7 +11,6 @@ Write-Host -NoNewline " => Config "
 Write-Host -ForegroundColor YELLOW "putty"
 If (Get-Command putty -errorAction SilentlyContinue) {
 	regedit.exe "$($PSScriptRoot)\putty_sexy.reg"
-}
-Else {
+} Else {
 	Write-Host "    Not installed."
 }

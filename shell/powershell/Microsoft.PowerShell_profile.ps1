@@ -34,6 +34,7 @@ Import-Module -Name PSReadLine
 Set-Alias meld 'C:\Program Files (x86)\Meld\Meld.exe'
 Set-Alias python2 'C:\Python27\python.exe'
 Set-Alias python3 'C:\Python37\python.exe'
+Set-Alias python python3
 
 function git-status { git status }
 Set-Alias -Name gst -Value git-status

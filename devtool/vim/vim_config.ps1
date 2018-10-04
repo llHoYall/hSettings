@@ -11,7 +11,7 @@ Write-Host -NoNewline " => Config "
 Write-Host -ForegroundColor YELLOW "neovim"
 If (Get-Command nvim -errorAction SilentlyContinue) {
 	Remove-Item "C:\Users\$($env:UserName)\.config\nvim\pack\bundle\start\fzf"
-	git clone https://github.com/junegunn/fzf ~/.config/nvim/pack/bundle/start
+	git clone https://github.com/junegunn/fzf "C:\Users\$($env:UserName)\.config\nvim\pack\bundle\start"
 } Else {
 	Write-Host "    Not installed."
 }

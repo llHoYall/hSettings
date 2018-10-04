@@ -11,7 +11,7 @@
 echo -e " => Config ${YELLOW}neovim${END}"
 if [ ! -z "$(command -v nvim)" ]; then
 	rm -rf ~/.config/nvim/pack/bundle/start/fzf
-	git clone https://github.com/junegunn/fzf ~/.config/nvim/pack/bundle/start
+	git clone https://github.com/junegunn/fzf ~/.config/nvim/pack/bundle/start/fzf
 else
 	echo "    Not installed."
 fi

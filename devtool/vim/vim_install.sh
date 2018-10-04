@@ -12,7 +12,7 @@ cd $(dirname $0)
 . ../../misc/color.sh
 
 # Install Vim -----------------------------------------------------------------#
-echo -e " => Install ${YELLOW}tmux${END}"
+echo -e " => Install ${YELLOW}vim${END}"
 if [ -z "$(command -v vim)" ]; then
 	if [ "$(uname -s)" == "Darwin" ]; then
 		brew install vim
@@ -36,8 +36,8 @@ else
 fi
 
 # Install Ctags ---------------------------------------------------------------#
-echo -e " => Install ${YELLOW}neovim${END}"
-if [ -z "$(command -v neovim)" ]; then
+echo -e " => Install ${YELLOW}ctags${END}"
+if [ -z "$(command -v ctags)" ]; then
 	if [ "$(uname -s)" == "Darwin" ]; then
 		brew install ctags
 	elif [ "$(uname -s)" == "Linux" ]; then

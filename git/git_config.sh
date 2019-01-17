@@ -25,7 +25,7 @@ if [ ! -z "$(command -v git)" ]; then
 	case ${scope} in
 		G | Global)
 			# user.name
-			if [ ${option} == "R" -o ${option} == "RP" ]; then
+			if [ ${option} == "N" -o ${option} == "NC" ]; then
 				git config --global user.name "HoYa"
 			elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
 				git config --global user.name "llHoYall"
@@ -35,7 +35,7 @@ if [ ! -z "$(command -v git)" ]; then
 			fi
 
 			# user.email
-			if [ ${option} == "R" -o ${option} == "RP" ]; then
+			if [ ${option} == "N" -o ${option} == "NC" ]; then
 				git config --global user.email "hoya128@nextchip.com"
 			elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
 				git config --global user.email "hoya128@gmail.com"
@@ -51,7 +51,7 @@ if [ ! -z "$(command -v git)" ]; then
 			git config --global core.autocrlf input
 
 			# core.editor
-			git config --global core.editor vim
+			git config --global core.editor nvim
 
 			# credential.helper
 			if [ "$(uname -s)" == "Darwin" ]; then

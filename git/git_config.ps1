@@ -61,7 +61,7 @@ If (Get-Command git -errorAction SilentlyContinue) {
 			git config --global core.autocrlf true
 
 			# core.editor
-			git config --global core.editor vim
+			git config --global core.editor nvim
 
 			# credential.helper
 			git config --global credential.helper wincred

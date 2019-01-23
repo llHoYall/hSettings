@@ -36,20 +36,17 @@ def install(hos):
 
     # Hyper
     if hos == 'Windows':
-        subprocess.Popen(['powershell.exe',
-                          path + '\\hyper\\hyper_install.ps1']) \
+        subprocess.Popen(['powershell.exe', path + '/hyper/hyper_install.ps1']) \
             .communicate()
 
     # ConEmu
     if hos == 'Windows':
-        subprocess.Popen(['powershell.exe',
-                          path + '\\conemu\\conemu_install.ps1'])   \
+        subprocess.Popen(['powershell.exe', path + '/conemu/conemu_install.ps1'])   \
             .communicate()
 
     # putty
     if hos == 'Windows':
-        subprocess.Popen(['powershell.exe',
-                          path + '\\putty\\putty_install.ps1'])   \
+        subprocess.Popen(['powershell.exe', path + '/putty/putty_install.ps1'])   \
             .communicate()
 
 
@@ -68,18 +65,15 @@ def config(hos):
 
     # Hyper
     if hos == 'Windows':
-        subprocess.Popen(['powershell.exe',
-                          path + '\\hyper\\hyper_config.ps1'])   \
+        subprocess.Popen(['powershell.exe', path + '/hyper/hyper_config.ps1'])   \
             .communicate()
 
     # ConEmu
     if hos == 'Windows':
-        subprocess.Popen(['powershell.exe',
-                          path + '\\conemu\\conemu_config.ps1'])   \
+        subprocess.Popen(['powershell.exe', path + '/conemu/conemu_config.ps1'])   \
             .communicate()
 
     # putty
     if hos == 'Windows':
-        subprocess.Popen(['powershell.exe',
-                          path + '\\putty\\putty_config.ps1'])    \
+        subprocess.Popen(['powershell.exe', path + '/putty/putty_config.ps1'])    \
             .communicate()

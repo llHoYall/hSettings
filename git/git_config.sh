@@ -26,7 +26,7 @@ if [ ! -z "$(command -v git)" ]; then
 		G | Global)
 			# user.name
 			if [ ${option} == "N" -o ${option} == "NC" ]; then
-				git config --global user.name "HoYa"
+				git config --global user.name "hoya128"
 			elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
 				git config --global user.name "llHoYall"
 			else
@@ -75,7 +75,7 @@ if [ ! -z "$(command -v git)" ]; then
 		L | Local)
 			# user.name
 			if [ ${option} == "N" -o ${option} == "NC" ]; then
-				git config --local user.name "HoYa"
+				git config --local user.name "hoya128"
 			elif [ ${option} == "H" -o ${option} == "HoYa" ]; then
 				git config --local user.name "llHoYall"
 			else

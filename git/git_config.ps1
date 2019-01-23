@@ -32,7 +32,7 @@ If (Get-Command git -errorAction SilentlyContinue) {
 		{($_ -ceq "G") -or ($_ -ceq "Global")} {
 			# User Name
 			If ($option -ceq "N" -or $option -ceq "NC") {
-				git config --global user.name "HoYa"
+				git config --global user.name "hoya128"
 			}
 			Elseif ($option -ceq "H" -or $option -ceq "HoYa") {
 				git config --global user.name "llHoYall"
@@ -84,7 +84,7 @@ If (Get-Command git -errorAction SilentlyContinue) {
 		{($_ -ceq "L") -or ($_ -ceq "Local")} {
 			# User Name
 			If ($option -ceq "N" -or $option -ceq "NC") {
-				git config --local user.name "HoYa"
+				git config --local user.name "hoya128"
 			}
 			Elseif ($option -ceq "H" -or $option -ceq "HoYa") {
 				git config --local user.name "llHoYall"

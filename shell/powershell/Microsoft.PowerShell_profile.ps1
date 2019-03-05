@@ -36,5 +36,5 @@ Set-Alias python2 'C:\Python27\python.exe'
 Set-Alias python3 'C:\Python37\python.exe'
 Set-Alias python python3
 
-function git-status { git status }
-Set-Alias -Name gst -Value git-status
+function Git-Status { git status $args }
+Set-Alias -Name gst -Value Git-Status

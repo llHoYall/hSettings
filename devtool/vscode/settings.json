@@ -19,8 +19,10 @@
   "git.autofetch": true,
 
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.shell.linux": "/bin/zsh",
   "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.shell.linux": "/bin/zsh",
+
+  "workbench.colorTheme": "Material Theme Darker",
 
   "[c]": {
     "editor.autoIndent": true

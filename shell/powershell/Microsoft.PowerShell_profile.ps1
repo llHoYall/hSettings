@@ -42,22 +42,58 @@ Set-Alias python3 'C:\Python37\python.exe'
 Set-Alias python python3
 
 function Git-Add { git add $args }
-Set-Alias -Name gad -Value Git-Add
+Set-Alias -Name ga -Value Git-Add
+
+function Git-Add-All { git add --all $args }
+Set-Alias -Name gaa -Value Git-Add-All
 
 function Git-Branch { git branch $args }
-Set-Alias -Name gbr -Value Git-Branch
+Set-Alias -Name gb -Value Git-Branch
+
+function Git-Branch-Remotes { git branch -r$args }
+Set-Alias -Name gbr -Value Git-Branch-Remotes
 
 function Git-Checkout { git checkout $args }
 Set-Alias -Name gco -Value Git-Checkout
 
 function Git-Commit { git commit $args }
-Set-Alias -Name gcmm -Value Git-Commit
+Set-Alias -Name gc -Value Git-Commit
+
+function Git-Commit-Amend { git commit --amend $args }
+Set-Alias -Name gc! -Value Git-Commit-Amend
 
 function Git-Config { git config $args }
 Set-Alias -Name gcf -Value Git-Config
 
+function Git-Diff { git diff $args }
+Set-Alias -Name gd -Value Git-Diff
+
+function Git-Fetch { git fetch $args }
+Set-Alias -Name gf -Value Git-Fetch
+
+function Git-Help { git help $args }
+Set-Alias -Name gh -Value Git-Help
+
 function Git-Log { git log --oneline --graph -50 $args }
 Set-Alias -Name gl -Value Git-Log
+
+function Git-Merge { git merge $args }
+Set-Alias -Name gm -Value Git-Merge
+
+function Git-Pull { git pull $args }
+Set-Alias -Name gpl -Value Git-Pull
+
+function Git-Push { git push $args }
+Set-Alias -Name gpu -Value Git-Push
+
+function Git-Remote { git remote $args }
+Set-Alias -Name grm -Value Git-Remote
+
+function Git-Rebase { git rebase $args }
+Set-Alias -Name grb -Value Git-Rebase
+
+function Git-Reset { git reset $args }
+Set-Alias -Name grst -Value Git-Reset
 
 function Git-Show { git show $args }
 Set-Alias -Name gsh -Value Git-Show
@@ -67,3 +103,6 @@ Set-Alias -Name gsts -Value Git-Stash
 
 function Git-Status { git status $args }
 Set-Alias -Name gst -Value Git-Status
+
+function Git-Tag { git tag $args }
+Set-Alias -Name gt -Value Git-Tag

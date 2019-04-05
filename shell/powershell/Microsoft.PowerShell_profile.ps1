@@ -57,10 +57,10 @@ function Git-Checkout { git checkout $args }
 Set-Alias -Name gco -Value Git-Checkout
 
 function Git-Commit { git commit $args }
-Set-Alias -Name gc -Value Git-Commit
+Set-Alias -Name gcmm -Value Git-Commit
 
 function Git-Commit-Amend { git commit --amend $args }
-Set-Alias -Name gc! -Value Git-Commit-Amend
+Set-Alias -Name gcmm! -Value Git-Commit-Amend
 
 function Git-Config { git config $args }
 Set-Alias -Name gcf -Value Git-Config
@@ -75,10 +75,10 @@ function Git-Help { git help $args }
 Set-Alias -Name gh -Value Git-Help
 
 function Git-Log { git log --oneline --graph -50 $args }
-Set-Alias -Name gl -Value Git-Log
+Set-Alias -Name glg -Value Git-Log
 
 function Git-Merge { git merge $args }
-Set-Alias -Name gm -Value Git-Merge
+Set-Alias -Name gmg -Value Git-Merge
 
 function Git-Pull { git pull $args }
 Set-Alias -Name gpl -Value Git-Pull

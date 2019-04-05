@@ -44,11 +44,26 @@ Set-Alias python python3
 function Git-Add { git add $args }
 Set-Alias -Name gad -Value Git-Add
 
-function Git-Commit { git commit $args }
-Set-Alias -Name gcmm -Value Git-Commit
+function Git-Branch { git branch $args }
+Set-Alias -Name gbr -Value Git-Branch
 
 function Git-Checkout { git checkout $args }
 Set-Alias -Name gco -Value Git-Checkout
+
+function Git-Commit { git commit $args }
+Set-Alias -Name gcmm -Value Git-Commit
+
+function Git-Config { git config $args }
+Set-Alias -Name gcf -Value Git-Config
+
+function Git-Log { git log --oneline --graph -50 $args }
+Set-Alias -Name gl -Value Git-Log
+
+function Git-Show { git show $args }
+Set-Alias -Name gsh -Value Git-Show
+
+function Git-Stash { git stash $args }
+Set-Alias -Name gsts -Value Git-Stash
 
 function Git-Status { git status $args }
 Set-Alias -Name gst -Value Git-Status
